@@ -1,7 +1,5 @@
 # Attendance Management System
 
-
-
 ## Contributors
 
 |  이름  |   학번   |   Github ID   | 비고 |
@@ -12,10 +10,6 @@
 | 이한용 | 20151322 |    lhy0718    |
 | 정나린 | 20180396 |    jnl1128    |
 |  진겸  | 20153031 | kevinoriginal |
-
-
-
-
 
 ## Problem Statement
 
@@ -38,25 +32,19 @@
    c. 각 수업으로 들어가면 `출결정보 전송`이 있고 교사가 누르면 즉시 출결 정보가 학부모에게 전송된다.  
     예시) _홍길동 학생은 오늘 참석을 해 `출결` 버튼을 누른다. 김예지 학생은 지각을 해 `지각` 버튼을 누르고, 그렇게 총 오늘 수업에 참석한 50명의 학생을 모두 출결관리를 한다. 화면의 맨 위에 학생의 정원수와 출결 인원수, 지각인원수, 공결 인원수를 체크를 한다. 수업 종료 후 교사가 `출결정보 전송`을 누르면 학부모에게 이메일 또는 문자메세지를 통해 자녀의 출결 정보가 전송된다._
 
-
-
 ## Sub-Group
 
 | Group              | Desecription                                                 | Contributor    |
 | ------------------ | ------------------------------------------------------------ | -------------- |
 | Auth+Core          | 개발 환경 세팅 및 사용자 모델 정의, 사용자가 앱에 로그인 및 회원가입, 부모에게 자녀의 출결 결과 발송 | 김지혜, 진겸   |
-| Form Create/Update | 사용자가 수업 및 학생을 CRUD                                 | 이한용, 정나린 |
+| Form Create/Update | 사용자가 수업 및 학생 정보를 저장, 수정 및 삭제              | 이한용, 정나린 |
 | 출석 체크          | 학생에 대한 출석 체크, 수업 및 학생 목록, 기본적인 정보 조회 | 박종혁, 윤진호 |
-
-
 
 ## [WIP] Requirments (Stories)
 
 - [Core & Auth](/Core/Requirements.md)
 - [Attendance Check](/AttendanceCheck/Requirements.md)
 - [Form Create / Update](/FormCreateUpdate/Requirements.md)
-
-
 
 ## [WIP] Use Case
 
