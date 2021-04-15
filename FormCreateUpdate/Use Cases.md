@@ -19,3 +19,14 @@ Actor|Actor’s Goal|Use Case Name
 ## Use Case Diagram
 
 ## Traceability Matrix
+
+Req't|PW|UC1|UC2|UC3|UC4|UC5|UC6|UC7|UC8|UC9|UC10|UC11
+:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:
+ST-1|6|X|X|X|X|X|X|||||X
+ST-2|1|||||||X|X|X||
+ST-3|3||||||||||X|X
+ST-4|2||||||||||X|
+ST-5|5||||||||||X|
+ST-6|3||||||||||X|
+ST-7|1|X|X|X|X|X|X||||X|
+ST-8|2||||||||||X|
