@@ -20,6 +20,8 @@ Actor|Actor’s Goal|Use Case Name
 
 ## Traceability Matrix
 
+* Requirements : [link](/FormCreateUpdate/Requirements.md)
+
 Req't|PW|UC1|UC2|UC3|UC4|UC5|UC6|UC7|UC8|UC9|UC10|UC11
 :--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:
 ST-1|6|X|X|X|X|X|X|||||X
@@ -30,3 +32,5 @@ ST-5|5||||||||||X|
 ST-6|3||||||||||X|
 ST-7|1|X|X|X|X|X|X||||X|
 ST-8|2||||||||||X|
+Max PW||6|6|6|6|6|6|1|1|1|5|6
+Total PW||7|7|7|7|7|7|1|1|1|16|9
