@@ -30,6 +30,8 @@
 | Controller | 회원가입 Checker | 회원가입 요청이 들어왔을 때 이미 회원가입이 되어있는 사용자인지 이메일을 통해 확인한다. |
 | 개인 정보  | 개인 정보 record | 사용자가 입력한 개인 정보(이름,email,password)               |
 
+![2](https://user-images.githubusercontent.com/59490892/115526470-091eb400-a2cb-11eb-864a-c2f8a2a7243e.JPG)
+
 
 
 ### **UC-2(Login)**
@@ -62,6 +64,8 @@
 | ----------- | ------------------ | ----------------------------------------------------------- |
 | 사용자 정보 | 사용자 정보 record | DB Connection으로부터 받아온 개인 정보(이름,email,password) |
 
+![3](https://user-images.githubusercontent.com/59490892/115526494-0e7bfe80-a2cb-11eb-8635-ce6e2f86a0eb.JPG)
+
 
 
 ### **UC-3(Logout)**
@@ -92,6 +96,8 @@
 | concept | Attributes | Attributes Description |
 | ------- | ---------- | ---------------------- |
 |         |            |                        |
+
+![4](https://user-images.githubusercontent.com/59490892/115526507-1176ef00-a2cb-11eb-8070-c4527ccbf1ca.JPG)
 
 
 
@@ -127,6 +133,8 @@
 | ----------- | ------------------ | ----------------------------------------------------------- |
 | 사용자 정보 | 사용자 정보 record | DB Connection으로부터 받아온 개인 정보(이름,email,password) |
 
+![5](https://user-images.githubusercontent.com/59490892/115526521-150a7600-a2cb-11eb-8300-b98339c2c743.JPG)
+
 
 
 ### **UC-5(Remove_User)**
@@ -161,3 +169,5 @@
 | concept | Attributes | Attributes Description |
 | ------- | ---------- | ---------------------- |
 |         |            |                        |
+
+![6](https://user-images.githubusercontent.com/59490892/115526538-18056680-a2cb-11eb-9789-d7cff2bb5ecf.JPG)
