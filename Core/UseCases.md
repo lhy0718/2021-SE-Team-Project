@@ -12,6 +12,7 @@
 | DB | 유저의 데이터를 저장,삭제 및 불러오는 역할 |UC-1,UC-2,UC-3,UC-4,UC-5 |
 
 ## Use Case Diagram
+![UseCaseDiagram](https://user-images.githubusercontent.com/59490892/115492166-399b2980-a29c-11eb-8716-0d2b910917d3.JPG)
 
 ## Traceability Matrix
 
