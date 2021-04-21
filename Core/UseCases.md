@@ -55,7 +55,7 @@ Flow of Events for Main Success Senario
 | Initiating Actor                        | 교수자(User)                                                 |
 | Actor's Goal                            | 가입 후 플랫폼에 본인의 계정으로 접속하기 위함 (로그인)      |
 | Participating Actors                    | Customers,DataBase                                           |
-| Preconditions                           | 웹페이지 접속 시, 첫 화면(BeforeLogin page)에 로그인 페이지가 바로 보여야 한다. |
+| Preconditions                           | <ol><li>교수자(User)는 회원가입 되어있는 상태여야한다.  </li><li>웹페이지 접속 시, 첫 화면(BeforeLogin page)에 로그인 페이지가 바로 보여야 한다. </li></ol> |
 | Postconditions                          | 사용자는 로그인을 한 번 할 때마다 로그인 유지가 된다. (max-age: 90일)	|
 | Flow of Events for Main Success Senario | <ol><li>교수자(User)는 id(email)/password를 입력하고, 로그인 버튼을 클릭한다. </li><li>입력받은 user의 id/pw를 DataBase와 대조한다.<ol><li>True:AfterLogin page로 돌아간다. </li><li>False:로그인 실패 알림창이 나온뒤 계속 동일 페이지에 머무른다.</li></ol></li></ol>                                                  |
 
