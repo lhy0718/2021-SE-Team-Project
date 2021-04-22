@@ -25,7 +25,7 @@ Actor|Actor’s Goal|Use Case Name
 Req't| PW | UC1| UC2| UC3| UC4| UC5
 :--: |:--:|:--:|:--:|:--:|:--:|:--:
 ST-1|6|X||||X
-ST-2|1||X|X||
+ST-2|1||X|X|X|
 ST-3|3||||X|X
 ST-4|2||X|X|X|
 ST-5|5||||X|
@@ -33,4 +33,4 @@ ST-6|3||X|X|X|
 ST-7|1|X|||X|
 ST-8|2||X|X|X|
 Max PW||6|3|3|5|6
-Total PW||7|8|8|16|9
+Total PW||7|8|8|17|9
