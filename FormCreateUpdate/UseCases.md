@@ -18,6 +18,8 @@ Actor|Actor’s Goal|Use Case Name
 
 ## Use Case Diagram
 
+* Detailed Use Cases : [link](/FormCreateUpdate/DetailedUseCases.md)
+
 ## Traceability Matrix
 
 * Requirements : [link](/FormCreateUpdate/Requirements.md)
