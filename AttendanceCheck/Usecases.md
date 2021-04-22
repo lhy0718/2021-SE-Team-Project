@@ -30,7 +30,7 @@ FR-7 |  4 ||||||X||
 FR-8 |  10 |||||||X|
 FR-9 |  3 |||||X|X|X|
 Max PW|   |  6 |  4 |  8 |  6 |  6 |  6 |  10 |
-Total PW| |  6 |  4 |  12 |  10 |  13 |  10 |  13 |
+Total PW| |  6 |  4 |  12 |  10 |  13 |  17 |  13 |
 
 ## Use Case Schema
 Use Case UC-1 | InquireClassList |
