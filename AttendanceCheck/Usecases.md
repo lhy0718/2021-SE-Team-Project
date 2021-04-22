@@ -71,7 +71,7 @@ Actor's Goal| 여러 학생 중에서 특정 학생을 이름으로 검색하여
 Participating Actors| Database |
 Preconditions | - 사용자는 정상적으로 로그인이 완료되어 있어야 한다.<br>- 사용자는 '수업목록' 페이지에서 수업을 선택해야 한다.<br>- 해당 수업의 학생목록 데이터가 데이터베이스에 정상적으로 등록되어 있어야 한다.<br>- 검색할 이름을 입력할 수 있는 폼이 존재해야 한다.|
 Postconditions| 검색조건을 만족하는 학생정보를 출력한다. |
-Flow of Events for Main Success Senario|-> 1. 사용자가 '수업목록' 페이지에서 수업을 선택한다.<br>-> 2. 사용자로부터 검색할 학생의 이름을 입력받는다.<br><- 3. DB에서 입력받은 이름과 일치하는 학생정보 데이터를 가져와 ``학생정보조회(UC-5)``에 전달한다.|
+Flow of Events for Main Success Senario|-> 1. 사용자가 '수업목록' 페이지에서 수업을 선택한다.<br>-> 2. 사용자로부터 검색할 학생의 이름을 입력받는다.<br><- 3.  DB에서 입력받은 이름과 일치하는 학생정보 데이터만을 `학생목록`으로 출력한다.|
 ---
 Use Case UC-5 | 	InquireStudentInfo |
 :--:|:--|
