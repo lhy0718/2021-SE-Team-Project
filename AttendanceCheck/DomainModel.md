@@ -65,6 +65,9 @@
 | Controller | 사용자 정보 | 현재 인증된 로그인 정보 |
 | Controller | 수업 정보 | 현재 선택된 수업 정보 |
 | 학생 목록  | 학생 사진, 이름, 학번, 출석상태 등  | 학생 정보와 관련된 세부사항           |
+
+![DomainModel_UC2](https://user-images.githubusercontent.com/76427521/115754868-9fd89700-a3d7-11eb-9ae2-05ffd810f604.JPG)
+
 ---
 ### **UC-3(CheckAttendance)**
 
@@ -136,6 +139,10 @@
 | Controller | 수업 정보 | 현재 선택된 수업 정보 |
 | 학생정보 | 검색과 일치하는 학생정보 목록 | 검색된 학생의 정보 |
 | UserInput  | 검색 폼  | 사용자로부터 입력을 받을 수 있는 검색 폼           |
+
+![DomainModel_UC4](https://user-images.githubusercontent.com/76427521/115754875-a23af100-a3d7-11eb-84b6-4c3d852b2d3a.JPG)
+
+
 ---
 ### **UC-5(InquireStudentInfo)**
 
@@ -178,6 +185,10 @@
 | Controller | 수업 정보 | 현재 선택된 수업 정보 |
 | 학생정보 | 학생 이름,사진,학번,Email,메모 등 | 검색된 학생의 정보 |
 | UserInput  | 검색 폼  | 사용자로부터 입력을 받을 수 있는 검색 폼           |
+
+![DomainModel_UC5](https://user-images.githubusercontent.com/76427521/115754882-a404b480-a3d7-11eb-984d-617f7c9d0aef.JPG)
+
+
 ---
 ### **UC-6(StudentMemo)**
 
