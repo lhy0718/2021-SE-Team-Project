@@ -223,3 +223,36 @@
 
 ---
 ### **UC-7(SendEmail)**
+
+**Extracting the Responsibilities**
+
+| Responsibility Description                                   | Type | Concept Name  |
+| ------------------------------------------------------------ | :---: | ------------- |
+| 수업 종료를 클릭되면 수업이 종료처리를 요청한다.|D|수업종료 요청|
+|UC-7과 연관된 개념들의 행동들을 조정하고 다른 개념에 작업을 위임한다.|D|Controller|
+|출결정보를 학부모에게 이메일로 전송한다.|D|Email Sender|
+|서버와 여러 데이터들을 DB에 전송하고 record값을 받아온다.|D|DB Connection|
+|불러온 정보를 보여준다.|K|View|
+|출결 처리 내용|K|Checked Result|
+|가져온 데이터를 페이지(화면)에 출력한다.|D|Page Maker|
+
+
+**Extracting the Associations**
+
+| Concept pair                  | Association Description                                      | Association Name |
+| :--------------------------: | ------------------------------------------------------------ | ------------ |
+|수업종료 요청 <-> Controller|수업종료 처리를 Contoller에게 요청한다.|요청 전달|
+|Controller <-> DB Connection|Controller는 DB Connection으로 request를 넘긴다.|요청 전달|
+|DB Connection <-> Email Sender|이메일 발송에 필요한 정보를 전달한다.|데이터 전달|
+|Controller <-> Email Sender|이메일 발송을 요청한다.|요청 전달|
+|Email Sender <-> Checked Result|이메일 전송이 완료됨을 전달한다.|전송완료 전달|
+|Checked Result <-> Controller|출결결과에 대한 정보를 요청한다. |요청전달|
+|DB Connection <-> Checked Result|출결결과에 대한 정보를 전달한다.|데이터 전달|
+|Check Result <-> View|해당 내용을 View에 전달|데이터 전달|
+|View <-> Page Maker|View를 화면에 출력한다.|출력|
+
+![UC-7](https://user-images.githubusercontent.com/79308015/115797745-a2ef7980-a40f-11eb-9bf6-b05f4cf600e9.jpg)
+
+
+
+
