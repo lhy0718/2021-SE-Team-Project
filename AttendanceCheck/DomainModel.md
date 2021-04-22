@@ -32,6 +32,39 @@
 | 수업 목록  | 수업 이름, 수업 요일, 수업 시간 , 수강 인원 등  | 각 수업과 관련된 세부적인 정보           |
 ---
 ### **UC-2(InquireEnrolledStudent)**
+
+**Extracting the Responsibilities**
+
+| Responsibility Description                                   | Type | Concept Name  |
+| ------------------------------------------------------------ | :---: | ------------- |
+| UC-2와 연관된 개념들을 행동들을 조정하고 다른 개념에 작업을 위임한다. | D    | Controller    |
+| 로그인 상태를 확인하여, 현재 수업 정보를 바탕으로 DB 학생목록을 요청한다. | D    | DB Connection    |
+| 가져온 데이터를 페이지(화면)에 출력한다.                                 | D    | Page maker |
+| DB로부터 받아온 학생목록 | K    | 학생목록 |
+| 학생을 선택하여 ``학생정보조회(UC-5)``로 이동한다. | D    | 학생선택 |
+| 학생 CRUD 버튼                               | K    | 학생_CRUD_Button          |
+| 불러온 정보를 보여주는 페이지                                 | K    | View          |
+
+**Extracting the Associations**
+
+| Concept pair                  | Association Description                                      | Association Name |
+| :--------------------------: | ------------------------------------------------------------ | ------------ |
+| Controller <-> DB Connection   | Controller는 DB Connection으로 request를 넘긴다.   | 요청 전달        |
+| Controller <-> 학생목록  | DB로부터 학생목록을 전달받아 저장한다.  | 데이터 전달        |
+| View <-> 학생목록  | 학생목록을 View에 전달한다.  | 데이터 전달        |
+| View <-> 학생 CRUD  | 학생 CRUD에 해당하는 GUI를 View에 전달한다. | 데이터 전달      |
+| View <-> Pagemaker  | View를 화면에 출력한다. | 출력      |
+| Controller <-> 학생 선택  | 학생을 선택하면 해당 학생정보조회 페이지로 이동한다. | 요청 전달     |
+
+
+
+**Extracting Attributes**
+
+| concept    | Attributes       | Attributes Description                                       |
+| ---------- | ---------------- | ------------------------------------------------------------ |
+| Controller | 사용자 정보 | 현재 인증된 로그인 정보 |
+| Controller | 수업 정보 | 현재 선택된 수업 정보 |
+| 학생 목록  | 학생 사진, 이름, 학번, 출석상태 등  | 학생 정보와 관련된 세부사항           |
 ---
 ### **UC-3(CheckAttendance)**
 
@@ -69,8 +102,82 @@
 
 ---
 ### **UC-4(SearchStudent)**
+
+**Extracting the Responsibilities**
+
+| Responsibility Description                                   | Type | Concept Name  |
+| ------------------------------------------------------------ | :---: | ------------- |
+| UC-4와 연관된 개념들을 행동들을 조정하고 다른 개념에 작업을 위임한다. | D    | Controller    |
+| 사용자로부터 입력받은 학생이름을 바탕으로 DB 학생정보를 요청한다. | D    | DB Connection    |
+| 가져온 데이터를 페이지(화면)에 출력한다.                                 | D    | Page maker |
+| 사용자로부터 검색된 학생의 정보목록                   | K   | 학생정보  |
+| 입력받은 Input에 해당하는 학생의 정보를 DB에 요청한다.                    | D   | 학생검색  |
+| 사용자로부터 문자열을 입력받는다.                    | D   | UserInput  |
+| 불러온 정보를 보여주는 페이지                                 | K    | View          |
+
+**Extracting the Associations**
+
+| Concept pair                  | Association Description                                      | Association Name |
+| :--------------------------: | ------------------------------------------------------------ | ------------ |
+| Controller <-> DB Connection   | Controller는 DB Connection으로 request를 넘긴다.   | 요청 전달        |
+| View <-> Pagemaker  | View를 화면에 출력한다. | 출력      |
+| Controller <-> UserInput   | 사용자로부터 검색 할 학생이름을 입력받는다. | 문자열 입력      |
+| UserInput <-> 학생 검색   | 입력받은 UserInput 데이터를 전달한다. | 데이터 전달      |
+| Contorller <-> 학생 검색    | UserInput을 Controller에 전달하여 학생정보를 전달받는다. | 검색      |
+| View <-> 학생정보   | 학생정보를 View에 전달한다. | 데이터 전달      |
+
+
+
+**Extracting Attributes**
+
+| concept    | Attributes       | Attributes Description                                       |
+| ---------- | ---------------- | ------------------------------------------------------------ |
+| Controller | 사용자 정보 | 현재 인증된 로그인 정보 |
+| Controller | 수업 정보 | 현재 선택된 수업 정보 |
+| 학생정보 | 검색과 일치하는 학생정보 목록 | 검색된 학생의 정보 |
+| UserInput  | 검색 폼  | 사용자로부터 입력을 받을 수 있는 검색 폼           |
 ---
 ### **UC-5(InquireStudentInfo)**
+
+**Extracting the Responsibilities**
+
+| Responsibility Description                                   | Type | Concept Name  |
+| ------------------------------------------------------------ | :---: | ------------- |
+| UC-5와 연관된 개념들을 행동들을 조정하고 다른 개념에 작업을 위임한다. | D    | Controller    |
+| 사용자로부터 입력받은 학생이름을 바탕으로 DB 학생정보를 요청한다. | D    | DB Connection    |
+| 가져온 데이터를 페이지(화면)에 출력한다.                                 | D    | Page maker |
+| 사용자로부터 검색된 학생의 정보                    | K   | 학생정보  |
+| 입력받은 Input에 해당하는 학생의 정보를 DB에 요청한다.                    | D   | 학생검색  |
+| 사용자로부터 문자열을 입력받는다.                    | D   | UserInput  |
+| 로그인 정보를 다시 입력받아 사용자 인증과정을 거친다.                   | D   | 사용자인증  |
+| 학생의 정보를 수정한다.                 | D   | 학생정보수정  |
+| 불러온 정보를 보여주는 페이지                                 | K    | View          |
+
+**Extracting the Associations**
+
+| Concept pair                  | Association Description                                      | Association Name |
+| :--------------------------: | ------------------------------------------------------------ | ------------ |
+| Controller <-> DB Connection   | Controller는 DB Connection으로 request를 넘긴다.   | 요청 전달        |
+| View <-> Pagemaker  | View를 화면에 출력한다. | 출력      |
+| Controller <-> UserInput   | 사용자로부터 검색 할 학생이름을 입력받는다. | 문자열 입력      |
+| Controller <-> UserInput   | 사용자로부터 로그인 정보를 입력받는다. | 문자열 입력      |
+| Controller <-> UserInput   | 사용자로부터 수정할 학생 정보를 입력받는다. | 문자열 입력      |
+| UserInput <-> 학생 검색   | 입력받은 UserInput 데이터를 전달한다. | 데이터 전달      |
+| Contorller <-> 학생 검색    | UserInput을 Controller에 전달하여 학생정보를 전달받는다. | 검색      |
+| View <-> 학생정보   | 학생정보를 View에 전달한다. | 데이터 전달      |
+| Controller <-> 학생정보 수정   | 학생정보 수정 데이터를 전달받고, 데이터베이스에 저장한다.     |
+| Controller <-> 사용자 인증   | 입력받은 로그인정보를 통해 사용자 인증과정을 거친다. | 데이터 전달      |
+
+
+
+**Extracting Attributes**
+
+| concept    | Attributes       | Attributes Description                                       |
+| ---------- | ---------------- | ------------------------------------------------------------ |
+| Controller | 사용자 정보 | 현재 인증된 로그인 정보 |
+| Controller | 수업 정보 | 현재 선택된 수업 정보 |
+| 학생정보 | 학생 이름,사진,학번,Email,메모 등 | 검색된 학생의 정보 |
+| UserInput  | 검색 폼  | 사용자로부터 입력을 받을 수 있는 검색 폼           |
 ---
 ### **UC-6(StudentMemo)**
 
