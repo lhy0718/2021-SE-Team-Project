@@ -55,7 +55,7 @@ Flow of Events for Main Success Senario|1. 사용자가 '수업목록' 페이지
 ---
 Use Case UC-3 | CheckAttendance |
 :--:|:--|
-Related Requirements| FR-1, FR-2, FR-3, FR-5, FR-6 | 
+Related Requirements| FR-3, FR-5, FR-6 | 
 Initiating Actor| 교수자(사용자) |
 Actor's Goal| - 학생들의 출결을 학생별로 '출석', '결석', '지각', '기타'로 각각 체크하기 위함<br>- 수업 종료 후, 출결 현황을 최종 저장하여 학생들의 출결관리를 용이하게 하기 위함 |
 Participating Actors| Database |
@@ -73,9 +73,19 @@ Preconditions | - 사용자는 정상적으로 로그인이 완료되어 있어�
 Postconditions| 검색조건을 만족하는 학생정보를 출력한다. |
 Flow of Events for Main Success Senario|1. 사용자가 '수업목록' 페이지에서 수업을 선택한다.<br>2. 사용자로부터 검색할 학생의 이름을 입력받는다.<br>3. DB에서 입력받은 이름과 일치하는 학생정보 데이터를 가져와 출력한다.|
 ---
+Use Case UC-5 | 	InquireStudentInfo |
+:--:|:--|
+Related Requirements| FR-2, FR-4, FR-9 | 
+Initiating Actor| 교수자(사용자) |
+Actor's Goal| -	사용자가 학생에 대한 정보(이름, 학부모 이메일, 출결 현황 등)를 조회하기 위함 |
+Participating Actors| Database |
+Preconditions | - 학생에 대한 정보가 사전에 Database에 등록되어 있어야 한다.<br>- 학생정보는 개인정보에 해당하므로 조회 시에 계정 비밀번호를 이용하여 인증을 한번 더 거친다.<br>- 정보를 수정할 수 있도록 테이블의 오른쪽 상단에 `수정` 버튼이 있어야 한다.(???)|
+Postconditions| 없음 |
+Flow of Events for Main Success Senario|→ 1. Include:: SearchStudent(UC-4) // 교수자가 정보 조회할 학생의 이름을 입력한다.<br>→ 2. 사용자 인증을 요구하는 창에 계정 비밀번호를 입력하여 인증을 거친다. <br>← 3. 검색한 이름에 해당하는 학생의 정보를 테이블 형식으로 출력한다.<br>→ 4. 학생 정보를 수정하고 싶을 경우, `수정` 버튼을 클릭하여 해당 부분을 수정한다. (???)<br>← 5. Database에 변경된 사항을 저장한다.|
+---
 Use Case UC-6 | 	StudentMemo |
 :--:|:--|
-Related Requirements| FR-2, FR-4, FR-7, FR-9 | 
+Related Requirements| FR-4, FR-7 | 
 Initiating Actor| 교수자(사용자) |
 Actor's Goal| - 학생에 대한 메모를 생성하기 위함<br>- 과거에 작성했던 학생에 대한 메모를 삭제하거나 수정하여 저장하기 위함<br>- 출석 체크를 할 때 사용되는 학생 명단 테이블에서도 각 학생에 대한 메모를 조회하기 위함 |
 Participating Actors| Database |
