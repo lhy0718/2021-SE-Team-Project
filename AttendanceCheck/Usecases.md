@@ -21,16 +21,16 @@
 Req't| PW | UC1| UC2| UC3| UC4| UC5| UC6| UC7| 
 :--: |:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
 FR-1 |  6 |X|||||||
-FR-2 |  4 ||X||X|X|||
+FR-2 |  4 ||X||X|X|X||
 FR-3 |  8 |||X|||||
 FR-4 |  6 ||||X|X|X||
 FR-5 |  2 |||X|||||
 FR-6 |  2 |||X|||||
 FR-7 |  4 ||||||X||
 FR-8 |  10 |||||||X|
-FR-9 |  3 |||||X||X|
+FR-9 |  3 |||||X|X|X|
 Max PW|   |  6 |  4 |  8 |  6 |  6 |  6 |  10 |
-Total PW| |  6 |  4 |  12 |  10 |  13 |  10 |  13 |
+Total PW| |  6 |  4 |  12 |  10 |  13 |  17 |  13 |
 
 ## Use Case Schema
 Use Case UC-1 | InquireClassList |
@@ -61,7 +61,7 @@ Actor's Goal| - 학생들의 출결을 학생별로 '출석', '결석', '지각'
 Participating Actors| Database |
 Preconditions | - 학생 명단은 테이블의 형식으로 화면에 출력하여 식별이 쉽도록 한다.<br>- 각 수업이 시작되기 전, 학생들의 출결 상태는 default로 초기화한다.<br>- 각 출결 상태를 체크하는 것은 토글을 단순히 클릭함으로써 가능하도록 한다.<br>- 출결 상태는 실시간으로 저장한다. <br>- 수업 종료전(이메일 발송(UC-7)전에는 언제든지 출결 상태를 변경할 수 있어야 한다.<br>- '수업 종료' 버튼이 있어서 수업 종료를 교수자(사용자)가 승인할 수 있어야 한다.|
 Postconditions| 출결 결과를 Database에 최종 저장 |
-Flow of Events for Main Success Senario|→ 1. Include:: InquireClassList(UC-1) // 교수자가 본인이 맡은 수업 목록 중 출결체크 할 수업을 선택한다.<br>← 2. Include:: InquireEnrolledStudent(UC-2) // 화면에 해당 수업을 듣는 학생 명단과 그 옆에 출석/결석/지각/기타를 체크할 수 있도록 보여준다.<br>→ 3. 교수자가 학생별로 학생들의 출결 현황에 따라 출석 체크를 진행한다.<br>← 4. 출결 현황을 실시간으로 저장한다.<br>→ 5. 수업이 종료되면 교수자는 ‘수업종료’ 버튼을 누른다.<br>← 6. 교수자는 팝업창을 통해 “수업이 종료되었습니다. (출석:a명/결석:b명/지각:c명/기타:d명)”을 확인하게 된다.<br>← 7. 교수자는 본인이 맡은 수업 목록이 있는 창으로 다시 나오게 된다.|
+Flow of Events for Main Success Senario|→ 1. Include:: InquireClassList(UC-1) // 교수자가 본인이 맡은 수업 목록 중 출결체크 할 수업을 선택한다.<br>← 2. Include:: InquireEnrolledStudent(UC-2) // 화면에 해당 수업을 듣는 학생 명단과 그 옆에 출석/결석/지각/기타를 체크할 수 있도록 보여준다.<br>→ 3. 교수자가 학생별로 학생들의 출결 현황에 따라 출석 체크를 진행한다.<br>← 4. 출결 현황을 실시간으로 저장한다.<br>→ 5. 수업이 종료되면 교수자는 ‘수업종료’ 버튼을 누른다.<br>← 6. 교수자는 본인이 맡은 수업 목록이 있는 창으로 다시 나오게 된다.|
 ---
 Use Case UC-4 | 	SearchStudent |
 :--:|:--|
@@ -79,19 +79,19 @@ Related Requirements| FR-2, FR-4, FR-9 |
 Initiating Actor| 교수자(사용자) |
 Actor's Goal| -	사용자가 학생에 대한 정보(이름, 학부모 이메일, 출결 현황 등)를 조회하기 위함 |
 Participating Actors| Database |
-Preconditions | - 학생에 대한 정보가 사전에 Database에 등록되어 있어야 한다.<br>- 학생정보는 개인정보에 해당하므로 조회 시에 계정 비밀번호를 이용하여 인증을 한번 더 거친다.<br>- 정보를 수정할 수 있도록 테이블의 오른쪽 상단에 `수정` 버튼이 있어야 한다.(???)|
+Preconditions | - 학생에 대한 정보가 사전에 Database에 등록되어 있어야 한다.<br>- 학생정보는 개인정보에 해당하므로 조회 시에 계정 비밀번호를 이용하여 인증을 한번 더 거친다.<br>- 정보를 수정할 수 있도록 테이블의 오른쪽 상단에 `수정` 버튼이 있어야 한다.|
 Postconditions| 없음 |
-Flow of Events for Main Success Senario|→ 1. Include:: SearchStudent(UC-4) // 교수자가 정보 조회할 학생의 이름을 입력한다.<br>→ 2. 사용자 인증을 요구하는 창에 계정 비밀번호를 입력하여 인증을 거친다. <br>← 3. 검색한 이름에 해당하는 학생의 정보를 테이블 형식으로 출력한다.<br>→ 4. 학생 정보를 수정하고 싶을 경우, `수정` 버튼을 클릭하여 해당 부분을 수정한다. (???)<br>← 5. Database에 변경된 사항을 저장한다.|
+Flow of Events for Main Success Senario|→ 1. Include:: SearchStudent(UC-4) // 교수자가 정보 조회할 학생의 이름을 입력한다.<br>→ 2. 사용자 인증을 요구하는 창에 계정 비밀번호를 입력하여 인증을 거친다. <br>← 3. 검색한 이름에 해당하는 학생의 정보를 테이블 형식으로 출력한다.<br>→ 4. 학생 정보를 수정하고 싶을 경우, `수정` 버튼을 클릭한다. <br>← 5. Database에 변경된 사항을 저장한다.|
 ---
 Use Case UC-6 | 	StudentMemo |
 :--:|:--|
-Related Requirements| FR-4, FR-7 | 
+Related Requirements| FR-2, FR-4, FR-7, FR-9 | 
 Initiating Actor| 교수자(사용자) |
-Actor's Goal| - 학생에 대한 메모를 생성하기 위함<br>- 과거에 작성했던 학생에 대한 메모를 삭제하거나 수정하여 저장하기 위함<br>- 출석 체크를 할 때 사용되는 학생 명단 테이블에서도 각 학생에 대한 메모를 조회하기 위함 |
+Actor's Goal| - 학생에 대한 메모를 생성하기 위함<br>- 과거에 작성했던 학생에 대한 메모를 삭제하거나 수정하여 저장하기 위함<br>- 출석 체크를 할 때 사용되는 학생 명단 테이블과 학생 조회를 통해 조회한 학생정보에서 각 학생에 대한 메모를 조회하기 위함 |
 Participating Actors| Database |
 Preconditions | -	학생 조회(SearchStudent(UC-4))를 통해 학생을 조회했을 때, ‘메모’ 버튼이 있어야 한다.<br>- `메모`클릭 시 메모 작성을 위한 텍스트 편집기가 팝업 되어야 한다.|
 Postconditions| 사용자가 작성한 메모가 최근 상태로 DB에 저장 또는 삭제 |
-Flow of Events for Main Success Senario|→ Include:: SearchStudent(UC-4), InquireStudentInfo(UC-5) // 1. 교수자가 학생이름을 통하여 메모를 추가할 학생을 검색<br>→ 2. 사용자 재인증(개인정보를 조회하는 상황이므로)<br>← 3. 학생 이름과 동일한 학생정보를 불러와서 출력, 마지막 칸에 ‘메모’버튼<br>→ 4. 교수자가 ‘메모’버튼 클릭<br> ← 5. 텍스트 편집기 팝업<br>→ 6-a. 내용을 작성 또는 수정한 후 ‘저장’버튼 클릭<br>← 7. DB에 변경 내용을 저장<br><br>→ 6-b. ‘삭제’버튼 클릭<br>← 7. DB에서 해당 내용 삭제|
+Flow of Events for Main Success Senario|→ Include::InquireStudentInfo(UC-5) // 1. 교수자가 학생이름을 통하여 메모를 추가할 학생을 검색<br>→ 2. 사용자 재인증(개인정보를 조회하는 상황이므로)<br>← 3. 학생 이름과 동일한 학생정보를 불러와서 출력, 마지막 칸에 ‘메모’버튼<br>→ 4. 교수자가 ‘메모’버튼 클릭<br> ← 5. 텍스트 편집기 팝업<br>→ 6-a. 내용을 작성 또는 수정한 후 ‘저장’버튼 클릭<br>← 7. DB에 변경 내용을 저장<br><br>→ 6-b. ‘삭제’버튼 클릭<br>← 7. DB에서 해당 내용 삭제|
 ---
 Use Case UC-7 | 	SendEmail |
 :--:|:--|
@@ -101,4 +101,4 @@ Actor's Goal| 사용자로부터 수업 종료를 전달받으면 출결정보�
 Participating Actors| User, Database |
 Preconditions | - 사용자로부터 수업 종료를 전달받아야 한다.<br>- 학생들의 출석정보가 데이터베이스에 정상적으로 등록되어 있어야 한다.<br>- 학부모의 이메일이 데이터베이스에 정상적으로 등록되어 있어야 한다.
 Postconditions | - 수업이 종료되고 출결정보 전송이 완료되었음을 확인하는 메세지를 출력한다.|
-Flow of Events for Main Success Senario|-> 1. 사용자로부터 ``수업종료``를 전달받는다.<br><- 2. 현재 수업을 수강하는 전체 학생의 학부모 Email 데이터를 DB에서 가져온다.<br><- 3. 각 학생의 출결정보를 학부모 Email로 전송한다.<br>|
+Flow of Events for Main Success Senario|-> 1. 사용자로부터 ``수업종료``를 전달받는다.<br><- 2. 현재 수업을 수강하는 전체 학생의 학부모 Email 데이터를 DB에서 가져온다.<br><- 3. 각 학생의 출결정보를 학부모 Email로 전송한다.<br><- 6. 교수자는 팝업창을 통해 “수업이 종료되었습니다. (출석:a명/결석:b명/지각:c명/기타:d명)”을 확인하게 된다.|
