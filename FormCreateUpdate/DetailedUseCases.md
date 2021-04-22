@@ -110,12 +110,12 @@ Use Case UC-7 :|InputExceptionAlert
 Related Requirements:|ST-2, ST-4, ST-6, ST-8
 Initiating Actor:|Client
 Actor’s Goal:|범위를 벗어난 입력에 대해 사용자에게 알린다.
-Participating Actors:|User
+Participating Actors:|User, Server
 Preconditions:|사용자가 폼을 입력하여 전송버튼을 클릭한다.
 Postconditions:|입력이 유효하지 않다면 사용다에게 에러 메시지를 띄운다.
 ||입력이 유효하다면 서버에게 폼 데이터를 전송한다.
 ||**Flow of Events for Main Success Scenario:**
-→|1. 사용자가 폼을 입력하고 페이지에 있는 전송버튼(summit)을 클릭한다.
+→|1. 사용자가 폼을 입력하고 페이지에 있는 전송버튼(submit)을 클릭한다.
 ||2. (a)숫자, (b)문자, (c)날짜 등의 입력의 포멧이 맞는지 확인한다.
 ←|2a. 범위를 벗어난 숫자를 입력하면 오류 메시지를 반환한다.
 ←|2b. 입력할 수 없는 문자를 입력하면 오류 메시지를 반환한다.
@@ -179,5 +179,5 @@ Postconditions:|DB에 사용자가 전송한 데이터가 저장된다.
 ||**Flow of Events for Main Success Scenario:**
 →|1. 사용자가 데이터를 입력할 수 있는 페이지에 접속한다.
 →|2. 사용자가 과목이나 학생 데이터를 서버에 전송한다.
-||3. 유효성 건사 후에 데이터를 저장한다.
+||3. 유효성 검사 후에 데이터를 저장한다.
 ←|4. 사용자가 데이터를 요구하면 대분류, 소분류로 정리하여 전송한다.
