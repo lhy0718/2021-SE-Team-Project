@@ -41,7 +41,7 @@ Actor's Goal| 등록된 수업목록을 조회하기 위함 |
 Participating Actors| Database |
 Preconditions | - 사용자는 정상적으로 로그인이 완료되어 있어야 한다.<br>- 사용자의 수업목록 데이터가 데이터베이스에 정상적으로 등록되어 있어야 한다.|
 Postconditions| 없음 |
-Flow of Events for Main Success Senario|1. 사용자가 로그인에 성공할시 '수업목록' 페이지로 이동한다. <br>2. 사용자의 인증정보를 바탕으로 DB에서 수업목록 데이터를 가져와 출력한다. <br>3. 수업목록이 출력되고 아래에 '수업 등록' , '수업 수정', 수업 삭제' 버튼이 존재한다.|
+Flow of Events for Main Success Senario|<- 1. 사용자가 로그인에 성공할시 ``수업목록(UC-1)`` 페이지로 이동한다. <br><- 2. 사용자의 인증정보를 바탕으로 DB에서 수업목록 데이터를 가져와 출력한다. <br><- 3. 수업목록이 출력되고 아래에 ``수업 등록 , 수업 수정, 수업 삭제`` 버튼이 존재한다.<br>-> 4. 사용자가 수업을 클릭한다.<br><- 5. 해당 수업에 대한 ``학생목록(UC-2)`` 페이지로 이동한다.|
 ---
 Use Case UC-2 | InquireEnrolledStudent |
 :--:|:--|
@@ -51,7 +51,7 @@ Actor's Goal| 각 수업별로 해당 수업을 수강하는 학생 명단을 �
 Participating Actors| Database |
 Preconditions | - 사용자는 정상적으로 로그인이 완료되어 있어야 한다.<br>- 사용자는 '수업목록' 페이지에서 수업을 선택해야 한다.<br>- 해당 수업의 학생목록 데이터가 데이터베이스에 정상적으로 등록되어 있어야 한다.|
 Postconditions| 없음 |
-Flow of Events for Main Success Senario|1. 사용자가 '수업목록' 페이지에서 수업을 선택한다.<br>2. 사용자가 선택한 수업정보를 바탕으로 DB에서 학생목록 데이터를 가져와 출력한다.<br>3. 학생의 사진, 이름, 학번, 출석상태가 포함된 전체 학생목록을 출력한다.<br>4. 학생목록을 생성/수정/삭제 하고 출석상태를 변경할 수 있는 버튼이 존재한다.|
+Flow of Events for Main Success Senario|-> 1. 사용자가 '수업목록' 페이지에서 수업을 선택한다.<br><- 2. 사용자가 선택한 수업정보를 바탕으로 DB에서 해당 수업의 학생목록 데이터를 가져온다.<br><- 3. 학생의 ``사진, 이름, 학번, 출석상태`` 등이 포함된 전체 학생목록을 출력한다.<br><- 4. 학생목록을 ``생성/수정/삭제`` 하고 출석상태를 변경할 수 있는 버튼이 존재한다.|
 ---
 Use Case UC-3 | CheckAttendance |
 :--:|:--|
@@ -71,7 +71,7 @@ Actor's Goal| 여러 학생 중에서 특정 학생을 이름으로 검색하여
 Participating Actors| Database |
 Preconditions | - 사용자는 정상적으로 로그인이 완료되어 있어야 한다.<br>- 사용자는 '수업목록' 페이지에서 수업을 선택해야 한다.<br>- 해당 수업의 학생목록 데이터가 데이터베이스에 정상적으로 등록되어 있어야 한다.<br>- 검색할 이름을 입력할 수 있는 폼이 존재해야 한다.|
 Postconditions| 검색조건을 만족하는 학생정보를 출력한다. |
-Flow of Events for Main Success Senario|1. 사용자가 '수업목록' 페이지에서 수업을 선택한다.<br>2. 사용자로부터 검색할 학생의 이름을 입력받는다.<br>3. DB에서 입력받은 이름과 일치하는 학생정보 데이터를 가져와 출력한다.|
+Flow of Events for Main Success Senario|-> 1. 사용자가 '수업목록' 페이지에서 수업을 선택한다.<br>-> 2. 사용자로부터 검색할 학생의 이름을 입력받는다.<br><- 3. DB에서 입력받은 이름과 일치하는 학생정보 데이터를 가져와 ``학생정보조회(UC-5)``에 전달한다.|
 ---
 Use Case UC-5 | 	InquireStudentInfo |
 :--:|:--|
@@ -100,5 +100,5 @@ Initiating Actor| 시스템 |
 Actor's Goal| 사용자로부터 수업 종료를 전달받으면 출결정보를 학부모에게 이메일로 전송하기 위함 |
 Participating Actors| User, Database |
 Preconditions | - 사용자로부터 수업 종료를 전달받아야 한다.<br>- 학생들의 출석정보가 데이터베이스에 정상적으로 등록되어 있어야 한다.<br>- 학부모의 이메일이 데이터베이스에 정상적으로 등록되어 있어야 한다.
-Postconditions | 전송이 완료되었음을 확인하는 메세지를 출력한다.|
-Flow of Events for Main Success Senario|1. 사용자로부터 '수업종료'를 전달받는다.<br>2. 현재 수업을 수강하는 전체 학생의 학부모 Email 데이터를 DB에서 가져온다.<br>3. 각 학생의 출결정보를 학부모 Email로 전송한다.|
+Postconditions | - 수업이 종료되고 출결정보 전송이 완료되었음을 확인하는 메세지를 출력한다.|
+Flow of Events for Main Success Senario|-> 1. 사용자로부터 ``수업종료``를 전달받는다.<br><- 2. 현재 수업을 수강하는 전체 학생의 학부모 Email 데이터를 DB에서 가져온다.<br><- 3. 각 학생의 출결정보를 학부모 Email로 전송한다.<br>|
