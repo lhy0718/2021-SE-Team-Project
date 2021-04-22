@@ -16,7 +16,7 @@
 | 학부모 | 자녀의 출결 정보를 이메일로 전달받기 위함 | UC-7  |
 
 ## Use Case Diagram
-
+![usecase_diagram](https://user-images.githubusercontent.com/76427521/115723412-e966b900-a3ba-11eb-8252-816e22ff45b5.JPG)
 ## Traceability Matrix
 Req't| PW | UC1| UC2| UC3| UC4| UC5| UC6| UC7| 
 :--: |:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
