@@ -1,4 +1,4 @@
-### **UC-1(InquireClassList)**
+## **UC-1(InquireClassList)**
 
 **Extracting the Responsibilities**
 
@@ -17,11 +17,11 @@
 | Concept pair                  | Association Description                                      | Association Name |
 | :--------------------------: | ------------------------------------------------------------ | ------------ |
 | Controller <-> DB Connection   | Controller는 DB Connection으로 request를 넘긴다.   | 요청 전달        |
-| View <-> 수업목록  | 수업목록을 View에 전달한다.  | 데이터 전달        |
+| View <-> DB Connection  | 수업목록을 View에 전달한다.  | 데이터 전달        |
 | View <-> Page Maker  | View를 화면에 출력한다. | 출력      |
-| View <-> 수업_CRUD_Button  |수업 CRUD에 해당하는 GUI를 View에 전달한다. | 데이터 전달     |
-| Controller <-> 수업 선택  |수업을 선택하면 해당 페이지로 이동한다. | 요청 전달     |
-
+| Controller <-> 수업_CRUD_Button  |수업 CRUD에 해당하는 요청을 전달한다. | 요청 전달     |
+| DB Connection <-> 수업 목록  |DB에 저장된 수업 목록을 주고받는다. | 요청 전달     |
+|수업선택 <-> Controller|사용자가 선택한 수업에 대한 정보 요청을 전달한다. |요청전달|
 
 
 **Extracting Attributes**
@@ -30,8 +30,12 @@
 | ---------- | ---------------- | ------------------------------------------------------------ |
 | Controller | 사용자 정보 | 어떤 요청이 들어왔을 때 로그인이 되어있는지 확인한다. |
 | 수업 목록  | 수업 이름, 수업 요일, 수업 시간 , 수강 인원 등  | 각 수업과 관련된 세부적인 정보           |
+
+![UC-1](https://user-images.githubusercontent.com/79308015/115801172-13e65f80-a417-11eb-8230-d01e7a6b2f46.jpg)
+
 ---
-### **UC-2(InquireEnrolledStudent)**
+
+## **UC-2(InquireEnrolledStudent)**
 
 **Extracting the Responsibilities**
 
@@ -69,7 +73,7 @@
 ![DomainModel_UC2](https://user-images.githubusercontent.com/76427521/115754868-9fd89700-a3d7-11eb-9ae2-05ffd810f604.JPG)
 
 ---
-### **UC-3(CheckAttendance)**
+## **UC-3(CheckAttendance)**
 
 **Extracting the Responsibilities**
 
@@ -105,7 +109,7 @@
 ![UC-3](https://user-images.githubusercontent.com/79308015/115747954-b0d1da00-a3d0-11eb-8d37-731584321ba1.jpg)
 
 ---
-### **UC-4(SearchStudent)**
+## **UC-4(SearchStudent)**
 
 **Extracting the Responsibilities**
 
@@ -145,7 +149,7 @@
 
 
 ---
-### **UC-5(InquireStudentInfo)**
+## **UC-5(InquireStudentInfo)**
 
 **Extracting the Responsibilities**
 
@@ -191,7 +195,7 @@
 
 
 ---
-### **UC-6(StudentMemo)**
+## **UC-6(StudentMemo)**
 
 **Extracting the Responsibilities**
 
@@ -223,7 +227,7 @@
 ![UC-6](https://user-images.githubusercontent.com/79308015/115748113-d52db680-a3d0-11eb-963a-06fbab9a320c.jpg)
 
 ---
-### **UC-7(SendEmail)**
+## **UC-7(SendEmail)**
 
 **Extracting the Responsibilities**
 
