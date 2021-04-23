@@ -31,6 +31,7 @@ Concept|Attributes|Attributes Description
 -|-|-
 수업정보|	수업 정보 record|	사용자가 입력한 수업 정보(수업명, 학년도, 학기)
 
+![diagram (1)_2](https://user-images.githubusercontent.com/64057843/115800880-683d0f80-a416-11eb-8e88-0a4ccca4e0c1.png))
 
 ## UC-2 : UpdateClass
 
@@ -63,6 +64,7 @@ Concept|Attributes|Attributes Description
 -|-|-
 수업정보|	수업 정보 record|	사용자가 입력한 수업 정보(수업명, 학년도, 학기)
 
+![diagram (1)_3](https://user-images.githubusercontent.com/64057843/115800916-77bc5880-a416-11eb-8b54-5add0dfe5dc8.png)
 
 ## UC-3 : RemoveClass
 
@@ -91,6 +93,8 @@ Valid Checker<-> DB connection|	DB connection에서 탈퇴 요청된 데이터�
 Valid Checker<-> Pop-up Maker|	Pop-up Maker는 Valid Checker에게 정보를 받아 성공/실패에 관한 팝업창을 만든다.|생성
 
 ### Extracting Attributes
+
+![diagram (1)_4](https://user-images.githubusercontent.com/64057843/115801077-dda8e000-a416-11eb-9de6-a4daf7e001fe.png)
 
 ## UC-7 : InputExceptionAlert
 
