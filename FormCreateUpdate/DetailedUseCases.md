@@ -9,7 +9,7 @@ Use Case UC-1 :| AddClass
 --|--
 Related Requirements:|ST-1, ST-7
 Initiating Actor:|User
-Actor’s Goal:|수업 리스트에 수업을 추가하기 위함
+Actor’s Goal:|수업 목록에 수업을 추가하기 위함
 Participating Actors:|Database
 Preconditions:|사용자는 정상적으로 로그인이 완료되어 있어야 한다.
 ||수업 추가 버튼은 수업목록페이지 좌측 상단에 위치한다.
@@ -28,10 +28,10 @@ Use Case UC-2 :| UpdateClass
 --|--
 Related Requirements:|ST-1, ST-7
 Initiating Actor:|User
-Actor’s Goal:|수업 리스트에서 수업을 수정하기 위함
+Actor’s Goal:|수업 목록에서 수업을 수정하기 위함
 Participating Actors:|Database
 Preconditions:|사용자는 정상적으로 로그인이 완료되어 있어야 한다.
-||수업 수정 버튼은 수업 리스트의 수업명 우측에 위치한다.
+||수업 수정 버튼은 수업 목록의 수업명 우측에 위치한다.
 ||수업 수정을 위한 폼이 있어야 한다.
 Postconditions:|수정된 수업이 DB에 저장된다.
 ||**Flow of Events for Main Success Scenario:**
@@ -45,10 +45,10 @@ Use Case UC-3 :| RemoveClass
 --|--
 Related Requirements:|ST-1, ST-7
 Initiating Actor:|User
-Actor’s Goal:|수업 리스트에서 수업을 삭제하기 위함
+Actor’s Goal:|수업 목록에서 수업을 삭제하기 위함
 Participating Actors:|Database
 Preconditions:|사용자는 정상적으로 로그인이 완료되어 있어야 한다.
-||수업 삭제 버튼은 수업 리스트의 수업명 우측에 위치한다.
+||수업 삭제 버튼은 수업 목록의 수업명 우측에 위치한다.
 Postconditions:|수업이 DB에서 삭제된다
 ||**Flow of Events for Main Success Scenario:**
 ||1. 사용자가 수업 삭제 버튼을 선택한다.
@@ -60,7 +60,7 @@ Use Case UC-4 :| AddStudent
 --|--
 Related Requirements:|ST-1, ST-7
 Initiating Actor:|User
-Actor’s Goal:|학생 리스트에서 학생을 추가하기 위함
+Actor’s Goal:|학생 목록에서 학생을 추가하기 위함
 Participating Actors:|Database
 Preconditions:|사용자는 정상적으로 로그인이 완료되어 있어야 한다.
 ||수업목록페이지에서 한 수업을 선택해야 한다.
@@ -79,12 +79,12 @@ Use Case UC-5 :| UpdateStudent
 --|--
 Related Requirements:|ST-1, ST-7
 Initiating Actor:|User
-Actor’s Goal:|학생 리스트에서 학생을 수정하기 위함
+Actor’s Goal:|학생 목록에서 학생을 수정하기 위함
 Participating Actors:|Database
 Preconditions:|사용자는 정상적으로 로그인이 완료되어 있어야 한다.
 ||수업목록페이지에서 한 수업을 선택해야 한다.
 ||학생 수정 폼이 존재해야 한다.
-||학생리스트의 학생명 우측에 학생 수정버튼이 존재한다.
+||학생목록의 학생명 우측에 학생 수정버튼이 존재한다.
 Postconditions:|수정된 학생의 정보가 DB에 저장된다.
 ||**Flow of Events for Main Success Scenario:**
 ||1. 사용자가 학생 수정 버튼을 선택한다.
@@ -97,12 +97,12 @@ Use Case UC-6 :| RemoveStudent
 --|--
 Related Requirements:|ST-1, ST-7
 Initiating Actor:|User
-Actor’s Goal:|학생 리스트에서 학생을 삭제하기 위함
+Actor’s Goal:|학생 목록에서 학생을 삭제하기 위함
 Participating Actors:|Database
 Preconditions:|사용자는 정상적으로 로그인이 완료되어 있어야 한다.
 ||수업목록페이지에서 한 수업을 선택해야 한다.
 ||학생 수정 폼이 존재해야 한다.
-||학생리스트의 학생명 우측에 학생 삭제버튼이 존재한다.
+||학생 목록의 학생명 우측에 학생 삭제버튼이 존재한다.
 Postconditions:|학생에 대한 정보가 DB에서 삭제된다.
 ||**Flow of Events for Main Success Scenario:**
 ||1. 사용자가 학생 삭제 버튼을 선택한다.
