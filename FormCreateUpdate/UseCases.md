@@ -2,6 +2,8 @@
 
 ## Deriving Use Cases from System Requirements
 
+* Requirements : [link](/FormCreateUpdate/Requirements.md)
+
 Actor|Actor’s Goal|Use Case Name
 :--:|:--:|:--:
 사용자|수업 리스트에 수업을 추가하기 위해 서버에 요청을 보낸다.|AddClass (UC-1)
@@ -14,7 +16,3 @@ Actor|Actor’s Goal|Use Case Name
 ## Use Case Diagram
 
 * Detailed Use Cases : [link](/FormCreateUpdate/DetailedUseCases.md)
-
-## Traceability Matrix
-
-* Requirements : [link](/FormCreateUpdate/Requirements.md)
