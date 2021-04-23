@@ -19,7 +19,7 @@
 | Controller <-> DB Connection   | Controller는 DB Connection으로 request를 넘긴다.   | 요청 전달        |
 | View <-> 수업목록  | 수업목록을 View에 전달한다.  | 데이터 전달        |
 | View <-> Page Maker  | View를 화면에 출력한다. | 출력      |
-| View <-> 수업_CRUD_Button  |수업 CRUD에 해당하는 GUI를 View에 전달한다. | 데이터 전달      |
+| View <-> 수업_CRUD_Button  |수업 CRUD에 해당하는 GUI를 View에 전달한다. | 데이터 전달     |
 | Controller <-> 수업 선택  |수업을 선택하면 해당 페이지로 이동한다. | 요청 전달     |
 
 
@@ -99,7 +99,8 @@
 
 | concept    | Attributes       | Attributes Description                                       |
 | ---------- | ---------------- | ------------------------------------------------------------ |
-|||
+|Toggle|출석/결석/지각/기타|출결 여부에 따라 출석체크를 할 수 있는 토글 버튼|
+|출결 데이터|각 학생들의 출결 정보|각 학생별로 현재까지의 출결 내용|
 
 ![UC-3](https://user-images.githubusercontent.com/79308015/115747954-b0d1da00-a3d0-11eb-8d37-731584321ba1.jpg)
 
@@ -217,7 +218,7 @@
 
 | concept    | Attributes       | Attributes Description                                       |
 | ---------- | ---------------- | ------------------------------------------------------------ |
-|||
+|메모 정보|메모 정보 record|이전에 작성되어 DB에 저장되어있는 학생별 메모 내용|
 
 ![UC-6](https://user-images.githubusercontent.com/79308015/115748113-d52db680-a3d0-11eb-963a-06fbab9a320c.jpg)
 
@@ -250,6 +251,14 @@
 |DB Connection <-> Checked Result|출결결과에 대한 정보를 전달한다.|데이터 전달|
 |Check Result <-> View|해당 내용을 View에 전달|데이터 전달|
 |View <-> Page Maker|View를 화면에 출력한다.|출력|
+
+**Extracting Attributes**
+
+| concept    | Attributes       | Attributes Description                                       |
+| ---------- | ---------------- | ------------------------------------------------------------ |
+|수업종료 요청|수업종료 버튼|수업이 종료됨을 입력받을 수 있는 버튼|
+|Checked Result|출결 처리 정보|해당 수업에서 출석/결석/지각/기타에 각각 해당하는 학생 인원|
+|Email Sender|학부모 이메일 주소, 출결 결과|학부모에게 전송할 출결 결과와 학생에 해당하는 학부모 이메일 주소|
 
 ![UC-7](https://user-images.githubusercontent.com/79308015/115797745-a2ef7980-a40f-11eb-9bf6-b05f4cf600e9.jpg)
 
