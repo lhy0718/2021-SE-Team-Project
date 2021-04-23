@@ -30,4 +30,4 @@ Actor's Goal| 수강중인 수업의 공지 및 학생정보(출결, 별점)를 
 Participating Actors| Database |
 Preconditions | - 학생은 정상적으로 로그인이 완료되어 있어야 한다.<br> - 수강중인 수업정보가 데이터베이스에 정상적으로 등록되어 있어야 한다.  |
 Postconditions| `UC-3`로 이동한다. |
-Flow of Events for Main Success Senario| -> 1. 학생이 수강정보를 요청한다.<br> <- 2. 수강중인 수업에 대한 학생정보를 DB에 요청한다. <br> <- 3. 학생정보를 화면에 출력한다.|
+Flow of Events for Main Success Senario| -> 1. 학생이 수강정보를 요청한다.<br> <- 2. 수강중인 수업에 대한 공지사항과 학생정보를 DB에 요청한다. <br> <- 3. 공지사항 및 학생정보를 화면에 출력한다.|
