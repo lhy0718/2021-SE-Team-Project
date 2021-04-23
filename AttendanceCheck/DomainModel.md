@@ -109,7 +109,7 @@
 ![UC-3](https://user-images.githubusercontent.com/79308015/115747954-b0d1da00-a3d0-11eb-8d37-731584321ba1.jpg)
 
 ---
-## **UC-4(SearchStudent)**
+## **UC-4(SearchStudents)**
 
 **Extracting the Responsibilities**
 
@@ -149,7 +149,7 @@
 
 
 ---
-## **UC-5(InquireStudentInfo)**
+## **UC-5(StudentInfo)**
 
 **Extracting the Responsibilities**
 
