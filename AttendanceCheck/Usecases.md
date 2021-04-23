@@ -63,17 +63,17 @@ Preconditions | - 학생 명단은 테이블의 형식으로 화면에 출력하
 Postconditions| 출결 결과를 Database에 최종 저장 |
 Flow of Events for Main Success Senario|→ 1. Include:: InquireClassList(UC-1) // 교수자가 본인이 맡은 수업 목록 중 출결체크 할 수업을 선택한다.<br>← 2. Include:: InquireEnrolledStudent(UC-2) // 화면에 해당 수업을 듣는 학생 명단과 그 옆에 출석/결석/지각/기타를 체크할 수 있도록 보여준다.<br>→ 3. 교수자가 학생별로 학생들의 출결 현황에 따라 출석 체크를 진행한다.<br>← 4. 출결 현황을 실시간으로 저장한다.<br>→ 5. 수업이 종료되면 교수자는 ‘수업종료’ 버튼을 누른다.<br>← 6. 교수자는 본인이 맡은 수업 목록이 있는 창으로 다시 나오게 된다.|
 ---
-Use Case UC-4 | 	SearchStudent |
+Use Case UC-4 | 	SearchStudents |
 :--:|:--|
 Related Requirements| FR-2, FR-4 | 
 Initiating Actor| 교수자(사용자) |
 Actor's Goal| 여러 학생 중에서 특정 학생을 이름으로 검색하여 정보를 조회하기 위함 |
 Participating Actors| Database |
 Preconditions | - 사용자는 정상적으로 로그인이 완료되어 있어야 한다.<br>- 사용자는 '수업목록' 페이지에서 수업을 선택해야 한다.<br>- 해당 수업의 학생목록 데이터가 데이터베이스에 정상적으로 등록되어 있어야 한다.<br>- 검색할 이름을 입력할 수 있는 폼이 존재해야 한다.|
-Postconditions| 검색조건을 만족하는 학생정보를 출력한다. |
+Postconditions| 검색조건을 만족하는 학생들의 학생정보 데이터 목록을 출력한다. |
 Flow of Events for Main Success Senario|-> 1. 사용자가 '수업목록' 페이지에서 수업을 선택한다.<br>-> 2. 사용자로부터 검색할 학생의 이름을 입력받는다.<br><- 3.  DB에서 입력받은 이름과 일치하는 학생정보 데이터만을 `학생목록`으로 출력한다.|
 ---
-Use Case UC-5 | 	InquireStudentInfo |
+Use Case UC-5 | 	StudentInfo |
 :--:|:--|
 Related Requirements| FR-2, FR-4, FR-9 | 
 Initiating Actor| 교수자(사용자) |
