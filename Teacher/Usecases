@@ -17,7 +17,7 @@
 | 교수자 | 학생의 정보(개인정보, 출결현황 등)를 조회하기 위함 | StudentInfo (UC-7) |
 | 교수자 | 학생에 대한 별점을 관리하기 위함 | StudentPoint (UC-8) |
 | 교수자 | 수업 공지사항을 생성하고 발송하기 위함 | ClassNotice (UC-9) |
-| 교수자 | 수업 내 학생 목록에서 학생을 삭제할 수 있다. | RejectStudent(UC-10) |
+| 교수자 | 수업 내 학생 목록에서 학생을 삭제하기 위함 | RejectStudent(UC-10) |
 
 
 ## Use Case Diagram
