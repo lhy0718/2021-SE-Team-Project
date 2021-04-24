@@ -11,6 +11,8 @@
 
 ## Use Case Diagram
 
+![st_diagram_1](https://user-images.githubusercontent.com/64057843/115964386-3edbcb00-a55f-11eb-8c2d-f0dd603883d9.png)
+
 ## Use Case Schema
 
 |Use Case UC-1 | AvailableClassList |
