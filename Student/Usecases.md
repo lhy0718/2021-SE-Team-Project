@@ -29,7 +29,7 @@
 Use Case UC-2 | RegisterClass |
 :--:|:--|
 Related Requirements| FR-1, FR-2, FR-3 | 
-Initiating Actor| 교수자(사용자) |
+Initiating Actor| 학생(사용자) |
 Actor's Goal| 교수자로부터 개설된 수업에 수강을 신청하기 위함 |
 Participating Actors| Database |
 Preconditions | - 학생은 정상적으로 로그인이 완료되어 있어야 한다.<br> - 개설된 수업목록을 `UC-1`을 통해 조회할 수 있어야 한다.<br> - 수업을 클릭하여 수강 신청 할 수 있어야 한다. |
@@ -51,7 +51,7 @@ Flow of Events for Main Success Senario|-> 1. 학생이 개설된 수업에 수�
 Use Case UC-4 | MyClassInfo |
 :--:|:--|
 Related Requirements| FR-5, FR-6, FR-7, FR-8 | 
-Initiating Actor| 교수자(사용자) |
+Initiating Actor| 학생(사용자) |
 Actor's Goal| 수강중인 수업의 공지 및 학생정보(출결, 별점)를 확인하기 위함 |
 Participating Actors| Database |
 Preconditions | - 학생은 정상적으로 로그인이 완료되어 있어야 한다.<br> - 수강중인 수업정보가 데이터베이스에 정상적으로 등록되어 있어야 한다.  |
