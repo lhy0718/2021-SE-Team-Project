@@ -380,3 +380,4 @@ Concept | Attributes | Attributes Description
 Controller | 로그인 정보 | 어떤 요청이 들어왔을 때 교수자로 로그인이 되어있는지 확인한다.
 수강신청 거절 요청 | 학생 정보 | 수업의 학년, 반 정보와 학생의 학년 반 정보가 일치하는지 확인한다.
 
+![st_diagram_2](https://user-images.githubusercontent.com/64057843/115964512-cf1a1000-a55f-11eb-8ff3-618d1528ce56.png)
