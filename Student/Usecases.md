@@ -11,7 +11,7 @@
 
 ## Use Case Diagram
 
-![st_diagram_1](https://user-images.githubusercontent.com/64057843/115964386-3edbcb00-a55f-11eb-8c2d-f0dd603883d9.png)
+![제목을-입력해주세요 -001 (3)](https://user-images.githubusercontent.com/64057843/115967306-e7dcf280-a56c-11eb-9bca-74cc2accc7ec.jpg)
 
 ## Use Case Schema
 
