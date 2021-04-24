@@ -29,6 +29,9 @@ Concept | Attributes | Attributes Description
 Controller | 로그인 정보 | 어떤 요청이 들어왔을 때 교수자로 로그인이 되어있는지 확인한다.
 별점 부과 요청 | 요청 폼 | 수업의 id, 학생의 id, 부과할 별점을 포함하는 폼 데이터
 
+![uc-9](https://user-images.githubusercontent.com/11364584/115962680-878f8600-a557-11eb-8b9e-facd45157b1c.jpeg)
+
+
 ## UC-10 (ClassNotice)
 
 ### Extracting the Responsibilities
@@ -57,3 +60,5 @@ Concept | Attributes | Attributes Description
 -|-|-
 Controller | 로그인 정보 | 어떤 요청이 들어왔을 때 교수자로 로그인이 되어있는지 확인한다.
 공지 전달 요청 | 요청 폼 | 수업의 id, 공지 제목, 공지 내용을 포함하는 폼 데이터
+
+![uc-10](https://user-images.githubusercontent.com/11364584/115962692-90805780-a557-11eb-9b8b-ce538c11a609.jpeg)
