@@ -33,7 +33,8 @@
 | 이메일 인증 요청 | 이메일 인증 요청 정보 | email                            |
 | 회원가입 요청    | 회원가입 요청 정보    | uid,email,name,password,userRole |
 
-![1](https://user-images.githubusercontent.com/59490892/115989315-bc074e80-a5f8-11eb-9813-fef78a9f9af4.JPG)
+![1](https://user-images.githubusercontent.com/59490892/115997139-0e5a6680-a61d-11eb-8569-8bebd87b6d20.JPG)
+
 
 
 
@@ -72,7 +73,8 @@
 | 사용자 정보 | 사용자 정보 record | DB로부터 받아온 개인 정보(uid,email,password,userRole) |
 | 로그인 요청 | 로그인 요청        | 로그인 요청 정보(email,password)                       |
 
-![2](https://user-images.githubusercontent.com/59490892/115989320-c0cc0280-a5f8-11eb-8733-c282717bf930.JPG)
+![2](https://user-images.githubusercontent.com/59490892/115997143-11555700-a61d-11eb-9c10-3d7f600eaa06.JPG)
+
 
 
 
@@ -103,7 +105,7 @@
 | ------------- | ------------- | ---------------------------------- |
 | 로그아웃 요청 | 로그아웃 요청 | 로그아웃 요청 정보(email,password) |
 
-![3](https://user-images.githubusercontent.com/59490892/115989325-c4f82000-a5f8-11eb-905e-3bd0d7a6cc02.JPG)
+![3](https://user-images.githubusercontent.com/59490892/115997146-14504780-a61d-11eb-842b-b08b25a68a90.JPG)
 
 
 
@@ -145,7 +147,8 @@
 | 개인정보 요청     | user정보   | email                   |
 | 개인정보수정 요청 | 수정정보   | uid,email,name,password |
 
-![4](https://user-images.githubusercontent.com/59490892/115989331-c9243d80-a5f8-11eb-8d2c-6d563ca6c2eb.JPG)
+![4](https://user-images.githubusercontent.com/59490892/115997151-174b3800-a61d-11eb-8655-38be9066f514.JPG)
+
 
 
 
@@ -180,4 +183,5 @@
 | --------- | ---------- | ----------------------------- |
 | 탈퇴 요청 | 탈퇴 요청  | 탈퇴요청 정보(email,password) |
 
-![5](https://user-images.githubusercontent.com/59490892/115989338-cb869780-a5f8-11eb-9148-791f956aebaa.JPG)
+![5](https://user-images.githubusercontent.com/59490892/115997155-1a462880-a61d-11eb-9186-2a7907e675f9.JPG)
+
