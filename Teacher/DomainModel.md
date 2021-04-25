@@ -130,7 +130,7 @@ Valid Checker<-> Pop-up Maker|	Pop-up Maker는 Valid Checker에게 정보를 받
 
 ### Extracting Attributes
 
-![teacher234DomainModel_3](https://user-images.githubusercontent.com/64057843/115980699-ad557300-a5c9-11eb-9623-65615c78da06.png)
+![teacher234DomainModel_3](https://user-images.githubusercontent.com/64057843/115980782-41273f00-a5ca-11eb-93b0-e93221b44b44.png)
 
 
 ### UC-5(InquireEnrolledStudent)
