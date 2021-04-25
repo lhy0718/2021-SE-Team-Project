@@ -44,23 +44,21 @@
 | Responsibility Description                                   | Type | Concept Name  |
 | -------------------------- | ------------------------------------------------------------ | ------------ |
 | UC-2과 연관된 개념들의 행동들을 조정하고 다른 개념에 작업을 위임한다. | D    | Controller    |
-| 서버와 여러 데이터들을 DB에 전송하고 DB로부터 record값을 받아온다. | D    | DB Connection    |
-| 가져온 데이터를 페이지에 출력한다.                                 | D    | Page Maker |
+| 서버와 연결해 User의 ID/PW 정보를 DB에 전송하고 record값을 받아온다. | D    | DB Connection(DAO+DB)    |
 | 신청하고자 하는 수업 정보 (from `UC-1`) | K    | 수업정보 |
-| 학생으로부터 수강신청에 대한 `예/아니요`를 입력받는다. | D | 수강확인 |
-| 불러온 정보가 담긴 페이지를 화면에 출력한다.                                 | K    | View          |
+| User가 수강등록을 요청한다. | D | 수강등록요청 |
+| GUI를 통해 현재의 상태를 화면에 표현한다                                 | D    | 	View Library(Page Maker) |
+| 사용자에게 화면을 보여주는 역할                              | K    | 	User interface          |
 
 **Extracting the Associations**
 
 | Concept pair                  | Association Description                                      | Association Name |
 | :--------------------------: | ------------------------------------------------------------ | ------------ |
-| Controller <-> DB Connection   | Controller는 DB Connection으로 request를 넘긴다.   | 요청 전달        |
-| Controller <-> 수강확인  | 수강확인 요청정보를 Controller에 전달한다. | 요청 전달     |
-| DB Connection <-> 수업 정보  | DB에 수업정보를 저장한다. | 데이터 전달     |
-|DB Connection <-> Page Maker|DB Connection에서 받아온 값을 넘기고, Page Marker는 이 데이터를 화면에 표현한다.|데이터 전달|
-|Page Maker <-> View|Page Marker가 View를 준비한다.|준비|
-|Controller <-> View|Controller는 View에게 게시할 내용을 전달한다.|게시|
-
+| Controller <-> View Library   | Controller는 View Library에 요청을 보내고,게시할 내용을 전달한다. | 응답             |
+| View Library<->User interface | 게시할 내용을 전달받고 뷰를 그린다.                          | 뷰를 그림        |
+| 수강등록요청 <->Controller    | 수강등록요청을 Controller에게 전달한다                       | 요청 전달    |
+| Controller<-> DB Connection    | 저장한 user 데이터를 전달한다                                | 요청/응답      |
+| 수업정보 <-> DB Connection    | 수강등록하고자 하는 수업의 정보를 제공한다.                             | 제공      |
 
 **Extracting Attributes**
 
@@ -116,25 +114,23 @@
 | Responsibility Description                                   | Type | Concept Name  |
 | -------------------------- | ------------------------------------------------------------ | ------------ |
 | UC-4과 연관된 개념들의 행동들을 조정하고 다른 개념에 작업을 위임한다. | D    | Controller    |
-| 서버와 여러 데이터들을 DB에 전송하고 DB로부터 record값을 받아온다. | D    | DB Connection    |
-| 가져온 데이터를 페이지에 출력한다.                                 | D    | Page Maker |
-| 사용자가 수업 관련 정보(공지사항, 출결 현황, 별점 등) 조회를 요청한다. (from `UC-3`) | D | 수업상세 요청|
+| 서버와 연결해 User의 ID/PW 정보를 DB에 전송하고 record값을 받아온다. | D    | DB Connection(DAO+DB)    |
 | 수강중인 수업에 대한 학생정보(출결, 별점) | K    | 학생정보 |
 | 수강중인 수업의 공지사항 | K    | 공지사항 |
-| 불러온 정보가 담긴 페이지를 화면에 출력한다.                                | K    | View          |
+| User가 수업 관련 정보(공지사항, 출결 현황, 별점 등) 조회를 요청한다. (from `UC-3`) | D | 수업상세요청 |
+| GUI를 통해 현재의 상태를 화면에 표현한다                                 | D    | 	View Library(Page Maker) |
+| 사용자에게 화면을 보여주는 역할                              | K    | 	User interface          |
 
 **Extracting the Associations**
 
 | Concept pair                  | Association Description                                      | Association Name |
 | :--------------------------: | ------------------------------------------------------------ | ------------ |
-| Controller <-> DB Connection   | Controller는 DB Connection으로 request를 넘긴다.   | 요청 전달        | 
-| Controller <-> 수업상세 요청  | 수업상세정보 요청정보를 Controller에 전달한다. | 요청 전달     |
-| DB Connection <-> 학생 정보  | DB로부터 사용자의 학생 정보를 받아온다. | 데이터 전달     |
-| DB Connection <-> 공지사항  | DB로부터 수업 공지사항을 받아온다. | 데이터 전달     |
-|DB Connection <-> Page Maker|DB Connection에서 받아온 값을 넘기고, Page Marker는 이 데이터를 화면에 표현한다.|데이터 전달|
-|Page Maker <-> View|Page Marker가 View를 준비한다.|준비|
-|Controller <-> View|Controller는 View에게 게시할 내용을 전달한다.|게시|
-
+| Controller <-> View Library   | Controller는 View Library에 요청을 보내고,게시할 내용을 전달한다. | 응답             |
+| View Library<->User interface | 게시할 내용을 전달받고 뷰를 그린다.                          | 뷰를 그림        |
+| 수업상세요청 <->Controller    | 수업상세요청을 Controller에게 전달한다                       | 요청 전달    |
+| Controller<-> DB Connection    | 저장한 user 데이터를 전달한다                                | 요청/응답      |
+| 학생정보 <-> DB Connection    | 수강중인 수업에 대한 학생정보를 제공한다                            | 제공      |
+| 공지사항 <-> DB Connection    | 수강중인 수업에 대한 공지사항 제공한다                            | 제공      |
 
 **Extracting Attributes**
 
