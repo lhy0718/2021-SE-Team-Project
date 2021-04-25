@@ -2,28 +2,28 @@
 
 **Extracting the Responsibilities**
 
-| Responsibility Description                                   | Type | Concept Name              |
-| ------------------------------------------------------------ | :--- | ------------------------- |
-| UC-1과 연관된 개념들을 행동들을 조정하고 다른 개념에 작업을 위임한다. | D    | Controller                |
-| User가 이메일 인증을 요청한다.                               | D    | 이메일 인증 요청          |
-| User가 회원가입을 요정한다.                                  | D    | 회원가입 요청             |
-| 메일 사용 가능여부를 확인한다.                               | D    | verification              |
-| 사용 불가능한 이메일일 경우 Pop-up Maker를 생성해준다.       | D    | Pop-up Maker              |
-| 서버와 연결해 User의 ID/PW 정보를 DB에 전송하고 record값을 받아온다. | D    | DB Connection(DAO+DB)     |
-| GUI를 통해 현재의 상태를 화면에 표현한다                     | D    | View Library(Page Marker) |
-| 사용자에게 화면을 보여주는 역할                              | K    | User interface            |
+| Responsibility Description                                   | Type | Concept Name             |
+| ------------------------------------------------------------ | :--- | ------------------------ |
+| UC-1과 연관된 개념들을 행동들을 조정하고 다른 개념에 작업을 위임한다. 클라이언트로부터 Request를 받는 첫 번째 관문(Router) 이다. | D    | Controller               |
+| User가 이메일의 verification을 요청 한다.                    | D    | 이메일 인증 요청         |
+| User가 인증받을 이메일 정보를 기반으로 회원가입을 요정한다.  | D    | 회원가입 요청            |
+| 메일 사용 가능여부를 확인한다.                               | D    | verification             |
+| 사용 불가능한 이메일일 경우 Pop-up 리소스를 띄워주기 위한 메세지를전달 한다. | D    | Pop-up Maker             |
+| 서버와 연결해 User의 ID/PW 정보를 DB에 전송하고 record값을 받아온다. | D    | DB Connection(DAO+DB)    |
+| UI를 통해 현재의 상태를 화면에 표현한다                      | D    | View Library(Page maker) |
+| 사용자에게 화면을 보여주는 역할                              | K    | User interface           |
 
 **Extracting the Associations**
 
 | Concept pair                  | Association Description                                      | Association Name |
 | ----------------------------- | ------------------------------------------------------------ | ---------------- |
-| Controller <-> View Library   | Controller는 View Library에 요청을 보내고,게시할 내용을 전달한다. | 응답             |
+| Controller <-> View Library   | Controller는 View Library에 요청에 받고 그에 대한 응답을 보내고,게시할 내용을 전달한다. | 응답             |
 | View Library<->User interface | 게시할 내용을 전달받고 뷰를 그린다.                          | 뷰를 그림        |
-| 이메일 인증 요청<->Controller | 이메일 인증 요청을 Controller에게 전달한다                   | 요청 전달        |
+| 이메일 인증 요청<->Controller | 이메일 인증 요청을 Controller에게 전달한다.                  | 요청 전달        |
 | Controller<->verification     | 확인 요청을 verification에 전달한다.                         | 요청 전달        |
 | verification<->DB Connection  | DB connection에서 이메일 인증 요청된 데이터가 사용 가능한지의 대한 여부를 verification 넘겨준다. | 요청/응답        |
-| verification<-> Pop-up Maker  | DB에서 받은 응답을 토대로 pop-up을 생성해야 하는 경우 생성 명령을 전달한다. | 생성             |
-| 회원가입 요청<->Controller    | 회원가입요청을 Controller에게 전달한다                       | 요청 전달        |
+| verification<-> Pop-up Maker  | DB에서 받은 응답을 토대로 pop-up을 생성해야 하는 경우 생성 명령을 전달한다. (Error code number 전달) | 생성             |
+| 회원가입 요청<->Controller    | 회원가입 요청을 Controller에게 전달한다                      | 요청 전달        |
 | Controller<->DB Connection    | 저장한 user 데이터를 전달한다                                | 데이터 전달      |
 
 **Extracting Attributes**
@@ -41,16 +41,16 @@
 
 **Extracting the Responsibilities**
 
-| Responsibility Description                                   | Type | Concept Name              |
-| ------------------------------------------------------------ | :--- | ------------------------- |
-| UC-2과 연관된 개념들을 행동들을 조정하고 다른 개념에 작업을 위임한다. | D    | Controller                |
-| User가 ID/PW 를 입력한다.                                    | D    | 로그인 요청               |
-| 서버와 연결해 User의 ID/PW 정보를 DB에 전송하고 record값을 받아온다. | D    | DB Connection(DAO+DB)     |
-| GUI를 통해 현재의 상태를 화면에 표현한다.                    | D    | View Library(Page Marker) |
-| 사용자에게 화면을 보여주는 역할                              | K    | User interface            |
-| DB에서 받아온 사용자 정보                                    | K    | 사용자 정보               |
-| 사용자 인증 역할                                             | D    | AuthUser                  |
-| 입력받은 user의 id/pw를 db와 대조                            | D    | Auth Service              |
+| Responsibility Description                                   | Type | Concept Name             |
+| ------------------------------------------------------------ | :--- | ------------------------ |
+| UC-2과 연관된 개념들을 행동들을 조정하고 다른 개념에 작업을 위임한다. | D    | Controller               |
+| User가 ID/PW 를 입력한다.                                    | D    | 로그인 요청              |
+| 서버와 연결해 User의 ID/PW 정보를 DB에 전송하고 record값을 받아온다. | D    | DB Connection(DAO+DB)    |
+| UI를 통해 현재의 상태를 화면에 표현한다.                     | D    | View Library(Page maker) |
+| 사용자에게 화면을 보여주는 역할                              | K    | User interface           |
+| DB에서 받아온 사용자 정보                                    | K    | 사용자 정보              |
+| 사용자 인증 역할                                             | D    | AuthUser                 |
+| 입력받은 user의 id/pw를 db와 대조                            | D    | Auth Service             |
 
 **Extracting the Associations**
 
@@ -67,10 +67,10 @@
 
 **Extracting Attributes**
 
-| concept     | Attributes         | Attributes Description                                 |
-| ----------- | ------------------ | ------------------------------------------------------ |
-| 사용자 정보 | 사용자 정보 record | DB로부터 받아온 개인 정보(uid,email,password,userRole) |
-| 로그인 요청 | 로그인 요청        | 로그인 요청 정보(email,password)                       |
+| concept     | Attributes         | Attributes Description                        |
+| ----------- | ------------------ | --------------------------------------------- |
+| 사용자 정보 | 사용자 정보 record | DB로부터 받아온 개인 정보(uid,email,userRole) |
+| 로그인 요청 | 로그인 요청        | 로그인 요청 정보(email,password)              |
 
 ![2](https://user-images.githubusercontent.com/59490892/115989320-c0cc0280-a5f8-11eb-8733-c282717bf930.JPG)
 
@@ -80,13 +80,13 @@
 
 **Extracting the Responsibilities**
 
-| Responsibility Description                                   | Type | Concept Name              |
-| ------------------------------------------------------------ | :--- | ------------------------- |
-| UC-3과 연관된 개념들을 행동들을 조정하고 다른 개념에 작업을 위임한다. | D    | Controller                |
-| User가 로그아웃 버튼 클릭한다.                               | D    | 로그아웃 요청             |
-| 서버와 연결해 User의 ID/PW 정보를 DB에 전송하고 record값을 받아온다. | D    | DB Connection(DAO+DB)     |
-| GUI를 통해 현재의 상태를 화면에 표현한다.                    | D    | View Library(Page Marker) |
-| 사용자에게 화면을 보여주는 역할을 한다.                      | K    | User interface            |
+| Responsibility Description                                   | Type | Concept Name             |
+| ------------------------------------------------------------ | :--- | ------------------------ |
+| UC-3과 연관된 개념들을 행동들을 조정하고 다른 개념에 작업을 위임한다. | D    | Controller               |
+| User가 로그아웃 버튼 클릭한다.                               | D    | 로그아웃 요청            |
+| 서버와 연결해 User의 ID/PW 정보를 DB에 전송하고 record값을 받아온다. | D    | DB Connection(DAO+DB)    |
+| UI를 통해 현재의 상태를 화면에 표현한다.                     | D    | View Library(Page maker) |
+| 사용자에게 화면을 보여주는 역할을 한다.                      | K    | User interface           |
 
 **Extracting the Associations**
 
@@ -99,9 +99,9 @@
 
 **Extracting Attributes**
 
-| concept       | Attributes    | Attributes Description             |
-| ------------- | ------------- | ---------------------------------- |
-| 로그아웃 요청 | 로그아웃 요청 | 로그아웃 요청 정보(email,password) |
+| concept       | Attributes    | Attributes Description    |
+| ------------- | ------------- | ------------------------- |
+| 로그아웃 요청 | 로그아웃 요청 | 로그아웃 요청 정보(token) |
 
 ![3](https://user-images.githubusercontent.com/59490892/115989325-c4f82000-a5f8-11eb-905e-3bd0d7a6cc02.JPG)
 
@@ -111,18 +111,18 @@
 
 **Extracting the Responsibilities**
 
-| Responsibility Description                                   | Type | Concept Name              |
-| ------------------------------------------------------------ | :--- | ------------------------- |
-| UC-4과 연관된 개념들을 행동들을 조정하고 다른 개념에 작업을 위임한다. | D    | Controller                |
-| User가 개인정보수정 버튼 클릭한다.                           | D    | 개인정보 요청             |
-| 개인정보 수정 후 수정 버튼 클릭한다.                         | D    | 개인정보수정 요청         |
-| 서버와 연결해 User의 ID/PW 정보를 DB에 전송하고 record값을 받아온다. | D    | DB Connection(DAO+DB)     |
-| GUI를 통해 현재의 상태를 화면에 표현한다.                    | D    | View Library(Page Marker) |
-| 사용자에게 화면을 보여주는 역할을 한다.                      | K    | User interface            |
-| 사용자가 문자열을 입력                                       | D    | UserInput                 |
-| DB에서 받아온 사용자 정보                                    | K    | 사용자 정보               |
-| 입력된 정보가 모두 validate 한지 확인                        | D    | Valid Checker             |
-| 수정 성공여부를 알리는 팝업창을 보인다                       | D    | Pop-up Maker              |
+| Responsibility Description                                   | Type | Concept Name             |
+| ------------------------------------------------------------ | :--- | ------------------------ |
+| UC-4과 연관된 개념들을 행동들을 조정하고 다른 개념에 작업을 위임한다. | D    | Controller               |
+| User가 개인정보수정 버튼 클릭한다.                           | D    | 개인정보 요청            |
+| 개인정보 수정 후 수정 버튼 클릭한다.                         | D    | 개인정보수정 요청        |
+| 서버와 연결해 User의 ID/PW 정보를 DB에 전송하고 record값을 받아온다. | D    | DB Connection(DAO+DB)    |
+| UI를 통해 현재의 상태를 화면에 표현한다.                     | D    | View Library(Page maker) |
+| 사용자에게 화면을 보여주는 역할을 한다.                      | K    | User interface           |
+| 사용자가 문자열을 입력                                       | D    | UserInput                |
+| DB에서 받아온 사용자 정보                                    | K    | 사용자 정보              |
+| 입력된 정보가 모두 validate 한지 확인                        | D    | Valid Checker            |
+| 수정 성공여부를 알리는 팝업창을 보인다                       | D    | Pop-up Maker             |
 
 **Extracting the Associations**
 
@@ -153,15 +153,15 @@
 
 **Extracting the Responsibilities**
 
-| Responsibility Description                                   | Type | Concept Name              |
-| ------------------------------------------------------------ | :--- | ------------------------- |
-| UC-5과 연관된 개념들을 행동들을 조정하고 다른 개념에 작업을 위임한다. | D    | Controller                |
-| User가 탈퇴 버튼 클릭한다.                                   | D    | 탈퇴 요청                 |
-| 서버와 연결해 User의 ID/PW 정보를 DB에 전송하고 record값을 받아온다. | D    | DB Connection(DAO+DB)     |
-| GUI를 통해 현재의 상태를 화면에 표현한다.                    | D    | View Library(Page Marker) |
-| 사용자에게 화면을 보여주는 역할을 한다.                      | K    | User interface            |
-| 탈퇴 성공 여부를 확인한다.                                   | D    | Valid Checker             |
-| 탈퇴 성공여부를 알리는 팝업창을 보인다                       | D    | Pop-up Maker              |
+| Responsibility Description                                   | Type | Concept Name             |
+| ------------------------------------------------------------ | :--- | ------------------------ |
+| UC-5과 연관된 개념들을 행동들을 조정하고 다른 개념에 작업을 위임한다. | D    | Controller               |
+| User가 탈퇴 버튼 클릭한다.                                   | D    | 탈퇴 요청                |
+| 서버와 연결해 User의 ID/PW 정보를 DB에 전송하고 record값을 받아온다. | D    | DB Connection(DAO+DB)    |
+| UI를 통해 현재의 상태를 화면에 표현한다.                     | D    | View Library(Page maker) |
+| 사용자에게 화면을 보여주는 역할을 한다.                      | K    | User interface           |
+| 탈퇴 성공 여부를 확인한다.                                   | D    | Valid Checker            |
+| 탈퇴 성공여부를 알리는 팝업창을 보인다                       | D    | Pop-up Maker             |
 
 **Extracting the Associations**
 
@@ -176,8 +176,8 @@
 
 **Extracting Attributes**
 
-| concept   | Attributes | Attributes Description        |
-| --------- | ---------- | ----------------------------- |
-| 탈퇴 요청 | 탈퇴 요청  | 탈퇴요청 정보(email,password) |
+| concept   | Attributes | Attributes Description |
+| --------- | ---------- | ---------------------- |
+| 탈퇴 요청 | 탈퇴 요청  | 탈퇴요청 정보(token)   |
 
 ![5](https://user-images.githubusercontent.com/59490892/115989338-cb869780-a5f8-11eb-9148-791f956aebaa.JPG)
