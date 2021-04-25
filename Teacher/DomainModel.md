@@ -300,7 +300,7 @@ Concept | Attributes | Attributes Description
 Controller | 로그인 정보 | 어떤 요청이 들어왔을 때 교수자로 로그인이 되어있는지 확인한다.
 별점 부과 요청 | 요청 폼 | 수업의 id, 학생의 id, 부과할 별점을 포함하는 폼 데이터
 
-![uc-9](https://user-images.githubusercontent.com/11364584/115988256-b5c2a380-a5f3-11eb-9f7f-4d5675ede59e.jpeg)
+![uc-9](https://user-images.githubusercontent.com/11364584/115998090-9f7f0c80-a620-11eb-8cf8-4cd76a228526.jpeg)
 
 ## UC-10 (ClassNotice)
 
@@ -332,7 +332,7 @@ Concept | Attributes | Attributes Description
 Controller | 로그인 정보 | 어떤 요청이 들어왔을 때 교수자로 로그인이 되어있는지 확인한다.
 공지 전달 요청 | 요청 폼 | 수업의 id, 공지 제목, 공지 내용을 포함하는 폼 데이터
 
-![uc-10](https://user-images.githubusercontent.com/11364584/115988263-bce9b180-a5f3-11eb-80c6-52a331f0acc3.jpeg)
+![uc-10](https://user-images.githubusercontent.com/11364584/115998095-a4dc5700-a620-11eb-8688-e5e15810e0d2.jpeg)
 
 ## UC-11 (RejectStudent)
 
