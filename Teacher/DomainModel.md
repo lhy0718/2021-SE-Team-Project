@@ -281,21 +281,21 @@ Valid Checker<-> Pop-up Maker|	Pop-up Maker는 Valid Checker에게 정보를 받
 Responsibility Description | Type | Concept Name
 -|-|-
 UC-9와 연관된 개념들의 행동들을 조정하고 다른 개념에 작업을 위임한다. | D | Controller
-로그인 상태를 확인하여, 유저 정보를 바탕으로 DB에 있는 수업의 학생목록을 요청한다. | D | DAO
-가져온 데이터를 페이지(화면)에 출력한다. | D | Page Maker
+로그인 상태를 확인하여, 유저 정보를 바탕으로 DB에 있는 수업의 학생목록을 요청한다. | D | DB Connection(DAO+DB)
+GUI를 통해 현재의 상태를 화면에 표현한다. | D | View Library(Page Maker)
 개별 학생에게 별점을 부과하는 요청 | K | 별점 부과 요청
-불러온 정보를 보여주는 페이지 | K | View
+사용자에게 화면을 보여주는 역할을 한다. | K | User interface
 교수자가 담당하는 수업의 학생 목록 | K | 학생 목록
 
 ### Extracting the Associations
 
 Concept pair | Association Description | Association Name
 :-:|-|-
-Controller <-> DAO | DAO는 controller로 요청에 대한 응답을 넘긴다. | 응답
-Controller <-> Page Maker | Controller는 요청을 Page Maker에게 전달하고, 페이지를 수신한다. | 응답
-View <-> Page Maker | View를 화면에 출력한다. | 출력
-Controller <-> 별점 부과 요청 | 학생목록에서 선택한 학생에 대해 별점을 부과할지 물어보고 요청을 받는다. | 요청 전달
-학생 목록 <-> DAO | 학생 목록을 DAO에 요청하고 제공받는다. | 제공
+Controller <-> View Library | Controller는 View Library에 요청을 보내고, 게시할 내용을 전달한다. | 응답
+View Library <-> User interface | 게시할 내용을 전달받고 뷰를 그린다. | 뷰를 그림
+DB Connection <-> Controller | Controller는 DAO로 request를 넘기고, DAO는 그에 따른 응답을 전달한다. | 요청/응답
+Controller <-> 별점 부과 요청 | 학생 목록에서 선택한 학생에 대해 별점을 부과할지 물어보고 요청을 받는다. | 요청 전달
+학생 목록 <-> DB Connection | 학생 목록을 DAO에 요청하고 제공받는다. | 제공
 
 ### Extracting Attributes
 
@@ -313,19 +313,19 @@ Controller | 로그인 정보 | 어떤 요청이 들어왔을 때 교수자로 �
 Responsibility Description | Type | Concept Name
 -|-|-
 UC-10과 연관된 개념들의 행동들을 조정하고 다른 개념에 작업을 위임한다. | D | Controller
-로그인 상태를 확인하여, 유저 정보를 바탕으로 DB에 있는 수업목록을 요청한다. | D | DAO
-가져온 데이터를 페이지(화면)에 출력한다. | D | Page Maker
-불러온 정보를 보여주는 페이지 | K | View
+로그인 상태를 확인하여, 유저 정보를 바탕으로 DB에 있는 수업의 학생목록을 요청한다. | D | DB Connection(DAO+DB)
+GUI를 통해 현재의 상태를 화면에 표현한다. | D | View Library(Page Maker)
 공지를 학생들에게 전달하는 요청 | K | 공지 전달 요청
+사용자에게 화면을 보여주는 역할을 한다. | K | User interface
 교수자가 담당하는 수업 목록 | K | 담당 수업 목록
 
 ### Extracting the Associations
 
 Concept pair | Association Description | Association Name
 -|-|-
-Controller <-> DAO | DAO는 controller로 요청에 대한 응답을 넘긴다. | 응답
-Controller <-> Page Maker | Controller는 요청을 Page Maker에게 전달하고, 페이지를 수신한다. | 응답
-View <-> Page Maker | View를 화면에 출력한다. | 출력
+Controller <-> View Library | Controller는 View Library에 요청을 보내고, 게시할 내용을 전달한다. | 응답
+View Library <-> User interface | 게시할 내용을 전달받고 뷰를 그린다. | 뷰를 그림
+DB Connection <-> Controller | Controller는 DAO로 request를 넘기고, DAO는 그에 따른 응답을 전달한다. | 요청/응답
 Controller <-> 공지 전달 요청 | 학생들에게 전달할 공지의 제목과 내용을 물어보고 요청을 받는다. | 요청 전달
 담당 수업 목록 <-> DAO | 교수자의 담당 수업 목록을 DAO에 요청하고 제공받는다. | 제공
 
