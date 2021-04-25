@@ -138,7 +138,7 @@ Flow of Events for Extensions (Alternate Scenarios) | -> 5a. 교수가 팝업에
 
 Use Case UC-11 | RejectStudent
 :--:|:--
-Related Requirements | FR-11
+Related Requirements | FR-12
 Initiating Actor | 교수자
 Actor's Goal | 잘못 수강 신청한 학생을 학생목록에서 삭제하기 위함
 Participating Actors | Database
