@@ -41,13 +41,13 @@
 | Teacher   | 학생에 대한 출석 체크, 수업 및 학생 목록, 정보 조회, 출결 결과 및 공지사항 발송 | 이한용, 정나린 |
 | Student   | 수업 신청, 개인 출결현황 및 수업참여도 확인                                     | 박종혁, 윤진호 |
 
-## [WIP] Requirments (Stories)
+## Requirments (Stories)
 
 - [Core & Auth](/Core/Requirements.md)
 - [Teacher](/Teacher/Requirements.md)
 - [Student](/Student/Requirements.md)
 
-## [WIP] Use Case
+## Use Case
 
 - [Core & Auth](/Core/UseCases.md)
 - [Teacher](/Teacher/UseCases.md)
@@ -69,3 +69,9 @@ Actor | Actor's Goal | Use Case Name
 교수자,학생 | 서비스 회원 탈퇴를 하기 위함 | 회원탈퇴(UC-11)
 서버 | 학부모가 학생들의 출결상태를 확인하기 위함 | 출결 확인(UC-12)
 서버,클라이언트 | 사용자 요청에 대한 유효성 검사 (타입, 범위, URL, ...) | 유효성 검사(UC-13)
+
+## Domain Model
+
+- [Core & Auth](/Core/DomainModel.md)
+- [Teacher](/Teacher/DomainModel.md)
+- [Student](/Student/DomainModel.md)
