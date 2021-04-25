@@ -109,6 +109,42 @@
 
 ---
 
+## **UC-3(MyClassList)**
+
+**Extracting the Responsibilities**
+| Responsibility Description                                   | Type | Concept Name  |
+| -------------------------- | ---------------------------------- | ------------ |
+|UC-3과 연관된 개념들의 행동들을 조정하고 다른 개념에 작업을 위임한다.|D|Controller|
+|서버와 여러 데이터들을 DB에 전송하고 DB로부터 record값을 받아온다.|D|DB Connection|
+|가져온 데이터를 페이지에 출력한다.|D|Page Maker|
+|불러온 정보가 담긴 페이지를 화면에 출력한다.|K|View|
+|DB로부터 받아온 사용자가 수강하고 있는 수업목록|K|MyClass|
+|사용자가 수강하고 있는 수업목록 조회를 요청한다.|D|MyClass 요청|
+|수업명을 클릭하여 수업 관련 정보(공지사항, 출결 현황, 별점 등) 조회를 요청한다.|D|수업상세 요청|
+
+**Extracting the Associations**
+
+| Concept pair                  | Association Description                                      | Association Name |
+| :--------------------------: | ------------------------------------------------------------ | ------------ |
+|MyClass 요청 <-> Controller|사용자가 수강하는 수업목록 요청을 Controller에게 전달한다.|요청 전달|
+|Controller <-> DB Connection|Controller는 DB Connection으로 사용자의 요청을 전달한다.|요청 전달|
+|수업상세 요청 <-> Controller|수업에 대한 상세정보 조회를 Controller에 요청한다.|요청 전달|
+|MyClass <-> DB Connection|DB로부터 사용자가 수강하는 수업목록을 받아온다.|데이터 전달|
+|DB Connection <-> Page Maker|DB Connection에서 받아온 값을 넘기고, Page Marker는 이 데이터를 화면에 표현한다.|데이터 전달|
+|Page Maker <-> View|Page Marker가 View를 준비한다.|준비|
+|Controller <-> View|Controller는 View에게 게시할 내용을 전달한다.|게시|
+
+**Extracting Attributes**
+
+| concept    | Attributes       | Attributes Description                                       |
+| ---------- | ---------------- | ------------------------------------------------------------ |
+| Controller | 로그인 정보 | 어떤 요청이 들어왔을 때 학생으로 로그인이 되어있는지 확인한다. |
+| MyClass|수강중인 수업 정보| 학생(사용자)가 수강중인 수업들의 정보(수업명, 교수자명 등)
+
+![UC-3](https://user-images.githubusercontent.com/79308015/115962327-c0c6f680-a555-11eb-9593-e0125ed2300a.jpg)
+
+---
+
 ## **UC-4(MyClassInfo)**
 
 **Extracting the Responsibilities**
