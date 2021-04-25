@@ -69,7 +69,7 @@
 | Controller | 로그인 정보 | 어떤 요청이 들어왔을 때 학생으로 로그인이 되어있는지 확인한다. |
 | 수업정보  | 이름, 과목, 교수자, 시간 등  | 수업과 관련된 세부적인 정보           |
 
-![UC-2](https://user-images.githubusercontent.com/76427521/115966442-8adf3d80-a568-11eb-935e-493f1f718aae.JPG)
+![UC-2](https://user-images.githubusercontent.com/76427521/115990139-b6ac0300-a5fc-11eb-95a7-c2e4c6dec782.PNG)
 
 ---
 
@@ -179,4 +179,4 @@
 | Controller | 로그인 정보 | 어떤 요청이 들어왔을 때 학생으로 로그인이 되어있는지 확인한다. |
 | 학생정보 | 출결, 별점 정보 | 해당 수업에 대한 학생의 출결,별점 정보 |
 
-![UC-4](https://user-images.githubusercontent.com/76427521/115966444-8c106a80-a568-11eb-98a9-182917eec9e0.JPG)
+![UC-4](https://user-images.githubusercontent.com/76427521/115990142-b7dd3000-a5fc-11eb-895a-b623083a9abc.PNG)
