@@ -191,7 +191,8 @@ Valid Checker<-> Pop-up Maker|	Pop-up Maker는 Valid Checker에게 정보를 받
 |Toggle|출석/결석/지각/기타|출결 여부에 따라 출석체크를 할 수 있는 토글 버튼|
 |출결 데이터|각 학생들의 출결 정보|각 학생별로 현재까지의 출결 내용|
 
-![UC-3](https://user-images.githubusercontent.com/79308015/115747954-b0d1da00-a3d0-11eb-8d37-731584321ba1.jpg)
+![teacher uc-6](https://user-images.githubusercontent.com/79308015/115994116-a1d96a80-a610-11eb-8a4c-03073d5fb0c5.jpg)
+
 
 
 ## UC-7(SearchStudents)
@@ -271,7 +272,8 @@ Valid Checker<-> Pop-up Maker|	Pop-up Maker는 Valid Checker에게 정보를 받
 | 학생정보 | 학생 이름,사진,학번,Email,메모 등 | 검색된 학생의 정보 |
 | UserInput  | 검색 폼  | 사용자로부터 입력을 받을 수 있는 검색 폼           |
 
-![DomainModel_UC5](https://user-images.githubusercontent.com/76427521/115754882-a404b480-a3d7-11eb-984d-617f7c9d0aef.JPG)
+![teacher uc-8](https://user-images.githubusercontent.com/79308015/115994124-a6058800-a610-11eb-8a33-7b4d3b6f2900.jpg)
+
 
 ## UC-9 (StudentPoint)
 
