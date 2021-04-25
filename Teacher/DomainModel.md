@@ -32,7 +32,7 @@
 | Controller | 사용자 정보 | 어떤 요청이 들어왔을 때 로그인이 되어있는지 확인한다. |
 | 수업 목록  | 수업 이름, 수업 요일, 수업 시간 , 수강 인원 등  | 각 수업과 관련된 세부적인 정보           |
 
-![UC-1](https://user-images.githubusercontent.com/79308015/115801172-13e65f80-a417-11eb-8230-d01e7a6b2f46.jpg)
+![UC-1](https://user-images.githubusercontent.com/76427521/115992121-fd9ef600-a606-11eb-88d4-eeff64afc0c9.PNG)
 
 
 ## UC-2 : AddClass
@@ -155,7 +155,7 @@ Valid Checker<-> Pop-up Maker|	Pop-up Maker는 Valid Checker에게 정보를 받
 | Controller | 수업 정보 | 현재 선택된 수업 정보 |
 | 학생 목록  | 학생 사진, 이름, 학번, 출석상태 등  | 학생 정보와 관련된 세부사항           |
 
-![DomainModel_UC2](https://user-images.githubusercontent.com/76427521/115754868-9fd89700-a3d7-11eb-9ae2-05ffd810f604.JPG)
+![UC-5](https://user-images.githubusercontent.com/76427521/115992125-00015000-a607-11eb-9c8f-c0f87ccd9a61.PNG)
 
 
 ## UC-6(CheckAttendance)
@@ -228,7 +228,7 @@ Valid Checker<-> Pop-up Maker|	Pop-up Maker는 Valid Checker에게 정보를 받
 | 학생정보 | 검색과 일치하는 학생정보 목록 | 검색된 학생의 정보 |
 | UserInput  | 검색 폼  | 사용자로부터 입력을 받을 수 있는 검색 폼           |
 
-![DomainModel_UC4](https://user-images.githubusercontent.com/76427521/115754875-a23af100-a3d7-11eb-84b6-4c3d852b2d3a.JPG)
+![UC-7](https://user-images.githubusercontent.com/76427521/115992126-01327d00-a607-11eb-95e7-e83b00f8b602.PNG)
 
 
 ## UC-8(StudentInfo)
