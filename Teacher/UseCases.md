@@ -22,7 +22,7 @@
 
 ## Use Case Diagram
 
-![TeacherUsecaseDiagram](https://user-images.githubusercontent.com/11364584/115982310-0e367880-a5d5-11eb-8498-926ed068cc2d.jpg)
+![Teacher](https://user-images.githubusercontent.com/11364584/115984866-1fd34c80-a5e4-11eb-84a2-d29580ed498a.jpg)
 
 ## Use Case Schema
 
