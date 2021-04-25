@@ -37,14 +37,14 @@
 | Group              | Desecription                                                 | Contributor    |
 | ------------------ | ------------------------------------------------------------ | -------------- |
 | Auth+Core          | 개발 환경 세팅 및 사용자 모델 정의, 사용자가 앱에 로그인 및 회원가입  | 김지혜, 진겸   |
-| Form Create/Update | 사용자가 수업 및 학생 정보를 저장, 수정 및 삭제              | 이한용, 정나린 |
-| 출석 체크          | 학생에 대한 출석 체크, 수업 및 학생 목록, 정보 조회, 학부모에게 출결 결과 발송 | 박종혁, 윤진호 |
+| Teacher | 학생에 대한 출석 체크, 수업 및 학생 목록, 정보 조회, 출결 결과 및 공지사항 발송  | 이한용, 정나린 |
+| Student | 수업 신청, 개인 출결현황 및 수업참여도 확인 | 박종혁, 윤진호 |
 
 ## [WIP] Requirments (Stories)
 
 - [Core & Auth](/Core/Requirements.md)
-- [Attendance Check](/AttendanceCheck/Requirements.md)
-- [Form Create / Update](/FormCreateUpdate/Requirements.md)
+- [Teacher](/Teacher/Requirements.md)
+- [Student](/Student/Requirements.md)
 
 ## [WIP] Use Case
 
