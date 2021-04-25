@@ -65,7 +65,7 @@ Concept|Attributes|Attributes Description
 -|-|-
 수업정보|	수업 정보 record|	사용자가 입력한 수업 정보(수업명, 학년, 반번호)
 
-![diagram (1)_2](https://user-images.githubusercontent.com/64057843/115800880-683d0f80-a416-11eb-8e88-0a4ccca4e0c1.png))
+![teacher234DomainModel_1](https://user-images.githubusercontent.com/64057843/115980696-ac244600-a5c9-11eb-9ccd-e0a30c258a8e.png)
 
 
 ## UC-3 : UpdateClass
@@ -99,7 +99,7 @@ Concept|Attributes|Attributes Description
 -|-|-
 수업정보|	수업 정보 record|	사용자가 입력한 수업 정보(수업명, 학년, 반번호)
 
-![diagram (1)_3](https://user-images.githubusercontent.com/64057843/115800916-77bc5880-a416-11eb-8b54-5add0dfe5dc8.png)
+![teacher234DomainModel_2](https://user-images.githubusercontent.com/64057843/115980697-acbcdc80-a5c9-11eb-9465-ecc057023770.png)
 
 
 ## UC-4 : RemoveClass
@@ -130,7 +130,7 @@ Valid Checker<-> Pop-up Maker|	Pop-up Maker는 Valid Checker에게 정보를 받
 
 ### Extracting Attributes
 
-![diagram (1)_4](https://user-images.githubusercontent.com/64057843/115801077-dda8e000-a416-11eb-9de6-a4daf7e001fe.png)
+![teacher234DomainModel_3](https://user-images.githubusercontent.com/64057843/115980699-ad557300-a5c9-11eb-9623-65615c78da06.png)
 
 
 ### UC-5(InquireEnrolledStudent)
