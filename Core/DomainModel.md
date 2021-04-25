@@ -10,7 +10,7 @@
 | 메일 사용 가능여부를 확인한다.                               | D    | verification              |
 | 사용 불가능한 이메일일 경우 Pop-up Maker를 생성해준다.       | D    | Pop-up Maker              |
 | 서버와 연결해 User의 ID/PW 정보를 DB에 전송하고 record값을 받아온다. | D    | DB Connection(DAO+DB)     |
-| GUI를 통해 현재의 상태를 화면에 표현한다                     | D    | View Library(Page Marker) |
+| GUI를 통해 현재의 상태를 화면에 표현한다                     | D    | View Library(Page Maker) |
 | 사용자에게 화면을 보여주는 역할                              | K    | User interface            |
 
 **Extracting the Associations**
@@ -46,7 +46,7 @@
 | UC-2과 연관된 개념들을 행동들을 조정하고 다른 개념에 작업을 위임한다. | D    | Controller                |
 | User가 ID/PW 를 입력한다.                                    | D    | 로그인 요청               |
 | 서버와 연결해 User의 ID/PW 정보를 DB에 전송하고 record값을 받아온다. | D    | DB Connection(DAO+DB)     |
-| GUI를 통해 현재의 상태를 화면에 표현한다.                    | D    | View Library(Page Marker) |
+| GUI를 통해 현재의 상태를 화면에 표현한다.                    | D    | View Library(Page Maker) |
 | 사용자에게 화면을 보여주는 역할                              | K    | User interface            |
 | DB에서 받아온 사용자 정보                                    | K    | 사용자 정보               |
 | 사용자 인증 역할                                             | D    | AuthUser                  |
@@ -85,7 +85,7 @@
 | UC-3과 연관된 개념들을 행동들을 조정하고 다른 개념에 작업을 위임한다. | D    | Controller                |
 | User가 로그아웃 버튼 클릭한다.                               | D    | 로그아웃 요청             |
 | 서버와 연결해 User의 ID/PW 정보를 DB에 전송하고 record값을 받아온다. | D    | DB Connection(DAO+DB)     |
-| GUI를 통해 현재의 상태를 화면에 표현한다.                    | D    | View Library(Page Marker) |
+| GUI를 통해 현재의 상태를 화면에 표현한다.                    | D    | View Library(Page Maker) |
 | 사용자에게 화면을 보여주는 역할을 한다.                      | K    | User interface            |
 
 **Extracting the Associations**
@@ -117,7 +117,7 @@
 | User가 개인정보수정 버튼 클릭한다.                           | D    | 개인정보 요청             |
 | 개인정보 수정 후 수정 버튼 클릭한다.                         | D    | 개인정보수정 요청         |
 | 서버와 연결해 User의 ID/PW 정보를 DB에 전송하고 record값을 받아온다. | D    | DB Connection(DAO+DB)     |
-| GUI를 통해 현재의 상태를 화면에 표현한다.                    | D    | View Library(Page Marker) |
+| GUI를 통해 현재의 상태를 화면에 표현한다.                    | D    | View Library(Page Maker) |
 | 사용자에게 화면을 보여주는 역할을 한다.                      | K    | User interface            |
 | 사용자가 문자열을 입력                                       | D    | UserInput                 |
 | DB에서 받아온 사용자 정보                                    | K    | 사용자 정보               |
@@ -158,7 +158,7 @@
 | UC-5과 연관된 개념들을 행동들을 조정하고 다른 개념에 작업을 위임한다. | D    | Controller                |
 | User가 탈퇴 버튼 클릭한다.                                   | D    | 탈퇴 요청                 |
 | 서버와 연결해 User의 ID/PW 정보를 DB에 전송하고 record값을 받아온다. | D    | DB Connection(DAO+DB)     |
-| GUI를 통해 현재의 상태를 화면에 표현한다.                    | D    | View Library(Page Marker) |
+| GUI를 통해 현재의 상태를 화면에 표현한다.                    | D    | View Library(Page Maker) |
 | 사용자에게 화면을 보여주는 역할을 한다.                      | K    | User interface            |
 | 탈퇴 성공 여부를 확인한다.                                   | D    | Valid Checker             |
 | 탈퇴 성공여부를 알리는 팝업창을 보인다                       | D    | Pop-up Maker              |
