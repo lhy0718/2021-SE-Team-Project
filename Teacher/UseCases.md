@@ -22,6 +22,8 @@
 
 ## Use Case Diagram
 
+![TeacherUsecaseDiagram](https://user-images.githubusercontent.com/11364584/115982310-0e367880-a5d5-11eb-8498-926ed068cc2d.jpg)
+
 ## Use Case Schema
 
 Use Case UC-1 | InquireClassList |
