@@ -42,30 +42,27 @@
 Responsibility Description|Type|Concept Name
 -|-|-
 UC-2과 연관된 개념들과 행동들을 조정하고 다른 개념에 작업을 위임 | D | Controller
-User가 수업 생성버튼을 클릭한다. | D | 수업추가폼 요청
-수업 정보|	K	|수업 정보 
-User가 수업 생성 완료 버튼을 클릭한다.|	D|	수업추가 요청
+User가 수업 정보를 입력한다. | D | 수업생성 요청
 서버와 연결해 User가 입력한 수업정보를 DB에 전송하고 record값을 받아온다.|D|	DB Connection
-UI를 통해 현재 상태를 화면에 표현한다.|	D|	Page Marker
+UI를 통해 현재 상태를 화면에 표현한다.|	D|	Page Maker
 현재 상태를 보여주는 UI|	K	|View
 
 ### Extracting the Associations
 Concept pair|	Association Description|	Association Name
 -|-|-
-Controller <-> Page Marker|	Controller는 Page Marker에게 요청을 보내고 UI를 받는다.|	요청 전달
-Controller <-> View|	Controller는 View에게 게시할 내용을 전달한다.|	게시
-수업 정보 <-> Controller|	수업 정보를 Controller에게 제공한다.|	데이터 전달
-Page Marker <-> View|	Page Marker가 View를 준비한다.	|준비
-Controller <-> DB Connection|	Controller는 DB Connection으로 request를 넘긴다.|	요청 전달
-수업추가 요청 <-> Controller|	수업 추가 요청을 Controller에게 전달한다.|	요청 전달
-Page Marker <-> DB Connection|	DB Connection에서 받아온 값을 넘기고, Page Marker는 이 데이터를 화면에 표현한다.	|데이터 전달
+Controller <-> DB Connection|	Controller는 DB Connection으로 request를 넘긴다.| 요청 전달
+Controller <-> Page Maker|	Controller는 Page Maker에게 요청을 보내고 UI를 받는다.| 요청 전달
+수업생성 요청 <-> Controller|	수업생성 요청을 Controller에게 전달한다.|	요청 전달
+Page Maker <-> View| View를 화면에 출력한다.	|출력
+
+
 
 ### Extracting Attributes
 Concept|Attributes|Attributes Description
 -|-|-
 수업정보|	수업 정보 record|	사용자가 입력한 수업 정보(수업명, 학년, 반번호)
 
-![teacher234DomainModel_1](https://user-images.githubusercontent.com/64057843/115980696-ac244600-a5c9-11eb-9ccd-e0a30c258a8e.png)
+![1908_1](https://user-images.githubusercontent.com/64057843/115989508-b3fbde80-a5f9-11eb-9d3e-6ba4961b0ab9.png)
 
 
 ## UC-3 : UpdateClass
@@ -74,32 +71,26 @@ Concept|Attributes|Attributes Description
 
 Responsibility Description|Type|Concept Name
 -|-|-
-UC-3와 연관된 개념들과 행동들을 조정하고 다른 개념에 작업을 위임 | D | Controller
-User가 수업 수정버튼을 클릭한다. | D | 수업수정폼 요청
-수업 정보|	K	|수업 정보 
-User가 수업 수정 완료 버튼을 클릭한다.|	D|	수업수정 요청
+UC-3과 연관된 개념들과 행동들을 조정하고 다른 개념에 작업을 위임 | D | Controller
+User가 수업 정보를 입력한다. | D | 수업수정 요청
 서버와 연결해 User가 입력한 수업정보를 DB에 전송하고 record값을 받아온다.|D|	DB Connection
-UI를 통해 현재 상태를 화면에 표현한다.|	D|	Page Marker
+UI를 통해 현재 상태를 화면에 표현한다.|	D|	Page Maker
 현재 상태를 보여주는 UI|	K	|View
-
 
 ### Extracting the Associations
 Concept pair|	Association Description|	Association Name
 -|-|-
-Controller <-> Page Marker|	Controller는 Page Marker에게 요청을 보내고 UI를 받는다.|	요청 전달
-Controller <-> View|	Controller는 View에게 게시할 내용을 전달한다.|	게시
-수업 정보 <-> Controller|	수업 정보를 Controller에게 제공한다.|	데이터 전달
-Page Marker <-> View|	Page Marker가 View를 준비한다.	|준비
-Controller <-> DB Connection|	Controller는 DB Connection으로 request를 넘긴다.|	요청 전달
-수업추가 요청 <-> Controller|	수업 수정 요청을 Controller에게 전달한다.|	요청 전달
-Page Marker <-> DB Connection|	DB Connection에서 받아온 값을 넘기고, Page Marker는 이 데이터를 화면에 표현한다.	|데이터 전달
+Controller <-> DB Connection|	Controller는 DB Connection으로 request를 넘긴다.| 요청전달
+Controller <-> Page Maker|	Controller는 Page Maker에게 요청을 보내고 UI를 받는다.|	요청 전달
+수업 수정 요청 <-> Controller|	수업 추가 요청을 Controller에게 전달한다.|	요청 전달
+Page Maker <-> View| View를 화면에 출력한다.	|출력
 
 ### Extracting Attributes
 Concept|Attributes|Attributes Description
 -|-|-
 수업정보|	수업 정보 record|	사용자가 입력한 수업 정보(수업명, 학년, 반번호)
 
-![teacher234DomainModel_2](https://user-images.githubusercontent.com/64057843/115980697-acbcdc80-a5c9-11eb-9465-ecc057023770.png)
+![1908_2](https://user-images.githubusercontent.com/64057843/115989509-b4947500-a5f9-11eb-873c-e6d0a1b7d4cb.png)
 
 
 ## UC-4 : RemoveClass
@@ -112,25 +103,23 @@ UC-4과 연관된 개념들과 행동들을 조정하고 다른 개념에 작업
 User가 수업 삭제버튼을 클릭한다. | D | 수업삭제 요청
 서버와 연결해 User가 입력한 수업정보를 DB에 전송하고 record값을 받아온다.|D|	DB Connection
 현재 상태를 보여주는 UI|	K	|View
-UI를 통해 현재 상태를 화면에 표현한다.|	D|	Page Marker
+UI를 통해 현재 상태를 화면에 표현한다.|	D|	Page Maker
 삭제 성공 여부를 확인한다.|	D|	Valid Checker
 삭제 성공여부를 알리는 팝업창을 보인다.	|D|	Pop-up Maker
 
 ### Extracting the Associations
 Concept pair|	Association Description|	Association Name
 -|-|-
-Controller <-> Page Marker|	Controller는 Page Marker에게 요청을 보내고 UI를 받는다.|	요청 전달
-Controller <-> View|	Controller는 View에게 게시할 내용을 전달한다.|	게시
-Page Marker <-> View|	Page Marker가 View를 준비한다.|	준비
+Controller <-> Page Maker|	Controller는 Page Maker에게 요청을 보내고 UI를 받는다.|	요청 전달
+Page Maker <-> View| View를 화면에 출력한다.	|출력
 Controller<->DB Connection|	Controller는 DB Connection으로 request를 넘긴다.|요청전달
 수업삭제 요청 <-> Controller|	수업 삭제 요청을 Controller에게 전달한다.|	요청 전달
-Page Marker <-> DB Connection|	DB Connection에서 받아온 값을 넘기고, Page Marker는 이 데이터를 화면에 표현한다.|	데이터 전달
 Valid Checker<-> DB connection|	DB connection에서 탈퇴 요청된 데이터가 잘 제거되어있는지의 여부를 Valid Checker애 넘겨준다.|	유효 여부 전달
 Valid Checker<-> Pop-up Maker|	Pop-up Maker는 Valid Checker에게 정보를 받아 성공/실패에 관한 팝업창을 만든다.|생성
 
 ### Extracting Attributes
 
-![teacher234DomainModel_3](https://user-images.githubusercontent.com/64057843/115980782-41273f00-a5ca-11eb-93b0-e93221b44b44.png)
+![1908_3](https://user-images.githubusercontent.com/64057843/115989512-b52d0b80-a5f9-11eb-853c-bd7c5f8b7ffd.png)
 
 
 ### UC-5(InquireEnrolledStudent)
@@ -291,21 +280,20 @@ Valid Checker<-> Pop-up Maker|	Pop-up Maker는 Valid Checker에게 정보를 받
 Responsibility Description | Type | Concept Name
 -|-|-
 UC-9와 연관된 개념들의 행동들을 조정하고 다른 개념에 작업을 위임한다. | D | Controller
-로그인 상태를 확인하여, 유저 정보를 바탕으로 DB에 있는 수업의 학생목록을 요청한다. | D | DAO
+로그인 상태를 확인하여, 유저 정보를 바탕으로 DB에 있는 수업의 학생목록을 요청한다. | D | DB Connection
 가져온 데이터를 페이지(화면)에 출력한다. | D | Page Maker
 개별 학생에게 별점을 부과하는 요청 | K | 별점 부과 요청
 불러온 정보를 보여주는 페이지 | K | View
-교수자가 담당하는 수업의 학생 목록 | K | 학생 목록
 
 ### Extracting the Associations
 
 Concept pair | Association Description | Association Name
 :-:|-|-
-Controller <-> DAO | DAO는 controller로 요청에 대한 응답을 넘긴다. | 응답
-Controller <-> Page Maker | Controller는 요청을 Page Maker에게 전달하고, 페이지를 수신한다. | 응답
+Controller <-> DB Connection | Controller는 DB Connection으로 request를 넘긴다. | 요청 전달
+Controller <-> Page Maker | Controller는 요청을 Page Maker에게 전달하고, 페이지를 수신한다. | 요청 전달
+Page Maker <-> DB Connection | DB Connection이 학생목록과 각 학생의 별점 정보를 전달한다. | 데이터 전달
 View <-> Page Maker | View를 화면에 출력한다. | 출력
-Controller <-> 별점 부과 요청 | 학생목록에서 선택한 학생에 대해 별점을 부과할지 물어보고 요청을 받는다. | 요청 전달
-학생 목록 <-> DAO | 학생 목록을 DAO에 요청하고 제공받는다. | 제공
+Controller <-> 별점 부과 요청 | 학생목록에서 선택한 학생에 대해 별점을 부과할지 물어보고 요청을 받는다. | 수신
 
 ### Extracting Attributes
 
@@ -314,7 +302,8 @@ Concept | Attributes | Attributes Description
 Controller | 로그인 정보 | 어떤 요청이 들어왔을 때 교수자로 로그인이 되어있는지 확인한다.
 별점 부과 요청 | 요청 폼 | 수업의 id, 학생의 id, 부과할 별점을 포함하는 폼 데이터
 
-![uc-9](https://user-images.githubusercontent.com/11364584/115988256-b5c2a380-a5f3-11eb-9f7f-4d5675ede59e.jpeg)
+![uc-9](https://user-images.githubusercontent.com/11364584/115962680-878f8600-a557-11eb-8b9e-facd45157b1c.jpeg)
+
 
 ## UC-10 (ClassNotice)
 
@@ -323,21 +312,20 @@ Controller | 로그인 정보 | 어떤 요청이 들어왔을 때 교수자로 �
 Responsibility Description | Type | Concept Name
 -|-|-
 UC-10과 연관된 개념들의 행동들을 조정하고 다른 개념에 작업을 위임한다. | D | Controller
-로그인 상태를 확인하여, 유저 정보를 바탕으로 DB에 있는 수업목록을 요청한다. | D | DAO
+로그인 상태를 확인하여, 유저 정보를 바탕으로 DB에 있는 수업목록을 요청한다. | D | DB Connection
 가져온 데이터를 페이지(화면)에 출력한다. | D | Page Maker
 불러온 정보를 보여주는 페이지 | K | View
 공지를 학생들에게 전달하는 요청 | K | 공지 전달 요청
-교수자가 담당하는 수업 목록 | K | 담당 수업 목록
 
 ### Extracting the Associations
 
 Concept pair | Association Description | Association Name
 -|-|-
-Controller <-> DAO | DAO는 controller로 요청에 대한 응답을 넘긴다. | 응답
-Controller <-> Page Maker | Controller는 요청을 Page Maker에게 전달하고, 페이지를 수신한다. | 응답
+Controller <-> DB Connection | Controller는 DB Connection으로 request를 넘긴다. | 요청 전달
+Controller <-> Page Maker | Controller는 요청을 Page Maker에게 전달하고, 페이지를 수신한다. | 요청 전달
+Page Maker <-> DB Connection | DB Connection이 학생목록과 각 학생의 별점 정보를 전달한다. | 데이터 전달
 View <-> Page Maker | View를 화면에 출력한다. | 출력
-Controller <-> 공지 전달 요청 | 학생들에게 전달할 공지의 제목과 내용을 물어보고 요청을 받는다. | 요청 전달
-담당 수업 목록 <-> DAO | 교수자의 담당 수업 목록을 DAO에 요청하고 제공받는다. | 제공
+Controller <-> 공지 전달 요청 | 학생들에게 전달할 공지의 제목과 내용을 물어보고 요청을 받는다. | 수신
 
 ### Extracting Attributes
 
@@ -346,7 +334,8 @@ Concept | Attributes | Attributes Description
 Controller | 로그인 정보 | 어떤 요청이 들어왔을 때 교수자로 로그인이 되어있는지 확인한다.
 공지 전달 요청 | 요청 폼 | 수업의 id, 공지 제목, 공지 내용을 포함하는 폼 데이터
 
-![uc-10](https://user-images.githubusercontent.com/11364584/115988263-bce9b180-a5f3-11eb-80c6-52a331f0acc3.jpeg)
+![uc-10](https://user-images.githubusercontent.com/11364584/115962692-90805780-a557-11eb-9b8b-ce538c11a609.jpeg)
+
 
 ## UC-11 (RejectStudent)
 
@@ -358,19 +347,17 @@ UC-11과 연관된 개념들과 행동들을 조정하고 다른 개념에 작�
 User가 거절 버튼을 클릭한다. | D | 수강신청 거절 요청
 서버와 연결해 User가 입력한 수업정보를 DB에 전송하고 record값을 받아온다.|D|	DB Connection
 현재 상태를 보여주는 UI|	K	|View
-UI를 통해 현재 상태를 화면에 표현한다.|	D|	Page Marker
+UI를 통해 현재 상태를 화면에 표현한다.|	D|	Page Marer
 수강신청 거절 성공 여부를 확인한다.|	D|	Valid Checker
 수강신청 거절 성공여부를 알리는 팝업창을 보인다.	|D|	Pop-up Maker
 
 ### Extracting the Associations
 Concept pair|	Association Description|	Association Name
 -|-|-
-Controller <-> Page Marker|	Controller는 Page Marker에게 요청을 보내고 UI를 받는다.|	요청 전달
-Controller <-> View|	Controller는 View에게 게시할 내용을 전달한다.|	게시
-Page Marker <-> View|	Page Marker가 View를 준비한다.|	준비
+Controller <-> Page Maker|	Controller는 Page Maker에게 요청을 보내고 UI를 받는다.|	요청 전달
+Page Maker <-> View| View를 화면에 출력한다.	|출력
 Controller<->DB Connection|	Controller는 DB Connection으로 request를 넘긴다.|요청전달
 수강신청 거절 요청 <-> Controller| 수강신청  요청을 Controller에게 전달한다.|	요청 전달
-Page Marker <-> DB Connection|	DB Connection에서 받아온 값을 넘기고, Page Marker는 이 데이터를 화면에 표현한다.|	데이터 전달
 Valid Checker<-> DB connection|	DB connection에서 탈퇴 요청된 데이터가 잘 제거되어있는지의 여부를 Valid Checker애 넘겨준다.|	유효 여부 전달
 Valid Checker<-> Pop-up Maker|	Pop-up Maker는 Valid Checker에게 정보를 받아 성공/실패에 관한 팝업창을 만든다.|생성
 
@@ -380,4 +367,4 @@ Concept | Attributes | Attributes Description
 Controller | 로그인 정보 | 어떤 요청이 들어왔을 때 교수자로 로그인이 되어있는지 확인한다.
 수강신청 거절 요청 | 학생 정보 | 수업의 학년, 반 정보와 학생의 학년 반 정보가 일치하는지 확인한다.
 
-![st_diagram_2](https://user-images.githubusercontent.com/64057843/115964512-cf1a1000-a55f-11eb-8ff3-618d1528ce56.png)
+![1908_4](https://user-images.githubusercontent.com/64057843/115989515-b52d0b80-a5f9-11eb-826a-1a7ac145d77e.png)
