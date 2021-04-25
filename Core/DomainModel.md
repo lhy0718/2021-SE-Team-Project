@@ -2,30 +2,16 @@
 
 **Extracting the Responsibilities**
 
-<<<<<<< HEAD
-| Responsibility Description | Type | Concept Name |
-| ------------------------------------------------------------ | :--- | ------------------------ |
-| UC-1과 연관된 개념들을 행동들을 조정하고 다른 개념에 작업을 위임한다. 클라이언트로부터 Request를 받는 첫 번째 관문(Router) 이다. | D | Controller |
-| User가 이메일의 verification을 요청 한다. | D | 이메일 인증 요청 |
-| User가 인증받을 이메일 정보를 기반으로 회원가입을 요정한다. | D | 회원가입 요청 |
-| 메일 사용 가능여부를 확인한다. | D | verification |
-| 사용 불가능한 이메일일 경우 Pop-up 리소스를 띄워주기 위한 메세지를전달 한다. | D | Pop-up Maker |
-| 서버와 연결해 User의 ID/PW 정보를 DB에 전송하고 record값을 받아온다. | D | DB Connection(DAO+DB) |
-| UI를 통해 현재의 상태를 화면에 표현한다 | D | View Library(Page maker) |
-| 사용자에게 화면을 보여주는 역할 | K | User interface |
-=======
-| Responsibility Description | Type | Concept Name |
-| ------------------------------------------------------------ | :--- | ------------------------- |
-| UC-1과 연관된 개념들을 행동들을 조정하고 다른 개념에 작업을 위임한다. | D | Controller |
-| User가 이메일 인증을 요청한다. | D | 이메일 인증 요청 |
-| User가 회원가입을 요정한다. | D | 회원가입 요청 |
-| 메일 사용 가능여부를 확인한다. | D | verification |
-| 사용 불가능한 이메일일 경우 Pop-up Maker를 생성해준다. | D | Pop-up Maker |
-| 서버와 연결해 User의 ID/PW 정보를 DB에 전송하고 record값을 받아온다. | D | DB Connection(DAO+DB) |
-| GUI를 통해 현재의 상태를 화면에 표현한다 | D | View Library(Page Maker) |
-| 사용자에게 화면을 보여주는 역할 | K | User interface |
-
-> > > > > > > b2df6afa70aa0abf4b41bf07ca6d2ed691e88299
+| Responsibility Description                                                                                                       | Type | Concept Name             |
+| -------------------------------------------------------------------------------------------------------------------------------- | :--- | ------------------------ |
+| UC-1과 연관된 개념들을 행동들을 조정하고 다른 개념에 작업을 위임한다. 클라이언트로부터 Request를 받는 첫 번째 관문(Router) 이다. | D    | Controller               |
+| User가 이메일의 verification을 요청 한다.                                                                                        | D    | 이메일 인증 요청         |
+| User가 인증받을 이메일 정보를 기반으로 회원가입을 요정한다.                                                                      | D    | 회원가입 요청            |
+| 메일 사용 가능여부를 확인한다.                                                                                                   | D    | verification             |
+| 사용 불가능한 이메일일 경우 Pop-up 리소스를 띄워주기 위한 메세지를전달 한다.                                                     | D    | Pop-up Maker             |
+| 서버와 연결해 User의 ID/PW 정보를 DB에 전송하고 record값을 받아온다.                                                             | D    | DB Connection(DAO+DB)    |
+| UI를 통해 현재의 상태를 화면에 표현한다                                                                                          | D    | View Library(Page maker) |
+| 사용자에게 화면을 보여주는 역할                                                                                                  | K    | User interface           |
 
 **Extracting the Associations**
 
