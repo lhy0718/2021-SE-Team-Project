@@ -6,24 +6,22 @@
 
 | Responsibility Description | Type | Concept Name  |
 | - | - | - |
-| UC-1과 연관된 개념들의 행동들을 조정하고 다른 개념에 작업을 위임한다. | D | Controller |
-| 로그인 상태를 확인하여, 유저 정보를 바탕으로 DB에 있는 수업목록을 요청한다. | D | DB Connection |
-| 가져온 데이터를 페이지(화면)에 출력한다. | D | Page Maker |
-| DB로부터 받아온 수업목록 | K | 수업목록 |
-| 수업명을 클릭하면 해당 페이지로 넘어간다. | D | 수업선택 |
-| 수업CRUD 버튼 | K | 수업_CRUD_Button  |
-| 불러온 정보를 보여주는 페이지  | K | View |
+| UC-1과 연관된 개념들의 행동들을 조정하고 다른 개념에 작업을 위임한다. | D    | Controller    |
+| 서버와 연결해 User의 ID/PW 정보를 DB에 전송하고 record값을 받아온다. | D    | DB Connection(DAO+DB)    |
+| 교수자에게 등록된(담당하고 있는) 수업목록 | K    | 수업목록 |
+| User가 수업목록을 요청한다. | D | 수업목록요청 |
+| GUI를 통해 현재의 상태를 화면에 표현한다                                 | D    | 	View Library(Page Maker) |
+| 사용자에게 화면을 보여주는 역할                              | K    | 	User interface          |
 
 ### Extracting the Associations
 
 | Concept pair                  | Association Description                                      | Association Name |
 | :--------------------------: | ------------------------------------------------------------ | ------------ |
-| Controller <-> DB Connection   | Controller는 DB Connection으로 request를 넘긴다.   | 요청 전달        |
-| View <-> DB Connection  | 수업 목록을 View에 전달한다.  | 데이터 전달        |
-| View <-> Page Maker  | View를 화면에 출력한다. | 출력      |
-| Controller <-> 수업_CRUD_Button  |수업 CRUD에 해당하는 요청을 전달한다. | 요청 전달     |
-| DB Connection <-> 수업 목록  | DB에 저장된 수업 목록을 주고받는다. | 요청 전달     |
-|수업선택 <-> Controller|사용자가 선택한 수업에 대한 정보 요청을 전달한다. |요청전달|
+| Controller <-> View Library   | Controller는 View Library에 요청을 보내고,게시할 내용을 전달한다. | 응답             |
+| View Library<->User interface | 게시할 내용을 전달받고 뷰를 그린다.                          | 뷰를 그림        |
+| 수업목록요청 <->Controller    | 수업목록요청을 Controller에게 전달한다                       | 요청 전달    |
+| Controller<-> DB Connection    | 저장한 user 데이터를 전달한다                                | 요청/응답      |
+| 수업목록 <-> DB Connection    | user에게 등록된 수업목록을 제공한다.                           | 제공      |
 
 ### Extracting Attributes
 
@@ -131,34 +129,32 @@ Concept | Attributes | Attributes Description
 
 | Responsibility Description | Type | Concept Name  |
 | - | - | - |
-| UC-5와 연관된 개념들을 행동들을 조정하고 다른 개념에 작업을 위임한다. | D    | Controller    |
-| 로그인 상태를 확인하여, 현재 수업 정보를 바탕으로 DB 학생목록을 요청한다. | D    | DB Connection    |
-| 가져온 데이터를 페이지(화면)에 출력한다.                                 | D    | Page maker |
-| DB로부터 받아온 학생목록 | K    | 학생목록 |
-| 학생을 선택하여 ``학생정보조회(UC-5)``로 이동한다. | D    | 학생선택 |
-| 학생 CRUD 버튼                               | K    | 학생_CRUD_Button          |
-| 불러온 정보를 보여주는 페이지                                 | K    | View          |
+| UC-5과 연관된 개념들의 행동들을 조정하고 다른 개념에 작업을 위임한다. | D    | Controller    |
+| 서버와 연결해 User의 ID/PW 정보를 DB에 전송하고 record값을 받아온다. | D    | DB Connection(DAO+DB)    |
+| 해당 수업에 등록된 학생목록 | K    | 학생목록 |
+| User가 학생목록을 요청한다. | D | 학생목록요청 |
+| GUI를 통해 현재의 상태를 화면에 표현한다                                 | D    | 	View Library(Page Maker) |
+| 사용자에게 화면을 보여주는 역할                              | K    | 	User interface          |
 
 ### Extracting the Associations
 
 | Concept pair                  | Association Description                                      | Association Name |
 | :--------------------------: | ------------------------------------------------------------ | ------------ |
-| Controller <-> DB Connection   | Controller는 DB Connection으로 request를 넘긴다.   | 요청 전달        |
-| Controller <-> 학생목록  | DB로부터 학생목록을 전달받아 저장한다.  | 데이터 전달        |
-| View <-> 학생목록  | 학생목록을 View에 전달한다.  | 데이터 전달        |
-| View <-> 학생 CRUD  | 학생 CRUD에 해당하는 GUI를 View에 전달한다. | 데이터 전달      |
-| View <-> Pagemaker  | View를 화면에 출력한다. | 출력      |
-| Controller <-> 학생 선택  | 학생을 선택하면 해당 학생정보조회 페이지로 이동한다. | 요청 전달     |
+| Controller <-> View Library   | Controller는 View Library에 요청을 보내고,게시할 내용을 전달한다. | 응답             |
+| View Library<->User interface | 게시할 내용을 전달받고 뷰를 그린다.                          | 뷰를 그림        |
+| 학생목록요청 <->Controller    | 학생목록요청을 Controller에게 전달한다                       | 요청 전달    |
+| Controller<-> DB Connection    | 저장한 user 데이터를 전달한다                                | 요청/응답      |
+| 학생목록 <-> DB Connection    | 해당 수업의 학생목록을 제공한다.                           | 제공      |
 
 ### Extracting Attributes
 
 | concept    | Attributes       | Attributes Description                                       |
 | ---------- | ---------------- | ------------------------------------------------------------ |
 | Controller | 사용자 정보 | 현재 인증된 로그인 정보 |
-| Controller | 수업 정보 | 현재 선택된 수업 정보 |
+| 학생목록요청 | 수업 정보 | 현재 선택된 수업 정보 |
 | 학생 목록  | 학생 사진, 이름, 학번, 출석상태 등  | 학생 정보와 관련된 세부사항           |
 
-![UC-5](https://user-images.githubusercontent.com/76427521/115992125-00015000-a607-11eb-9c8f-c0f87ccd9a61.PNG)
+![UC-5](https://user-images.githubusercontent.com/76427521/115997443-11098b80-a61e-11eb-9201-41dc28b69219.PNG)
 
 
 ## UC-6(CheckAttendance)
@@ -204,33 +200,30 @@ Concept | Attributes | Attributes Description
 
 | Responsibility Description | Type | Concept Name  |
 | -- | - | -|
-| UC-7와 연관된 개념들을 행동들을 조정하고 다른 개념에 작업을 위임한다. | D    | Controller    |
-| 사용자로부터 입력받은 학생이름을 바탕으로 DB 학생정보를 요청한다. | D    | DB Connection    |
-| 가져온 데이터를 페이지(화면)에 출력한다. | D    | Page maker |
-| 사용자로부터 검색된 학생의 정보목록  | K   | 학생정보  |
-| 입력받은 Input에 해당하는 학생의 정보를 DB에 요청한다.   | D   | 학생검색  |
-| 사용자로부터 문자열을 입력받는다.   | D   | UserInput  |
-| 불러온 정보를 보여주는 페이지    | K    | View          |
+| UC-7과 연관된 개념들의 행동들을 조정하고 다른 개념에 작업을 위임한다. | D    | Controller    |
+| 서버와 연결해 User의 ID/PW 정보를 DB에 전송하고 record값을 받아온다. | D    | DB Connection(DAO+DB)    |
+| 요청한 학생에 대한 학생정보(출결정보, 별점 등) | K    | 학생목록 |
+| User가 학생검색을 요청한다. | D | 학생검색 요청 |
+| GUI를 통해 현재의 상태를 화면에 표현한다                                 | D    | 	View Library(Page Maker) |
+| 사용자에게 화면을 보여주는 역할                              | K    | 	User interface          |
 
 ### Extracting the Associations
 
 | Concept pair  | Association Description   | Association Name |
 | -| - | - |
-| Controller <-> DB Connection   | Controller는 DB Connection으로 request를 넘긴다.   | 요청 전달        |
-| View <-> Pagemaker  | View를 화면에 출력한다. | 출력      |
-| Controller <-> UserInput   | 사용자로부터 검색 할 학생이름을 입력받는다. | 문자열 입력      |
-| UserInput <-> 학생 검색   | 입력받은 UserInput 데이터를 전달한다. | 데이터 전달      |
-| Contorller <-> 학생 검색    | UserInput을 Controller에 전달하여 학생정보를 전달받는다. | 검색      |
-| View <-> 학생정보   | 학생정보를 View에 전달한다. | 데이터 전달      |
+| Controller <-> View Library   | Controller는 View Library에 요청을 보내고,게시할 내용을 전달한다. | 응답             |
+| View Library<->User interface | 게시할 내용을 전달받고 뷰를 그린다.                          | 뷰를 그림        |
+| 학생검색요청 <->Controller    | 학생검색요청을 Controller에게 전달한다                       | 요청 전달    |
+| Controller<-> DB Connection    | 저장한 user 데이터를 전달한다                                | 요청/응답      |
+| 학생정보 <-> DB Connection    | 검색요청한 학생에 대한 학생정보                        | 제공      |
 
 ### Extracting Attributes
 
 | concept    | Attributes       | Attributes Description                                       |
 | ---------- | ---------------- | ------------------------------------------------------------ |
 | Controller | 사용자 정보 | 현재 인증된 로그인 정보 |
-| Controller | 수업 정보 | 현재 선택된 수업 정보 |
-| 학생정보 | 검색과 일치하는 학생정보 목록 | 검색된 학생의 정보 |
-| UserInput  | 검색 폼  | 사용자로부터 입력을 받을 수 있는 검색 폼           |
+| 학생정보 | 검색요건과 일치하는 학생정보 목록 | 검색된 학생의 정보 |
+| 학생검색 요청  | 검색정보  | 검색하고자 하는 학생에 대한 학생정보(이름)    |
 
 ![UC-7](https://user-images.githubusercontent.com/76427521/115992126-01327d00-a607-11eb-95e7-e83b00f8b602.PNG)
 
