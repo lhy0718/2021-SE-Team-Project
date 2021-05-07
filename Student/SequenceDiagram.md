@@ -6,3 +6,4 @@
 
 ---
 ### UC-2 RegisterClass
+![Student_UC2_draft](https://user-images.githubusercontent.com/76427521/117476952-60de4000-af98-11eb-9006-c3b9e2b5d487.jpg)
