@@ -1,6 +1,6 @@
 # Sequence diagram
 
-### [sequence diagram process](/Core/sequence diagram process.md)
+[sequence diagram process](/Core/sequence diagram process.md)
 
 ### UC-1
 
