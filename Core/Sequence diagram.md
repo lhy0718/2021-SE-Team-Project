@@ -6,5 +6,5 @@
 
 ### UC-2 Login
 
-### UC-3 
+### UC-3 Logout
 
