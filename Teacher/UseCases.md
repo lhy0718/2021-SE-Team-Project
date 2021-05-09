@@ -89,7 +89,7 @@ Actor's Goal| - 학생들의 출결을 학생별로 '출석', '결석', '지각'
 Participating Actors| Database |
 Preconditions | - 학생 명단은 테이블의 형식으로 화면에 출력하여 식별이 쉽도록 한다.<br>- 각 수업이 시작되기 전, 학생들의 출결 상태는 default로 초기화한다.<br>- 각 출결 상태를 체크하는 것은 토글을 단순히 클릭함으로써 가능하도록 한다.<br>- 출결 상태는 실시간으로 저장한다. <br>- 수업 종료 전에는 언제든지 출결 상태를 변경할 수 있어야 한다.<br>- '수업 종료' 버튼이 있어서 수업 종료를 교수자(사용자)가 승인할 수 있어야 한다.|
 Postconditions| 출결 결과를 Database에 최종 저장 |
-Flow of Events for Main Success Senario|→ 1. Include:: InquireClassList(UC-1) // 교수자가 본인이 맡은 수업 목록 중 출결체크 할 수업을 선택한다.<br>← 2. Include:: InquireEnrolledStudent(UC-5) // 화면에 해당 수업을 듣는 학생 명단과 그 옆에 출석/결석/지각/기타를 체크할 수 있도록 보여준다.<br>→ 3. 교수자가 학생별로 학생들의 출결 현황에 따라 출석 체크를 진행한다.<br>← 4. 출결 현황을 실시간으로 저장한다.<br>→ 5. 수업이 종료되면 교수자는 ‘수업종료’ 버튼을 누른다.<br>← 6. 교수자는 본인이 맡은 수업 목록이 있는 창으로 다시 나오게 된다.|
+Flow of Events for Main Success Senario|→ 1. Include:: InquireClassList(UC-1) // 교수자가 본인이 맡은 수업 목록 중 출결체크 할 수업을 선택한다.<br>← 2. Include:: InquireEnrolledStudent(UC-5) // 화면에 해당 수업을 듣는 학생 명단과 그 옆에 출석/결석/지각/기타를 체크할 수 있도록 보여준다.<br>→ 3. 교수자가 학생별로 학생들의 출결 현황에 따라 출석 체크를 진행한다.<br>← 4. 출결 현황을 실시간으로 저장한다.|
 
 
 Use Case UC-7 | SearchStudent |
