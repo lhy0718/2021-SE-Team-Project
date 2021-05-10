@@ -24,5 +24,5 @@
 <summary>UC-6 sequence diagram</summary>
 </br>
 
-![Teacher Sequence Diagram-UC-6](https://user-images.githubusercontent.com/11364584/117637869-33bea700-b1bd-11eb-8c4b-08eb61218d76.jpg)
+![Teacher Sequence Diagram-UC-6](https://user-images.githubusercontent.com/11364584/117647283-bea49f00-b1c7-11eb-9278-b766a9a74563.jpg)
 </details>
