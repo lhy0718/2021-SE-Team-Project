@@ -35,8 +35,11 @@
 <summary>UC-5 sequence diagram v2</summary>
 </br>
 
-![ver2  teacherUC5 sequence diagram](https://user-images.githubusercontent.com/64057843/117837590-88911900-b2b4-11eb-9301-026d0adfa42d.png)
+![uc5(ver2)](https://user-images.githubusercontent.com/64057843/117838311-30a6e200-b2b5-11eb-9cbb-3c2bbe17d05f.png)
+
 </details>
+
+---
 
 ### UC-6 CheckAttendance
 <details>
