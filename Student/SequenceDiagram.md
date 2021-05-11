@@ -16,4 +16,19 @@
 
 ---
 ### UC-2 RegisterClass
+<details>
+<summary>UC-2 Sequence Diagram_v1</summary>
+
 ![Student_UC2_draft](https://user-images.githubusercontent.com/76427521/117476952-60de4000-af98-11eb-9006-c3b9e2b5d487.jpg)
+
+</details>
+
+<details>
+<summary>UC-2 Sequence Diagram_v2</summary>  
+
+![Student-SD-UC2](https://user-images.githubusercontent.com/76427521/117756022-581b9180-b258-11eb-8527-969a6961ba20.PNG)
+
+
+</details>
+
+
