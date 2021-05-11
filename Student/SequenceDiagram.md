@@ -1,7 +1,17 @@
 # Sequence diagram
 
 ### UC-1 AvailableClassList
-![SequenceDiagram(UC1_draft)](https://user-images.githubusercontent.com/79308015/117396876-dbc23f00-af35-11eb-93f6-5ed2633b10ba.JPG)
+<details><summary>UC-1 Sequence Diagram_v1</summary>
+  
+![Student_UC-1_v1](https://user-images.githubusercontent.com/79308015/117747494-4088dc80-b249-11eb-9bd1-34d884c54a1c.JPG)
+
+</details>
+
+<details><summary>UC-1 Sequence Diagram_v2</summary>
+  
+![Student_UC-1_v2](https://user-images.githubusercontent.com/79308015/117747920-03711a00-b24a-11eb-9ce3-7f8447c69784.JPG)
+
+</details>
 
 
 ---
