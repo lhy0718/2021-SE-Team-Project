@@ -1,5 +1,16 @@
 # Sequence diagram
 
+### UC-1 InquireClassList
+<details>
+<summary>UC-1 sequence diagram v1</summary>
+</br>
+
+![Teacher-SD-UC1](https://user-images.githubusercontent.com/76427521/117755815-e9d6cf00-b257-11eb-91d1-1197be7e54d2.PNG)
+
+</details>
+
+---
+
 ### UC-2 InquireEnrolledStudent
 <details>
 <summary>UC-2 sequence diagram v2</summary>
@@ -9,6 +20,8 @@
 
 </details>
 
+---
+
 ### UC-5 InquireEnrolledStudent
 <details>
 <summary>UC-5 sequence diagram</summary>
@@ -17,6 +30,8 @@
 ![슬라이드1](https://user-images.githubusercontent.com/64057843/117558537-59628800-b0b9-11eb-84ae-7630630aa4db.PNG)
 ![슬라이드2](https://user-images.githubusercontent.com/64057843/117558541-5bc4e200-b0b9-11eb-91c0-222efad55566.PNG)
 </details>
+
+---
 
 ### UC-6 CheckAttendance
 <details>
