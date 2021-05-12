@@ -37,7 +37,7 @@
 ### UC-3 Logout
 
 <details>
-<summary>UC-3 Sequence Diagram_v2</summary>  
+<summary>UC-3 Sequence Diagram</summary>  
   
 ![001](https://user-images.githubusercontent.com/59490892/117540902-4c5b7f80-b04c-11eb-879a-be96eeac3172.JPG)
 
