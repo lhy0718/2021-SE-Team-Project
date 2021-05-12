@@ -11,7 +11,7 @@
 
 ---
 
-### UC-2 InquireEnrolledStudent
+### UC-2 AddClass
 <details>
 <summary>UC-2 sequence diagram v2</summary>
 </br>
