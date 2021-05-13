@@ -20,6 +20,14 @@
 
 </details>
 
+<details>
+<summary>UC-2 sequence diagram v3</summary>
+</br>
+
+![Teacher Sequence Diagram-UC-2_v3](https://user-images.githubusercontent.com/11364584/118094497-c6ec1c80-b409-11eb-8bce-1408b302acb7.jpg)
+
+</details>
+
 ---
 
 ### UC-5 InquireEnrolledStudent
@@ -56,5 +64,13 @@
 </br>
 
 ![Teacher Sequence Diagram-UC-6](https://user-images.githubusercontent.com/11364584/117664358-a7bc7780-b1dc-11eb-855e-3ab69d6d7594.jpg)
+
+</details>
+
+<details>
+<summary>UC-6 sequence diagram v3</summary>
+</br>
+
+![Teacher Sequence Diagram-UC-6_v3](https://user-images.githubusercontent.com/11364584/118094575-de2b0a00-b409-11eb-906c-710d56d51dc3.jpg)
 
 </details>
