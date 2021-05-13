@@ -13,6 +13,11 @@
 
 </details>
 
+<details><summary>UC-1 Sequence Diagram_v3</summary>
+  
+![Student_UC-1_v3](https://user-images.githubusercontent.com/79308015/118110602-944c1f00-b41d-11eb-8cc8-5a926296b0a5.JPG)
+
+</details>
 
 ---
 ### UC-2 RegisterClass
