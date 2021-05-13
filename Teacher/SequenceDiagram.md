@@ -18,6 +18,7 @@
 
 ![Teacher Sequence Diagram-UC-2](https://user-images.githubusercontent.com/11364584/117861416-61dedc80-b2cc-11eb-9165-8ac94ba57f10.jpg)
 
+**val1**은 form의 input값의 type이나 range에 대한 유효성이고, **val2**는 서버에 도착한 request 구문이 유효한지 또는 form에 누락된 데이터는 없는지에 대한 유효성으로 구상함. 따라서 **val2**가 false이면 **400 Bad Request**으로 error code를 반환하도록 했음.
 </details>
 
 <details>
@@ -26,6 +27,7 @@
 
 ![Teacher Diagrams-UC-2_v3](https://user-images.githubusercontent.com/11364584/118148061-29b1d800-b44b-11eb-9b75-eb6a626c2661.jpg)
 
+상황에 따라 다르게 받던 Status Code를 하나의 변수를 리턴 받는 것으로 추상화 함
 </details>
 
 ---
@@ -65,6 +67,7 @@
 
 ![Teacher Sequence Diagram-UC-6](https://user-images.githubusercontent.com/11364584/117664358-a7bc7780-b1dc-11eb-855e-3ab69d6d7594.jpg)
 
+**val**은 request 구문이 유효한지 또는 누락된 데이터는 없는지에 대한 유효성으로 구상함. 따라서 val이 false이면 **400 Bad Request**으로 error code를 반환하도록 했음.
 </details>
 
 <details>
@@ -73,4 +76,6 @@
 
 ![Teacher Sequence Diagram-UC-6_v3](https://user-images.githubusercontent.com/11364584/118094575-de2b0a00-b409-11eb-906c-710d56d51dc3.jpg)
 
+
+상황에 따라 다르게 받던 Status Code를 하나의 변수를 리턴 받는 것으로 추상화 함. **addClassService**를 **classService**로 변경
 </details>
