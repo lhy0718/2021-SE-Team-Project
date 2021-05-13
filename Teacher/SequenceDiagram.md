@@ -24,7 +24,7 @@
 <summary>UC-2 sequence diagram v3</summary>
 </br>
 
-![Teacher Sequence Diagram-UC-2_v3](https://user-images.githubusercontent.com/11364584/118094497-c6ec1c80-b409-11eb-8bce-1408b302acb7.jpg)
+![Teacher Diagrams-UC-2_v3](https://user-images.githubusercontent.com/11364584/118148061-29b1d800-b44b-11eb-9b75-eb6a626c2661.jpg)
 
 </details>
 
