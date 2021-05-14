@@ -16,6 +16,8 @@
 <summary>UC-2 class diagram</summary>
 </br>
 
+![Teacher Diagrams-ClassDiagram UC-2](https://user-images.githubusercontent.com/11364584/118251897-1e11f000-b4e3-11eb-953d-99537aecdaed.jpg)
+
 </details>
 
 ---
@@ -35,5 +37,7 @@
 <details>
 <summary>UC-6 class diagram</summary>
 </br>
+
+![Teacher Diagrams-ClassDiagram UC-6](https://user-images.githubusercontent.com/11364584/118251920-24a06780-b4e3-11eb-8820-e7edce8506b7.jpg)
 
 </details>
