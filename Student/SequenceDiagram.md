@@ -27,7 +27,7 @@
 
 <details><summary>UC-1 Sequence Diagram_v3</summary>
   
-![Student_UC-1_v3-2](https://user-images.githubusercontent.com/79308015/118213298-9effc600-b4a8-11eb-81fe-ca72959335f6.JPG)
+![Student_UC-1_v3-2](https://user-images.githubusercontent.com/79308015/118233252-9d47f980-b4cc-11eb-8c6b-0082537dedb8.JPG)
 
 </details>
 
