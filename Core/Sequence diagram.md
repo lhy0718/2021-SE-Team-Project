@@ -31,10 +31,15 @@
 ![000](https://user-images.githubusercontent.com/59490892/117540895-482f6200-b04c-11eb-9d7c-d33ca258e923.JPG)
 
 </details>
+
 <details>
 <summary>UC-2 Sequence Diagram_v3</summary>  
+  
 ![image](https://user-images.githubusercontent.com/59490892/118222706-0d4d8400-b4bb-11eb-93c4-0bd3d2310085.png)
+
 </details>
+
+
 ---
 
 ### UC-3 Logout
