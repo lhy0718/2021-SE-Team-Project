@@ -49,6 +49,15 @@
 
 </details>
 
+<details>
+<summary>UC-5 sequence diagram v3</summary>
+</br>
+
+![image](https://user-images.githubusercontent.com/64057843/118227194-18a4ad80-b4c3-11eb-9d30-4c1f78aed35e.png)
+
+</details>
+
+
 ---
 
 ### UC-6 CheckAttendance
