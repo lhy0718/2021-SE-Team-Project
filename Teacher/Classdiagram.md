@@ -6,6 +6,8 @@
 <summary>UC-1 class diagram</summary>
 </br>
 
+![Teacher-UC1-ClassDiagram](https://user-images.githubusercontent.com/76427521/118296784-4ff17980-b518-11eb-9ea0-2046e23e1aff.PNG)
+
 </details>
 
 ---
