@@ -25,6 +25,7 @@
 ### UC-3 Logout
 <details><summary>UC-3 Class diagram</summary>
   
+![sequence-Page-8](https://user-images.githubusercontent.com/59490892/118278819-5b877500-b505-11eb-9290-83ecf7306142.png)
   
   
 </details>
