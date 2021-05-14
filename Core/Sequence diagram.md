@@ -46,7 +46,8 @@ service에서 repository로 가는 작업을 **hasInfo := requestUserInfo()** �
 <details>
 <summary>UC-2 Sequence Diagram_v3</summary>  
   
-![image](https://user-images.githubusercontent.com/59490892/118222706-0d4d8400-b4bb-11eb-93c4-0bd3d2310085.png)
+![sequence-Page-2](https://user-images.githubusercontent.com/59490892/118277740-10b92d80-b504-11eb-9af4-8c70f6e1a6cd.png)
+
 
 REST API 를 쓰기 사용할 예정이기에 controller 전에 page를 그리는 부분이 필요 없으므로 Page Maker를 구조상에서 제외하였고,
 최종적으로 User - UI - Controller - Service - Repository - DB 구조로 sequence diagram을 작성하였습니다.
@@ -77,5 +78,8 @@ controller에서 validation 과정도 있으면 좋을거 같아요.
 <details>
 <summary>UC-3 Sequence Diagram_v2</summary>  
   
+![sequence-Page-3](https://user-images.githubusercontent.com/59490892/118277882-41996280-b504-11eb-94fb-73a124909073.png)
+
+
 
 </details>
