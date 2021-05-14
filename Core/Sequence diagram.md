@@ -34,7 +34,7 @@
 
 <details>
 <summary>UC-2 Sequence Diagram_v2 feedback</summary>  
-
+   
 - [이한용] alt block의 하단의 **send result, refresh page** 부분은 분기에 상관없이 중복 되므로 블록 바깥으로 빼도 되지 않을까 싶습니다. 
 database 까지 작업이 진행되지 않은 상태에서 **user email**과 **password**의 오류 여부가 결정될지 의문이 있습니다. 따라서 alt block으로 진입하는 시점이 **find user** 이후 이어야 할 것 같습니다.
 service에서 repository로 가는 작업을 **hasInfo := requestUserInfo()** 으로 설정하고, alt block의 분기문을 **hasInfo == true** 와 같은 조건문으로 변경하면 좋을 것 같습니다.
