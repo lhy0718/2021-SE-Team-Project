@@ -53,7 +53,7 @@
 <summary>UC-5 sequence diagram v3</summary>
 </br>
 
-![image](https://user-images.githubusercontent.com/64057843/118227194-18a4ad80-b4c3-11eb-9d30-4c1f78aed35e.png)
+![image](https://user-images.githubusercontent.com/64057843/118227744-06773f00-b4c4-11eb-86a8-20303b2a5cd8.png)
 
 </details>
 
