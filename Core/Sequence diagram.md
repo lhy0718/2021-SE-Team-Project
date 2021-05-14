@@ -70,3 +70,9 @@ controller에서 validation 과정도 있으면 좋을거 같아요.
 - [정나린] 로그아웃 이후에 접근 권한이 없어지는 것을 표현하지 않아도 될는지 잘 모르겠습니다.
 
 </details>
+
+<details>
+<summary>UC-3 Sequence Diagram_v2</summary>  
+  
+
+</details>
