@@ -7,6 +7,26 @@
 
 ![Teacher-SD-UC1](https://user-images.githubusercontent.com/76427521/117755815-e9d6cf00-b257-11eb-91d1-1197be7e54d2.PNG)
 
+로그인에 성공하면 userID객체를 생성하여 해당 객체를 Service로 전달한다.<br>
+Service는 Repository를 통해 DB로부터 Class의 List를 받아와 Validation을 걸쳐 Controller로 전달<br>
+Controller는 ClassList를 UI에게 전달하여 User에게 Display한다.
+</details>
+
+<details>
+<summary>UC-1 sequence diagram v2 feedback</summary>
+
+- [김지혜]로그인 한 페이지에서 진행되는 상황이므로 user->user Interface로 가는 경로에는 Login이 아닌 다른 button click 과 같은 내용이 들어가는 것이 좋을 것 같습니다. 로그인을 통해 user정보를 얻어오는것을 표현하려하신것이라면 후에 controller에 접근하여 현재 로그인한 user의 info를 check 하는 부분을 넣는다면 좋을 것 같습니다.
+</details>
+
+<details>
+<summary>UC-1 sequence diagram v2</summary>
+</br>
+
+![Teacher-SD-UC1(v2)](https://user-images.githubusercontent.com/76427521/118295824-3dc30b80-b517-11eb-9775-58734d1e0db1.PNG)
+
+User -> User Interface를 click으로 수정 <br>
+id객체의 destroy 추가.
+
 </details>
 
 ---
