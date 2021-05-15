@@ -75,3 +75,17 @@ Actor | Actor's Goal | Use Case Name
 - [Core & Auth](/Core/DomainModel.md)
 - [Teacher](/Teacher/DomainModel.md)
 - [Student](/Student/DomainModel.md)
+
+## System Design Document(SDD)
+
+### Core
+- [Sequence Diagram](Core\SequenceDiagram.md)
+- [Class Diagram](Core\Classdiagram.md)
+
+### Teacher
+- [Sequence Diagram](Teacher\SequenceDiagram.md)
+- [Class Diagram](Teacher\Classdiagram.md)
+
+### Student
+- [Sequence Diagram](Student\SequenceDiagram.md)
+- [Class Diagram](Student\Classdiagram.md)
