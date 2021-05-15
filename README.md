@@ -79,13 +79,13 @@ Actor | Actor's Goal | Use Case Name
 ## System Design Document(SDD)
 
 ### Core
-- [Sequence Diagram](Core\SequenceDiagram.md)
-- [Class Diagram](Core\Classdiagram.md)
+- [Sequence Diagram](/Core/SequenceDiagram.md)
+- [Class Diagram](/Core/Classdiagram.md)
 
 ### Teacher
-- [Sequence Diagram](Teacher\SequenceDiagram.md)
-- [Class Diagram](Teacher\Classdiagram.md)
+- [Sequence Diagram](/Teacher/SequenceDiagram.md)
+- [Class Diagram](/Teacher/Classdiagram.md)
 
 ### Student
-- [Sequence Diagram](Student\SequenceDiagram.md)
-- [Class Diagram](Student\Classdiagram.md)
+- [Sequence Diagram](/Student/SequenceDiagram.md)
+- [Class Diagram](/Student/Classdiagram.md)
