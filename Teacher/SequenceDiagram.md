@@ -67,7 +67,7 @@ id객체의 destroy 추가.
 
 ![Teacher Diagrams-UC-2_v3](https://user-images.githubusercontent.com/11364584/118348312-5c132080-b584-11eb-9d09-a28580117e04.jpg)
 
-상황에 따라 다르게 받던 Status Code를 하나의 변수를 리턴 받는 것으로 추상화 함
+상황에 따라 다르게 받던 Status Code를 하나의 변수를 리턴 받는 것으로 추상화 함. **addClassService**를 **classService**로 변경
 </details>
 
 ---
@@ -161,5 +161,5 @@ val값을 정상적으로 사용한다면 updateAteendace(a) 함수에 대한 �
 
 ![Teacher Diagrams-UC-6_v3](https://user-images.githubusercontent.com/11364584/118348328-6f25f080-b584-11eb-8164-9c0f253e9f0f.jpg)
 
-상황에 따라 다르게 받던 Status Code를 하나의 변수를 리턴 받는 것으로 추상화 함. **addClassService**를 **classService**로 변경
+상황에 따라 다르게 받던 Status Code를 하나의 변수를 리턴 받는 것으로 추상화 함.
 </details>
