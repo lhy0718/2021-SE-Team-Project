@@ -12,7 +12,7 @@ UC-1 class diagram
 
 UC-2 class diagram
 
-![Teacher Diagrams-ClassDiagram UC-2](https://user-images.githubusercontent.com/11364584/118362189-6c012380-b5c9-11eb-81b2-c7cf7b352e02.jpg)
+![Teacher Diagrams-ClassDiagram UC-2](https://user-images.githubusercontent.com/11364584/118363009-4fff8100-b5cd-11eb-9551-38100022ad47.jpg)
 
 ---
 
@@ -28,4 +28,4 @@ UC-5 class diagram
 
 UC-6 class diagram
 
-![Teacher Diagrams-ClassDiagram UC-6](https://user-images.githubusercontent.com/11364584/118352135-be771b80-b59a-11eb-8ea0-65dc157c7119.jpg)
+![Teacher Diagrams-ClassDiagram UC-6](https://user-images.githubusercontent.com/11364584/118363018-58f05280-b5cd-11eb-8aed-b1289f8e5c2b.jpg)
