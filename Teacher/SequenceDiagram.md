@@ -25,6 +25,10 @@ id객체의 destroy 추가.
 
 ## UC-2 AddClass
 
+### UC-2 sequence diagram v1
+
+![KakaoTalk_20210515_234838168](https://user-images.githubusercontent.com/64057843/118365577-4a5b6880-b5d8-11eb-894b-e96debe7cda1.jpg)
+
 ### UC-2 sequence diagram v2
 
 ![Teacher Sequence Diagram-UC-2](https://user-images.githubusercontent.com/11364584/117861416-61dedc80-b2cc-11eb-9165-8ac94ba57f10.jpg)
