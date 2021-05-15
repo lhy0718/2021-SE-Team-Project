@@ -65,7 +65,7 @@ id객체의 destroy 추가.
 <summary>UC-2 sequence diagram v3</summary>
 </br>
 
-![Teacher Diagrams-UC-2_v3](https://user-images.githubusercontent.com/11364584/118148061-29b1d800-b44b-11eb-9b75-eb6a626c2661.jpg)
+![Teacher Diagrams-UC-2_v3](https://user-images.githubusercontent.com/11364584/118348312-5c132080-b584-11eb-9d09-a28580117e04.jpg)
 
 상황에 따라 다르게 받던 Status Code를 하나의 변수를 리턴 받는 것으로 추상화 함
 </details>
@@ -159,8 +159,7 @@ val값을 정상적으로 사용한다면 updateAteendace(a) 함수에 대한 �
 <summary>UC-6 sequence diagram v3</summary>
 </br>
 
-![Teacher Sequence Diagram-UC-6_v3](https://user-images.githubusercontent.com/11364584/118094575-de2b0a00-b409-11eb-906c-710d56d51dc3.jpg)
-
+![Teacher Diagrams-UC-6_v3](https://user-images.githubusercontent.com/11364584/118348328-6f25f080-b584-11eb-8164-9c0f253e9f0f.jpg)
 
 상황에 따라 다르게 받던 Status Code를 하나의 변수를 리턴 받는 것으로 추상화 함. **addClassService**를 **classService**로 변경
 </details>
