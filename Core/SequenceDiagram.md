@@ -79,7 +79,7 @@ email/password 유효 여부 확인과,email/password에 따른 user info를 불
 
 
 
-### UC-2 Sequence Diagram_v3
+### UC-2 Sequence Diagram_v3(Final version)
 
 최종적으로 User - UI - Controller - Auth Service - User Repository - DB 구조로 sequence diagram을 작성하였습니다.  
 
@@ -120,7 +120,7 @@ email/password 유효 여부 확인과,email/password에 따른 user info를 불
 
 
 
-### UC-3 Sequence Diagram_v2 
+### UC-3 Sequence Diagram_v2 (Final version)
 
 최종적으로 User - UI - Controller - User Repository - DB 구조로 sequence diagram을 작성하였습니다.  
 
