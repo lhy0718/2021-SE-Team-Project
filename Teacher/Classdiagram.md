@@ -20,7 +20,7 @@ UC-2 class diagram
 
 UC-5 class diagram
 
-![image](https://user-images.githubusercontent.com/64057843/118350759-77395c80-b593-11eb-8ce9-2325e5d2e67a.png)
+![image](https://user-images.githubusercontent.com/64057843/118363008-4ece5400-b5cd-11eb-82eb-5c63a8fbc564.png)
 
 ---
 
