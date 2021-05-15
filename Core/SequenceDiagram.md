@@ -91,9 +91,6 @@ email/password 유효 여부 확인과,email/password에 따른 user info를 불
 ![sequence-Page-2](https://user-images.githubusercontent.com/59490892/118277740-10b92d80-b504-11eb-9af4-8c70f6e1a6cd.png)
 
 
-REST API 를 쓰기 사용할 예정이기에 controller 전에 page를 그리는 부분이 필요 없으므로 Page Maker를 구조상에서 제외하였고,
-최종적으로 User - UI - Controller - Service - Repository - DB 구조로 sequence diagram을 작성하였습니다.
-
 </details>
 
 
