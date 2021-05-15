@@ -1,7 +1,7 @@
 # Class Diagram
 
 ## UC-1 AvailableClassList
-![Student_UC-1_ClassDiagram](https://user-images.githubusercontent.com/79308015/118356289-71517480-b5af-11eb-87cd-fabcb009b6a6.JPG)
+![Student_UC-1_ClassDiagram](https://user-images.githubusercontent.com/79308015/118362478-9b646000-b5ca-11eb-8ee0-e9146eb12e8c.JPG)
 
 
 ---
