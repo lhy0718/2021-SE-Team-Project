@@ -30,6 +30,8 @@
 <summary>UC-5 class diagram</summary>
 </br>
 
+![image](https://user-images.githubusercontent.com/64057843/118348577-4e5e9a80-b586-11eb-8938-a6aae55d2657.png)
+
 </details>
 
 ---
