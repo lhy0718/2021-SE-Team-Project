@@ -23,7 +23,7 @@
      
     click 개설 수업 조회 부분이 본인 학교의 모든 수업을 조회하려는 목적이라면 특정 수업을 의미하는 parameter가 필요하지 않을 것 같습니다.(한용님 feedback에 대한 의견)
 
-### UC-1 Sequence Diagram_v3 
+### UC-1 Sequence Diagram_v3 (Final version)
   
 ![Student_UC-1_v3-2](https://user-images.githubusercontent.com/79308015/118356116-b1fcbe00-b5ae-11eb-9da6-1a8c51f65dc2.JPG)
 : 수업 검색 시에 수업명 validation 과정을 추가하여 val에 true/false를 반환받음. true일 떄는 검색, false일 때는 error alert</br>
@@ -61,7 +61,7 @@ alt block의 destroy 부분은 분기에 상관없이 중복 되므로 블록 �
 - [김지혜]alt block 뒤의 부분에 User에게 UI가 보여지는 부분을 result displayed나 refresh page 등을 사용하여 추가해준다면 좋을 것 같습니다. 
 - [진겸]  Class Repository 에서 DB에 접속 할때는 함수의 형태보단SQL 로 하게 되는데 해당 부분 어떻게 표현 할지 생각 해보면 좋을 듯 합니다. (혹은 ORM 사용)
 
-### UC-2 Sequence Diagram_v3
+### UC-2 Sequence Diagram_v3 (Final version)
 
 ![Student-SD-UC2(v3)](https://user-images.githubusercontent.com/76427521/118348250-e5762300-b583-11eb-8fc9-0c32c180c9ad.PNG)
 
