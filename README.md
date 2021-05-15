@@ -3,7 +3,7 @@
 1. [Contributors](#Contributors)
 2. [Problem Statement](#Problem-Statement)
 3. [Sub-Group](#Sub-Group)
-4. [Requirements (Stories)](#Requirments-(Stories))
+4. [Requirements (Stories)](#Requirements-(Stories))
 5. [Use Case](#Use-Case)
 6. [Domain Model](#Domain-Model)
 7. [System Design Document(SDD)](#System-Design-Document(SDD))
