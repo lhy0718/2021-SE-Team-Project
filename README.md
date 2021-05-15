@@ -88,4 +88,4 @@ Actor | Actor's Goal | Use Case Name
 
 ### Student
 - [Sequence Diagram](/Student/SequenceDiagram.md)
-- [Class Diagram](/Student/Classdiagram.md)
+- [Class Diagram](/Student/ClassDiagram.md)
