@@ -14,7 +14,7 @@ Controller는 ClassList를 UI에게 전달하여 User에게 Display한다.
 
 - [김지혜]로그인 한 페이지에서 진행되는 상황이므로 user->user Interface로 가는 경로에는 Login이 아닌 다른 button click 과 같은 내용이 들어가는 것이 좋을 것 같습니다. 로그인을 통해 user정보를 얻어오는것을 표현하려하신것이라면 후에 controller에 접근하여 현재 로그인한 user의 info를 check 하는 부분을 넣는다면 좋을 것 같습니다.
 
-### UC-1 sequence diagram v2
+### UC-1 sequence diagram v2 (Final version)
 
 ![Teacher-SD-UC1(v2)](https://user-images.githubusercontent.com/76427521/118295824-3dc30b80-b517-11eb-9775-58734d1e0db1.PNG)
 
@@ -46,7 +46,7 @@ id객체의 destroy 추가.
     1. [답변: 이한용] confirm == false인 경우를 따로 두지 않은 이유는 사용자가 '네'를 클릭했을 때만 addClass가 진행이 되어 code 200을 받아 UC-1으로 빠져나가기 때문입니다. 제가 이해한 바로는 if else 인 경우에 alt를 사용하고 if만 있을때는 opt을 사용하기 때문에 이 상황에서는 opt가 적절한 표시라고 생각했습니다.
     2. 위의 답변과 같이 val2는 클래스의 존재여부가 아니라 요청 자체에 대한 유효성입니다. 따라서 db단 까지  가지 않더라도 유효성을 판단할 수 있습니다.
 
-### UC-2 sequence diagram v3
+### UC-2 sequence diagram v3 (Final version)
 
 ![Teacher Diagrams-UC-2_v3](https://user-images.githubusercontent.com/11364584/118348312-5c132080-b584-11eb-9d09-a28580117e04.jpg)
 
@@ -79,7 +79,7 @@ Contorller 에서 val := getStdList(id)가 되고 Service에서 StdList=checkStd
 
 교수자가 수업 목록을 받아오는 과정을 포함함.
 
-### UC-5 sequence diagram v4
+### UC-5 sequence diagram v4 (Final version)
 
 ![image](https://user-images.githubusercontent.com/64057843/118263023-af3b9380-b4f0-11eb-8d36-715e3ed2dc13.png)
 
@@ -110,7 +110,7 @@ User가 직접 수업 이름을 입력하는 것이 아니라, 있는 수업 중
 - [박종혁] **val := updateAttendance(a)** 부분에서 해당 함수에 대한 결과를 return받지 않았는데 val값의 어떻게 결정된것인지 이해하기가 힘듭니다. (UC-2의 val2도 마찬가지)
 val값을 정상적으로 사용한다면 updateAteendace(a) 함수에 대한 결과를 Service로부터 return받아서 그에 따른 분기를 나누는것이 더 좋을 것같습니다.(ex. val=true면 update가 제대로 이루어진것, false면 업데이트에 실패한것)
 
-### UC-6 sequence diagram v3
+### UC-6 sequence diagram v3 (Final version)
 
 ![Teacher Diagrams-UC-6_v3](https://user-images.githubusercontent.com/11364584/118348328-6f25f080-b584-11eb-8164-9c0f253e9f0f.jpg)
 
