@@ -3,10 +3,10 @@
 1. [Contributors](#Contributors)
 2. [Problem Statement](#Problem-Statement)
 3. [Sub-Group](#Sub-Group)
-4. [Requirements (Stories)](#Requirements-(Stories))
+4. [Requirements (Stories)](#Requirements)
 5. [Use Case](#Use-Case)
 6. [Domain Model](#Domain-Model)
-7. [System Design Document(SDD)](#System-Design-Document(SDD))
+7. [System Design Document(SDD)](#System-Design-Document)
 ## Contributors
 
 |  이름  |   학번   |   Github ID   | 비고 |
@@ -48,7 +48,7 @@
 | Teacher   | 학생에 대한 출석 체크, 수업 및 학생 목록, 정보 조회, 출결 결과 및 공지사항 발송 | 이한용, 정나린 |
 | Student   | 수업 신청, 개인 출결현황 및 수업참여도 확인                                     | 박종혁, 윤진호 |
 
-## Requirements (Stories)
+## Requirements
 
 - [Core & Auth](/Core/Requirements.md)
 - [Teacher](/Teacher/Requirements.md)
@@ -83,7 +83,7 @@ Actor | Actor's Goal | Use Case Name
 - [Teacher](/Teacher/DomainModel.md)
 - [Student](/Student/DomainModel.md)
 
-## System Design Document(SDD)
+## System Design Document
 
 ### Core
 - [Sequence Diagram](/Core/SequenceDiagram.md)
