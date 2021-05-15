@@ -12,7 +12,7 @@ UC-1 class diagram
 
 UC-2 class diagram
 
-![Teacher Diagrams-ClassDiagram UC-2](https://user-images.githubusercontent.com/11364584/118352127-b919d100-b59a-11eb-8470-19dbe5372dcd.jpg)
+![Teacher Diagrams-ClassDiagram UC-2](https://user-images.githubusercontent.com/11364584/118362189-6c012380-b5c9-11eb-81b2-c7cf7b352e02.jpg)
 
 ---
 
