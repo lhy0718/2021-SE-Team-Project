@@ -51,10 +51,19 @@ Class diagram의 초안을 완성 한 후 다시 보완을 마침. 다만 서버
 
 ### UC-2 Sequence Diagram v1
 
+로그인 과정을 user-UI-Controller-Auth Service-DB에 맞춰 작성하였으며 전송된 정보의 유효여부에 따라 작성하였습니다.
+
+1.   유저는 email/pw 입력 후 로그인 버튼 클릭
+2.   로그인 버튼 클릭 시 서버에서 정보를 auth service로 전송하여 유효한 정보인지 확인
+   2-1)   유효한 정보일 경우 해당 정보에 대한 결과값을 DB에 요청. 해당 정보 전달.
+   2-2)유효하지 않을 경우 유효하지 않음을 전송.
+3. 결과값에 따라 페이지 새로고침.
+
 ![uc2 login](https://user-images.githubusercontent.com/59490892/117151119-ba593a00-adf3-11eb-8168-b7a410407b71.JPG)
 
 ### UC-2 Sequence Diagram_v2
 
+email/password 유효 여부 확인과,email/password에 따른 user info를 불러오는 과정이 2번으로 나눌 필요 없이 1번으로 변경 가능할듯하다는 피드백에 따라 1번으로 수정하였으며, Auth service와 Database 사이에 User Repository를 추가하였습니다.
 
 ![000](https://user-images.githubusercontent.com/59490892/117540895-482f6200-b04c-11eb-9d7c-d33ca258e923.JPG)
 
@@ -72,6 +81,12 @@ Class diagram의 초안을 완성 한 후 다시 보완을 마침. 다만 서버
 
 ### UC-2 Sequence Diagram_v3
 
+최종적으로 User - UI - Controller - Auth Service - User Repository - DB 구조로 sequence diagram을 작성하였습니다.  
+
+피드백을 반영하여 수정하였으며 수정 사항은 다음과 같습니다.
+
+- 블록 내부의 send result, refresh page 부분이 중복되므로 블록 바깥으로 옮겨 작성
+- UI 로 return 하는 부분에 status code를 추가
 
 ![sequence-Page-2](https://user-images.githubusercontent.com/59490892/118277740-10b92d80-b504-11eb-9af4-8c70f6e1a6cd.png)
 
@@ -88,6 +103,13 @@ REST API 를 쓰기 사용할 예정이기에 controller 전에 page를 그리�
 
 ### UC-3 Sequence Diagram_v1 
 
+로그아웃 과정을 user-UI-Controller-Auth Service-DB에 맞춰 작성하였습니다.
+
+1. 유저는 logout 버튼을 클릭
+
+2. 로그아웃 버튼 클릭 시 서버에서 로그아웃 정보를 전송하여 로그아웃 진행
+
+3. 결과값에 따라 페이지 새로고침.
 
 ![001](https://user-images.githubusercontent.com/59490892/117540902-4c5b7f80-b04c-11eb-879a-be96eeac3172.JPG)
 
@@ -103,7 +125,12 @@ REST API 를 쓰기 사용할 예정이기에 controller 전에 page를 그리�
 
 ### UC-3 Sequence Diagram_v2 
 
+최종적으로 User - UI - Controller - User Repository - DB 구조로 sequence diagram을 작성하였습니다.  
 
+피드백을 반영하여 수정하였으며 수정 사항은 다음과 같습니다.
+
+- logout()함수에 email을 parameter로 추가
+- UI 로 return 하는 부분에 status code를 추가
 
 
 
