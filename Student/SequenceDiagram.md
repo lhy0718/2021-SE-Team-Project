@@ -30,7 +30,7 @@
 
 <details><summary>UC-1 Sequence Diagram_v3</summary>
   
-![Student_UC-1_v3-2](https://user-images.githubusercontent.com/79308015/118233252-9d47f980-b4cc-11eb-8c6b-0082537dedb8.JPG)
+![Student_UC-1_v3-2](https://user-images.githubusercontent.com/79308015/118349524-270acc00-b58c-11eb-944f-f18132a7e0f9.JPG)
 : 수업 검색 시에 수업명 validation 과정을 추가하여 val에 true/false를 반환받음. true일 떄는 검색, false일 때는 error alert</br>
 : status code를 상황에 따라 받지 않고 하나의 변수로 받도록 함</br>
 : className 객체 destrpy 과정, display 되는 과정 추가</br>
