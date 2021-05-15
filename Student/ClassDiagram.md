@@ -7,4 +7,5 @@
 ---
 
 ## UC-2 RegisterClass
-![Student-UC2-ClassDiagram](https://user-images.githubusercontent.com/76427521/118360349-20974700-b5c2-11eb-91e9-c36e7bcca9cf.PNG)
+![Student-UC2-ClassDiagram](https://user-images.githubusercontent.com/76427521/118363775-0153e600-b5d1-11eb-93f6-137827b782e1.PNG)
+
