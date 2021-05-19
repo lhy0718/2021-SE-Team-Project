@@ -11,8 +11,8 @@ ___
 1. 백엔드는 FireBase 대신에 Node.js 사용, 프론트엔드는 React 사용
 
 2. WIP: UI 그리기, ERD 작성
-- UI: 박종혁, 윤진호, 정나린
-- ERD: 김지혜, 이한용
+- UI: 박종혁, 윤진호, 정나린 ( https://www.notion.so/UI-e4d05a6f42d946518c781ce91a8f22c4 )
+- ERD: 김지혜, 이한용 ( https://www.notion.so/erd-7885a837461b4db9a6461ec79f90a4b1 )
 - 기본 Setup: 진겸
 
 3. 이후 일정은 다음 회의에서 다시 논의
