@@ -18,6 +18,36 @@
 | 정나린 | 20180396 |    jnl1128    |
 |  진겸  | 20153031 | kevinOriginal |
 
+
+
+## 실행 방법
+
+### 미리 설치 해야 할 것
+
+- Node.js 14 & NPM
+- Docker desktop & docker-compose
+- Yarn Package Manager
+
+```bash
+$ npm i -g yarn
+```
+
+
+
+### Docker 컨테이너를 통해 서버를 띄우는 방법
+
+```
+// 서버 및 디비 컨테이너 실행
+docker-compose -f docker-compose.yml up
+
+// 컨테이너 서비스 종료 
+docker-compose down $(docker ps -q)
+```
+
+
+
+
+
 ## Problem Statement
 
 ### Problem and Purpose
