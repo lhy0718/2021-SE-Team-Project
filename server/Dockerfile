@@ -1,5 +1,5 @@
 FROM node:14-alpine
-LABEL email="tsot8295@gmail.com"
+LABEL email="tost8295@gmail.com"
 
 RUN apk add --no-cache bash 
 
@@ -16,7 +16,7 @@ COPY ./src /app/src
 COPY ./tsconfig.json /app 
 COPY ./tsconfig.build.json /app 
 COPY ./wait-for-it.sh /app
-COPY ./production.env /app
+# COPY ./production.env /app
 
 # build the app at docker image build stage
 RUN yarn build
