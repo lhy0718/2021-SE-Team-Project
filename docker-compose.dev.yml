@@ -1,0 +1,39 @@
+version: '3'
+services:
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=attendance-db
+    ports:
+      - '5431:5432'
+    volumes:
+      - ./server/database/data/prod:/var/lib/postgresql/data
+
+  nginx:
+    build:
+      context: ./nginx
+    ports:
+      - 9090:443
+    volumes:
+      - ./nginx/cream.dev.conf:/etc/nginx/conf.d/default.conf
+      - ./nginx/dev-ssl:/etc/nginx/ssl
+
+  apiserver:
+    build:
+      context: ./server
+      dockerfile: ./Dockerfile #context 안에서 상대경로
+    environment:
+      - NODE_ENV=development
+    command: ['/app/wait-for-it.sh', 'db:5432', '--', 'yarn', 'start:dev']
+    volumes:
+      - ./server:/app:cached
+
+  frontserver:
+    build:
+      context: ./client
+      dockerfile: ./Dockerfile
+    command: ['yarn', 'start']
+    volumes:
+      - ./client:/app:cached
