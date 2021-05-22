@@ -80,15 +80,15 @@ docker-compose down $(docker ps -q)
 
 ## Requirements
 
-- [Core & Auth](/Core/Requirements.md)
-- [Teacher](/Teacher/Requirements.md)
-- [Student](/Student/Requirements.md)
+- [Core & Auth](/docs/Core/Requirements.md)
+- [Teacher](/docs/Teacher/Requirements.md)
+- [Student](/docs/Student/Requirements.md)
 
 ## Use Case
 
-- [Core & Auth](/Core/UseCases.md)
-- [Teacher](/Teacher/UseCases.md)
-- [Student](/Student/Usecases.md)
+- [Core & Auth](/docs/Core/UseCases.md)
+- [Teacher](/docs/Teacher/UseCases.md)
+- [Student](/docs/Student/Usecases.md)
 
 Actor | Actor's Goal | Use Case Name
 -|-|-
@@ -109,20 +109,20 @@ Actor | Actor's Goal | Use Case Name
 
 ## Domain Model
 
-- [Core & Auth](/Core/DomainModel.md)
-- [Teacher](/Teacher/DomainModel.md)
-- [Student](/Student/DomainModel.md)
+- [Core & Auth](/docs/Core/DomainModel.md)
+- [Teacher](/docs/Teacher/DomainModel.md)
+- [Student](/docs/Student/DomainModel.md)
 
 ## System Design Document
 
 ### Core
-- [Sequence Diagram](/Core/SequenceDiagram.md)
-- [Class Diagram](/Core/Classdiagram.md)
+- [Sequence Diagram](/docs/Core/SequenceDiagram.md)
+- [Class Diagram](/docs/Core/Classdiagram.md)
 
 ### Teacher
-- [Sequence Diagram](/Teacher/SequenceDiagram.md)
-- [Class Diagram](/Teacher/Classdiagram.md)
+- [Sequence Diagram](/docs/Teacher/SequenceDiagram.md)
+- [Class Diagram](/docs/Teacher/Classdiagram.md)
 
 ### Student
-- [Sequence Diagram](/Student/SequenceDiagram.md)
-- [Class Diagram](/Student/ClassDiagram.md)
+- [Sequence Diagram](/docs/Student/SequenceDiagram.md)
+- [Class Diagram](/docs/Student/ClassDiagram.md)
