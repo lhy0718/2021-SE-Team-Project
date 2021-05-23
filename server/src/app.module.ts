@@ -17,6 +17,7 @@ const ConfiguredTypeOrmModule = TypeOrmModule.forRootAsync({
       password: configService.get('DB_PASSWORD'),
       database: configService.get('DB_DATABASE_NAME'),
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
+      // migrations: [__dirname + '/**/migrations/*{.ts,.js}'],
       // synchronize: process.env.NODE_ENV === 'development',
       // TODO : After development, Set sync false.
       synchronize: true,
@@ -29,6 +30,7 @@ const ConfiguredTypeOrmModule = TypeOrmModule.forRootAsync({
         connectionTimeoutMillis: 0,
       },
     }
+    console.log('[ORM CONFIG]', ormconfigs)
     return ormconfigs
   },
   inject: [ConfigService],
