@@ -2,14 +2,32 @@ version: '3'
 services:
   db:
     image: postgres
+    env_file:
+      - ./server/.development.env
     environment:
       - POSTGRES_USER=admin
       - POSTGRES_PASSWORD=admin
       - POSTGRES_DB=attendance-db
     ports:
-      - '5431:5432'
+      - '5432:5432'
     volumes:
       - ./server/database/data/prod:/var/lib/postgresql/data
+    networks:
+      - postgres
+
+  # pgadmin:
+  #   links:
+  #     - db:postgres
+  #   container_name: pgadmin
+  #   image: dpage/pgadmin4
+  #   ports:
+  #     - '8080:80'
+  #   volumes:
+  #     - ./server/database/data/pgadmin:/root/.pgadmin
+  #   env_file:
+  #     - ./server/.development.env
+  #   networks:
+  #     - postgres
 
   apiserver:
     build:
@@ -17,9 +35,15 @@ services:
       dockerfile: ./Dockerfile #context 안에서 상대경로
     environment:
       - NODE_ENV=development
-    command: ['/app/wait-for-it.sh', 'db:5432', '--', 'yarn', 'start:dev']
+    command: ['/app/wait-for-it.sh', 'yarn', 'start:dev']
     volumes:
       - ./server:/app:cached
+    networks:
+      - postgres
+
+networks:
+  postgres:
+    driver: bridge
 
   # nginx:
   #   build:
