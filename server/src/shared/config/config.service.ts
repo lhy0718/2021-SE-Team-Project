@@ -1,13 +1,16 @@
 import type { TypeOrmModuleOptions } from '@nestjs/typeorm'
-import dotenv from 'dotenv'
-import fs from 'fs'
+import * as dotenv from 'dotenv'
+import * as fs from 'fs'
 
 export class ConfigService {
   private readonly envConfig: { [key: string]: string }
 
   constructor(filePath: string) {
-    const nodeEnv = this.nodeEnv
     this.envConfig = dotenv.parse(fs.readFileSync(filePath))
+  }
+
+  get(key: string): string {
+    return this.envConfig[key]
   }
 
   get isDevelopment(): boolean {
@@ -20,10 +23,6 @@ export class ConfigService {
 
   get nodeEnv(): string {
     return this.get('NODE_ENV') || 'development'
-  }
-
-  get(key: string): string {
-    return this.envConfig[key]
   }
 
   getNumber(key: string): number {
