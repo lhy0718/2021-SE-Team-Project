@@ -1,0 +1,9 @@
+@import '~antd/dist/antd.css';
+
+.Signup{
+    margin: 24px;
+}
+
+.Signup .ant-btn {
+    margin: 4px;
+  }
