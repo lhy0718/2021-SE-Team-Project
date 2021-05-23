@@ -1,0 +1,9 @@
+@import '~antd/dist/antd.css';
+
+.Login {
+    margin: 24px;
+}
+
+.User-Login-Image{
+    margin: 24px;
+}
