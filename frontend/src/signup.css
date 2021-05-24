@@ -9,6 +9,11 @@
 }
 
 .Signup .ant-input-group-compact .ant-form-item{
+    width: 20%;
     padding-right: 4px;
     margin-bottom: 0;
+}
+
+.Signup .ant-input-group-compact .ant-form-item .ant-input-number{
+    width: 100%;
 }

@@ -55,21 +55,22 @@ const Signup = (props) => {
         <Form.Item label="아이디" name="id" rules={[{required: true}]}>
           <Input />
         </Form.Item>
-
-        <Form.Item label="학년/반/번호" >
-          <Input.Group compact>
-            <Form.Item style={{ width: '20%' }} name='grade' rules={[{required: true, message: '학년을 입력하세요.'}]}>
-              <InputNumber style={{ width: '100%' }} min={1} max={10} />
-            </Form.Item>
-            <Form.Item style={{ width: '20%' }} name='class-number' rules={[{required: true, message: '반을 입력하세요.'}]}>
-              <InputNumber style={{ width: '100%' }} min={1} max={50} />
-            </Form.Item>
-            <Form.Item style={{ width: '20%' }} name='student-number' rules={[{required: true, message: '번호를 입력하세요.'}]}>
-              <InputNumber style={{ width: '100%' }} min={1} max={100} />
-            </Form.Item>
-          </Input.Group>
-        </Form.Item>
-
+        {props.isStudentScreen &&
+          <Form.Item label="학년/반/번호" >
+            <Input.Group compact>
+              <Form.Item name='grade' rules={[{required: true, message: '학년을 입력하세요.'}]}>
+                <InputNumber min={1} max={10} />
+              </Form.Item>
+              <Form.Item name='class-number' rules={[{required: true, message: '반을 입력하세요.'}]}>
+                <InputNumber min={1} max={50} />
+              </Form.Item>
+              <Form.Item name='student-number' rules={[{required: true, message: '번호를 입력하세요.'}]}>
+                <InputNumber min={1} max={100} />
+              </Form.Item>
+            </Input.Group>
+          </Form.Item>
+        }
+      
         <Form.Item label="비밀번호" name="password" rules={[{required: true}]}>
           <Input.Password onChange={ (e)=>{setPassword(e.target.value)} }/>
         </Form.Item>
