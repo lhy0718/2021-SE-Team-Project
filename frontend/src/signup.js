@@ -1,24 +1,11 @@
 import React, { useState } from 'react'
-import { Form, Input, Button, Row } from 'antd'
+import { Form, Input, Button, Row, InputNumber, message } from 'antd'
 import './Signup.css'
 import { withRouter } from 'react-router-dom'
 
 const inputLayout = {
   labelCol: { span: 6, },
   wrapperCol: { span: 12, },
-}
-
-const buttonLayout = {
-  wrapperCol:{
-    sm: {
-      offset: 6,
-      span: 12,
-    },
-    xs: {
-      offset: 0,
-      span: 12,
-    },
-  }
 }
 
 const validateMessages = {
@@ -59,31 +46,50 @@ const Signup = (props) => {
       <Row justify='center'>
         <h1>회원가입</h1>
       </Row>
+
       <Form {...inputLayout} name='signup-form' onFinish={onFinish} onFinishFailed={onFinishFailed} validateMessages={validateMessages}>
         <Form.Item label="이름" name="name" rules={[{required: true}]}>
           <Input />
         </Form.Item>
+
         <Form.Item label="아이디" name="id" rules={[{required: true}]}>
           <Input />
         </Form.Item>
+
+        <Form.Item label="학년/반/번호" >
+          <Input.Group compact>
+            <Form.Item style={{ width: '20%' }} name='grade' rules={[{required: true, message: '학년을 입력하세요.'}]}>
+              <InputNumber style={{ width: '100%' }} min={1} max={10} />
+            </Form.Item>
+            <Form.Item style={{ width: '20%' }} name='class-number' rules={[{required: true, message: '반을 입력하세요.'}]}>
+              <InputNumber style={{ width: '100%' }} min={1} max={50} />
+            </Form.Item>
+            <Form.Item style={{ width: '20%' }} name='student-number' rules={[{required: true, message: '번호를 입력하세요.'}]}>
+              <InputNumber style={{ width: '100%' }} min={1} max={100} />
+            </Form.Item>
+          </Input.Group>
+        </Form.Item>
+
         <Form.Item label="비밀번호" name="password" rules={[{required: true}]}>
           <Input.Password onChange={ (e)=>{setPassword(e.target.value)} }/>
         </Form.Item>
+
         <Form.Item label="비밀번호 확인" name="password-check" rules={[{required: true, validator: checkPassword}]}>
           <Input.Password />
         </Form.Item>
+
         <Form.Item label="전화번호" name="phone" rules={[{required: true, validator: checkNum}]}>
           <Input />
         </Form.Item>
+
         <Form.Item label="이메일 주소" name="email" rules={[{required: true, type: 'email'}]}>
           <Input />
         </Form.Item>
-        <Form.Item {...buttonLayout}>
-          <Row justify='center'>
-            <Button htmlType="button" onClick={props.history.goBack()}>이전</Button>
-            <Button type="primary" htmlType="submit">다음</Button>
-          </Row>
-        </Form.Item>
+
+        <Row justify='center'>
+          <Button htmlType="button" onClick={props.history.goBack()}>이전</Button>
+          <Button type="primary" htmlType="submit">다음</Button>
+        </Row>
       </Form>
     </div>
   )
