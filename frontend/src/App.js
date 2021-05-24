@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import './SelectClassNumberPopup'
+import SelectClassNumberPopup from './SelectClassNumberPopup';
 
 function App() {
   return (
@@ -17,6 +19,7 @@ function App() {
         >
           Learn React
         </a>
+        <SelectClassNumberPopup />
       </header>
     </div>
   );
