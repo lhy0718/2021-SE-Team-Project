@@ -1,6 +1,6 @@
 version: '3'
 services:
-  db:
+  postgres:
     image: postgres
     env_file:
       - ./server/.development.env
@@ -12,12 +12,10 @@ services:
       - '5432:5432'
     volumes:
       - ./server/database/data/prod:/var/lib/postgresql/data
-    networks:
-      - postgres
 
   # pgadmin:
   #   links:
-  #     - db:postgres
+  #     - postgres:postgres
   #   container_name: pgadmin
   #   image: dpage/pgadmin4
   #   ports:
@@ -35,15 +33,9 @@ services:
       dockerfile: ./Dockerfile #context 안에서 상대경로
     environment:
       - NODE_ENV=development
-    command: ['/app/wait-for-it.sh', 'yarn', 'start:dev']
+    command: ['/app/wait-for-it.sh', 'db:5432', '--', 'yarn', 'start:dev']
     volumes:
       - ./server:/app:cached
-    networks:
-      - postgres
-
-networks:
-  postgres:
-    driver: bridge
 
   # nginx:
   #   build:
