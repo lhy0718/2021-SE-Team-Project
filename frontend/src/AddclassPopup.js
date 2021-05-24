@@ -18,6 +18,13 @@ const validateMessages = {
   },
 }
 
+const checkNum = (_, value) => {
+  if(!isNaN(value) && parseInt(value) >= 0){
+    return Promise.resolve()
+  }
+  return Promise.reject(new Error('숫자만 입력 가능합니다.'))
+}
+
 const onFinish = (result) => {
   console.log('finish, result:', result)
 }
@@ -50,7 +57,7 @@ const AddclassPopup = () => {
               </Form.Item>
             </Col>
             <Col span={12}>
-              <Form.Item {...inputLayout} label='과목ID' name='classID' rules={[{required: true}]}>
+              <Form.Item {...inputLayout} label='과목ID' name='classID' rules={[{required: true, validator: checkNum}]}>
                 <Input />
               </Form.Item>
             </Col>
