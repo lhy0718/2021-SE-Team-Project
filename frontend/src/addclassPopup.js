@@ -34,7 +34,7 @@ const AddclassPopup = () => {
           <Button form='addclass-form' key='submit' htmlType='submit' type='primary'>등록</Button>,
         ]}
       >
-        <Form name='addclass-form' onFinish={onFinish} onFinishFailed={onFinishFailed} validateMessages={validateMessages}>
+        <Form name='addclassForm' onFinish={onFinish} onFinishFailed={onFinishFailed} validateMessages={validateMessages}>
           <Form.Item label="수업명" name="className" rules={[{required: true}]}>
             <Input />
           </Form.Item>
