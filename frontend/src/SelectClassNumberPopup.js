@@ -31,7 +31,7 @@ const SelectClassNumberPopup = (props) => {
   
   return (
     <div className='SelectClassNumberPopup'>
-      <Button type='primary' onClick={() => setVisible(true)}>수업 추가</Button>
+      <Button type='primary' onClick={() => setVisible(true)}>출석 체크</Button>
       <Modal title='차시 입력' centered visible={visible} onCancel={() => setVisible(false)}
         footer={[
           <Button key='cancel' htmlType='button' onClick={() => setVisible(false)}>취소</Button>,
