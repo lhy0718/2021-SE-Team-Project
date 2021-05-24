@@ -88,7 +88,7 @@ const Signup = (props) => {
         </Form.Item>
 
         <Row justify='center'>
-          <Button htmlType="button" onClick={props.history.goBack()}>이전</Button>
+          <Button htmlType="button" onClick={()=>{props.history.goBack()}}>이전</Button>
           <Button type="primary" htmlType="submit">다음</Button>
         </Row>
       </Form>

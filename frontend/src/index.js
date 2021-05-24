@@ -1,14 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import App from './App';
 import Signup from './Signup';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Signup isStudentScreen={false}/>
+      <Route exact path="/" component={App} />
+      <Route path="/signup/teacher" render={() => <Signup isStudentScreen={false} />} />
+      <Route path="/signup/student" render={() => <Signup isStudentScreen={true} />} />
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
