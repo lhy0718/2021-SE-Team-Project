@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Form, Input, Button, Row, InputNumber, message } from 'antd'
+import { Form, Input, Button, Row, InputNumber } from 'antd'
 import './Signup.css'
 import { withRouter } from 'react-router-dom'
 
@@ -65,7 +65,7 @@ const Signup = (props) => {
                 <InputNumber min={1} max={50} />
               </Form.Item>
               <Form.Item name='studentNumber' rules={[{required: true, message: '번호를 입력하세요.'}]}>
-                <InputNumber min={1} max={100} />
+                <InputNumber min={1} max={99999999} />
               </Form.Item>
             </Input.Group>
           </Form.Item>
