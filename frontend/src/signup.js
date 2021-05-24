@@ -47,7 +47,7 @@ const Signup = (props) => {
         <h1>회원가입</h1>
       </Row>
 
-      <Form {...inputLayout} name='signup-form' onFinish={onFinish} onFinishFailed={onFinishFailed} validateMessages={validateMessages}>
+      <Form {...inputLayout} name='signupForm' onFinish={onFinish} onFinishFailed={onFinishFailed} validateMessages={validateMessages}>
         <Form.Item label="이름" name="name" rules={[{required: true}]}>
           <Input />
         </Form.Item>
@@ -61,10 +61,10 @@ const Signup = (props) => {
               <Form.Item name='grade' rules={[{required: true, message: '학년을 입력하세요.'}]}>
                 <InputNumber min={1} max={10} />
               </Form.Item>
-              <Form.Item name='class-number' rules={[{required: true, message: '반을 입력하세요.'}]}>
+              <Form.Item name='classNumber' rules={[{required: true, message: '반을 입력하세요.'}]}>
                 <InputNumber min={1} max={50} />
               </Form.Item>
-              <Form.Item name='student-number' rules={[{required: true, message: '번호를 입력하세요.'}]}>
+              <Form.Item name='studentNumber' rules={[{required: true, message: '번호를 입력하세요.'}]}>
                 <InputNumber min={1} max={100} />
               </Form.Item>
             </Input.Group>
@@ -75,7 +75,7 @@ const Signup = (props) => {
           <Input.Password onChange={ (e)=>{setPassword(e.target.value)} }/>
         </Form.Item>
 
-        <Form.Item label="비밀번호 확인" name="password-check" rules={[{required: true, validator: checkPassword}]}>
+        <Form.Item label="비밀번호 확인" name="passwordCheck" rules={[{required: true, validator: checkPassword}]}>
           <Input.Password />
         </Form.Item>
 
