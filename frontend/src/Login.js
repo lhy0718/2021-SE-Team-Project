@@ -38,13 +38,13 @@ const Login = () => {
   return (
     <div className="Login">
       <Row justify='center'>
-        <img src={userLoginImage} className="User-Login-Image" alt="User Login" width={100}/>
+        <img src={userLoginImage} className="UserLoginImage" alt="User Login" width={100}/>
       </Row>
       <Form
         {...inputLayout}
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
-        name='login-form'
+        name='loginForm'
       >
         <Form.Item
           label="ID"
