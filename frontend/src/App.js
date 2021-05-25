@@ -3,6 +3,7 @@ import './App.css'
 import { useState } from 'react'
 import LayoutCtrl from './components/LayoutCtrl'
 import { BrowserRouter, Route } from 'react-router-dom'
+import Login from './components/Login'
 
 function App() {
   const [userObj, setUserObj] = useState({
@@ -19,6 +20,7 @@ function App() {
       <BrowserRouter>
         <LayoutCtrl userObj={userObj}>
           {/* <Route path="/" exact component={!!userObj ? Home : Login} /> */}
+          <Login />
           {/* <Route path="/signup" component={Signup} /> */}
         </LayoutCtrl>
       </BrowserRouter>
