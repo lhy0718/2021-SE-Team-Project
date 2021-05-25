@@ -9,15 +9,15 @@ import Home from './components/Home'
 import SelectSignup from './components/SelectSignup'
 
 function App() {
-  // const [userObj, setUserObj] = useState({
-  //   id: 1,
-  //   email: '',
-  //   name: '김교수',
-  //   type: 'S',
-  //   phone: '',
-  //   grade: 1,
-  // })
-  const userObj = false
+  const [userObj, setUserObj] = useState({
+    id: 1,
+    email: '',
+    name: '김교수',
+    type: 'S',
+    phone: '',
+    grade: 1,
+  })
+
   return (
     <div className="App">
       <BrowserRouter>
