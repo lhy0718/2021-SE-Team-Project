@@ -2,7 +2,7 @@ import React from 'react'
 import { Button, Row, Col } from 'antd'
 import './AttendenceCheckBtns.css'
 
-const AttendenceCheckBtns = ({ uID, lecID, lecNum }) => {
+const AttendenceCheckBtns = ({ uID, lecID, lecNum, attendenceState }) => {
   const onClickAttendence = () => {
     console.log({ uID, lecID, lecNum, attendenceType: 'attendence' })
   }
@@ -23,24 +23,28 @@ const AttendenceCheckBtns = ({ uID, lecID, lecNum }) => {
     <div className="AttendenceCheckBtns">
       <Row align="center">
         <Col>
-          <Button htmlType="button" onClick={onClickAttendence}>
+          <Button
+            id="attendenceBtn"
+            htmlType="button"
+            onClick={onClickAttendence}
+          >
             출석
           </Button>
         </Col>
         <Col>
-          <Button htmlType="button" onClick={onClickAbsent}>
+          <Button id="absentBtn" htmlType="button" onClick={onClickAbsent}>
             결석
           </Button>
         </Col>
       </Row>
       <Row align="center">
         <Col>
-          <Button htmlType="button" onClick={onClickTardy}>
+          <Button id="tardyBtn" htmlType="button" onClick={onClickTardy}>
             지각
           </Button>
         </Col>
         <Col>
-          <Button htmlType="button" onClick={onClickEtc}>
+          <Button id="etcBtn" htmlType="button" onClick={onClickEtc}>
             기타
           </Button>
         </Col>

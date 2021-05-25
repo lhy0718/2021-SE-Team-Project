@@ -2,6 +2,7 @@ import React from 'react'
 import { Table } from 'antd'
 import AttendenceCheckBtns from './AttendenceCheckBtns'
 import userProfileImage from './svg/profile-user.svg'
+import { values } from 'lodash'
 
 const columns = [
   {
@@ -34,18 +35,28 @@ const columns = [
     key: 'attendenceCheckButtons',
     align: 'center',
     render: (text, record) => (
-      <AttendenceCheckBtns uID={record.uID} lecID={2} lecNum={3} />
+      <AttendenceCheckBtns
+        uID={record.uID}
+        lecID={record.lecID}
+        lecNum={record.lecNum}
+      />
     ),
   },
 ]
 
-const AttendenceCheck = ({ studentsData }) => {
+const AttendenceCheck = ({ studentsData, lecData, lecNum }) => {
+  const studentsDataAndLecData = studentsData.map((elem) => ({
+    ...elem,
+    lecID: lecData.lecID,
+    lecNum: lecNum,
+  }))
+
   return (
     <div className="AttendenceCheck">
       <Table
         style={{ padding: '6px' }}
         columns={columns}
-        dataSource={studentsData}
+        dataSource={studentsDataAndLecData}
         bordered={true}
       />
     </div>

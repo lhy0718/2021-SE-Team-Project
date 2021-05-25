@@ -51,7 +51,13 @@ function App() {
           />
           <Route
             path="/attendence"
-            render={() => <AttendenceCheck studentsData={shareStudents} />}
+            render={() => (
+              <AttendenceCheck
+                studentsData={shareStudents} // test data
+                lecData={shareLectures[0]} // test data
+                lecNum={1} // test data, 수업 차시 숫자
+              />
+            )}
           />
         </LayoutCtrl>
       </BrowserRouter>
