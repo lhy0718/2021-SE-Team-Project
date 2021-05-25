@@ -8,7 +8,13 @@ import Signup from './components/Signup'
 import Home from './components/Home'
 import SelectSignup from './components/SelectSignup'
 import AttendenceCheck from './components/AttendenceCheck'
-import SelectSignup from './components/SelectSignup'
+
+// for test
+import {
+  sharedTemplate,
+  shareLectures,
+  shareStudents,
+} from './components/constants'
 
 function App() {
   const [userObj, setUserObj] = useState({
@@ -43,7 +49,10 @@ function App() {
             path="/signup/student"
             render={() => <Signup isStudentScreen={true} />}
           />
-          <Route path="/test" render={() => <AttendenceCheck />} />
+          <Route
+            path="/attendence"
+            render={() => <AttendenceCheck studentsData={shareStudents} />}
+          />
         </LayoutCtrl>
       </BrowserRouter>
     </div>

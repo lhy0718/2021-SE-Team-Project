@@ -1,10 +1,53 @@
-import React, { useState } from 'react'
-import { Button } from 'antd'
+import React from 'react'
+import { Table } from 'antd'
+import AttendenceCheckBtns from './AttendenceCheckBtns'
+import userProfileImage from './svg/profile-user.svg'
 
-const AttendenceCheck = () => {
+const columns = [
+  {
+    title: '사진',
+    dataIndex: 'image',
+    key: 'image',
+    align: 'center',
+    render: () => (
+      <img
+        src={userProfileImage}
+        className="userProfileImage"
+        alt="User Profile"
+        width="100px"
+      />
+    ),
+  },
+  {
+    title: '번호',
+    dataIndex: 'studentNum',
+    key: 'studentNum',
+  },
+  {
+    title: '이름',
+    dataIndex: 'name',
+    key: 'name',
+  },
+  {
+    title: '출석 체크',
+    dataIndex: 'attendenceCheckButtons',
+    key: 'attendenceCheckButtons',
+    align: 'center',
+    render: (text, record) => (
+      <AttendenceCheckBtns uID={record.uID} lecID={2} lecNum={3} />
+    ),
+  },
+]
+
+const AttendenceCheck = ({ studentsData }) => {
   return (
     <div className="AttendenceCheck">
-      <Button type="primary">test</Button>
+      <Table
+        style={{ padding: '6px' }}
+        columns={columns}
+        dataSource={studentsData}
+        bordered={true}
+      />
     </div>
   )
 }
