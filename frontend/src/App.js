@@ -6,6 +6,7 @@ import { BrowserRouter, Route } from 'react-router-dom'
 import Login from './components/Login'
 import Signup from './components/Signup'
 import Home from './components/Home'
+import AttendenceCheck from './components/AttendenceCheck'
 
 function App() {
   const [userObj, setUserObj] = useState({
@@ -39,6 +40,7 @@ function App() {
             path="/signup/student"
             render={() => <Signup isStudentScreen={true} />}
           />
+          <Route path="/test" render={() => <AttendenceCheck />} />
         </LayoutCtrl>
       </BrowserRouter>
     </div>
