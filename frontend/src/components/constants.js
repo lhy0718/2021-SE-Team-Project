@@ -3,7 +3,7 @@ export const sharedTemplate = [
     title: '수업명',
     dataIndex: 'lecName',
     key: 'lecName',
-    width: '100px',
+    width: '200px',
     align: 'center',
   },
   {

@@ -6,6 +6,7 @@ import { BrowserRouter, Route } from 'react-router-dom'
 import Login from './components/Login'
 import Signup from './components/Signup'
 import Home from './components/Home'
+import SelectSignup from './components/SelectSignup'
 
 function App() {
   const [userObj, setUserObj] = useState({
@@ -31,6 +32,7 @@ function App() {
               return <Login />
             }}
           />
+          <Route path="/signup" exact component={SelectSignup} />
           <Route
             path="/signup/teacher"
             render={() => <Signup isStudentScreen={false} />}
