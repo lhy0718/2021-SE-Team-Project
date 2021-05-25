@@ -20,13 +20,23 @@ function SelectSignup() {
     <div style={ImageLayout}>
       <div>
         <Link to="/signup/student">
-          <img src={studentImage} alt="User Login" width={500} style={Image} />
+          <img
+            src={studentImage}
+            alt="studentImage"
+            width={500}
+            style={Image}
+          />
           <Typography.Title>STUDENT</Typography.Title>
         </Link>
       </div>
       <div>
         <Link to="/signup/teacher">
-          <img src={teacherImage} alt="User Login" width={500} style={Image} />
+          <img
+            src={teacherImage}
+            alt="teacherImage"
+            width={500}
+            style={Image}
+          />
           <Typography.Title>TEACHER</Typography.Title>
         </Link>
       </div>
