@@ -5,14 +5,14 @@ import LayoutCtrl from './components/LayoutCtrl'
 import { BrowserRouter, Route } from 'react-router-dom'
 import Login from './components/Login'
 import Signup from './components/Signup'
-import AddclassPopup from './components/AddclassPopup'
+import Home from './components/Home'
 
 function App() {
   const [userObj, setUserObj] = useState({
     id: 1,
     email: '',
     name: '김교수',
-    type: 'T',
+    type: 'S',
     phone: '',
     grade: 1,
   })
@@ -21,7 +21,16 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <LayoutCtrl userObj={userObj}>
-          {/* <Route path="/" exact component={!!userObj ? Home : Login} /> */}
+          <Route
+            path="/"
+            exact
+            component={() => {
+              if (userObj) {
+                return <Home userObj={userObj} />
+              }
+              return <Login />
+            }}
+          />
           <Route
             path="/signup/teacher"
             render={() => <Signup isStudentScreen={false} />}

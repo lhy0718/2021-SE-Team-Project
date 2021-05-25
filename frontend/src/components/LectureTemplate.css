@@ -1,0 +1,31 @@
+.LectureTemplate {
+  width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 6rem;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.list-title {
+  background: white;
+  color: black;
+  height: 3rem;
+  font-size: 1.5rem;
+  display: inline-block;
+  align-items: center;
+  justify-content: left;
+}
+
+.content {
+  background: rgb(255, 255, 255);
+}
+
+.addLecture {
+  font-size: 15px;
+  display: inline-block;
+  margin-left: 924px;
+  justify-content: center;
+  background-color: rgb(89, 38, 148);
+  color: white;
+  cursor: pointer;
+}
