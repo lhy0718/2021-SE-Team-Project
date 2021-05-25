@@ -3,14 +3,14 @@ import { Form, Modal, Button, Select, Input } from 'antd'
 
 const { Option } = Select
 
-const SelectClassNumberPopup = ({ lecID }) => {
+const SelectClassNumberPopup = ({ lectureID }) => {
   const [visible, setVisible] = useState(false)
   const [maxClassNumber, setMaxClassNumber] = useState(3)
   const [selectClassNumberForm] = Form.useForm()
 
   const onFinish = (result) => {
     console.log('finish, result:', result)
-    console.log('lecid:', lecID)
+    console.log('lecid:', lectureID)
   }
 
   const onFinishFailed = (result) => {
@@ -49,7 +49,7 @@ const SelectClassNumberPopup = ({ lecID }) => {
             취소
           </Button>,
           <Button
-            form={lecID + 'selectClassNumberForm'}
+            form={lectureID + 'selectClassNumberForm'}
             key="submit"
             htmlType="submit"
             type="primary"
@@ -60,7 +60,7 @@ const SelectClassNumberPopup = ({ lecID }) => {
       >
         <Form
           form={selectClassNumberForm}
-          name={lecID + 'selectClassNumberForm'}
+          name={lectureID + 'selectClassNumberForm'}
           onFinish={onFinish}
           onFinishFailed={onFinishFailed}
         >
