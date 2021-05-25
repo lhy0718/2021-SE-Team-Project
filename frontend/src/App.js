@@ -5,6 +5,7 @@ import LayoutCtrl from './components/LayoutCtrl'
 import { BrowserRouter, Route } from 'react-router-dom'
 import Login from './components/Login'
 import Signup from './components/Signup'
+import AddclassPopup from './components/AddclassPopup'
 
 function App() {
   const [userObj, setUserObj] = useState({
@@ -29,7 +30,6 @@ function App() {
             path="/signup/student"
             render={() => <Signup isStudentScreen={true} />}
           />
-          {/* <Route path="/signup" component={Signup} /> */}
         </LayoutCtrl>
       </BrowserRouter>
     </div>
