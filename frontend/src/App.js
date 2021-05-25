@@ -12,7 +12,7 @@ function App() {
     id: 1,
     email: '',
     name: '김교수',
-    type: 'S',
+    type: 'T',
     phone: '',
     grade: 1,
   })

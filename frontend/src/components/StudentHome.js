@@ -6,17 +6,7 @@ import { sharedTemplate, shareLectures } from './constants'
 function StudentHome({ userObj }) {
   const lectures = shareLectures
 
-  const columns = [
-    ...sharedTemplate,
-    {
-      title: '출결현황 조회',
-      dataIndex: 'myAtd',
-      key: 'myAtd',
-      width: '180px',
-      align: 'center',
-      render: () => <ScheduleOutlined style={{ cursor: 'pointer' }} />,
-    },
-  ]
+  const columns = sharedTemplate
 
   return (
     <LectureTemplate

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import LectureTemplate from './LectureTemplate'
 import { sharedTemplate, shareLectures } from './constants'
+import SelectClassNumberPopup from './SelectClassNumberPopup'
 
 function TeacherHome({ userObj }) {
   const lectures = shareLectures
@@ -11,8 +12,9 @@ function TeacherHome({ userObj }) {
       title: '출석체크',
       dataIndex: 'AtdCheck',
       key: 'AtdCheck',
-      width: '180px',
+      width: '177px',
       align: 'center',
+      render: (text, record) => <SelectClassNumberPopup lecID={record.lecID} />,
     },
   ]
 
