@@ -1,7 +1,7 @@
 import React from 'react'
 import { Form, Input, Button, Row } from 'antd'
 import './Login.css'
-import userLoginImage from './userlogin.svg'
+import userLoginImage from './svg/userlogin.svg'
 
 const inputLayout = {
   labelCol: { span: 6 },
