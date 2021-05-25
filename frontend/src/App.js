@@ -6,14 +6,16 @@ import { BrowserRouter, Route } from 'react-router-dom'
 import Login from './components/Login'
 import Signup from './components/Signup'
 import Home from './components/Home'
+import SelectSignup from './components/SelectSignup'
 import AttendenceCheck from './components/AttendenceCheck'
+import SelectSignup from './components/SelectSignup'
 
 function App() {
   const [userObj, setUserObj] = useState({
     id: 1,
     email: '',
     name: '김교수',
-    type: 'S',
+    type: 'T',
     phone: '',
     grade: 1,
   })
@@ -32,6 +34,7 @@ function App() {
               return <Login />
             }}
           />
+          <Route path="/signup" exact component={SelectSignup} />
           <Route
             path="/signup/teacher"
             render={() => <Signup isStudentScreen={false} />}

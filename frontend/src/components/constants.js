@@ -1,13 +1,9 @@
-import React, { useState } from 'react'
-import { Modal, Button } from 'antd'
-import SelectClassNumberPopup from './SelectClassNumberPopup'
-
 export const sharedTemplate = [
   {
     title: '수업명',
     dataIndex: 'lecName',
     key: 'lecName',
-    width: '100px',
+    width: '200px',
     align: 'center',
   },
   {
@@ -48,14 +44,6 @@ export const sharedTemplate = [
     width: '177px',
     align: 'center',
   },
-  {
-    title: '출석체크',
-    dataIndex: 'AtdCheck',
-    key: 'AtdCheck',
-    width: '177px',
-    align: 'center',
-    render: (text, record) => <SelectClassNumberPopup lecID={record.lecID} />,
-  },
 ]
 
 export const shareLectures = [
@@ -69,11 +57,6 @@ export const shareLectures = [
     grade: 2,
     classNum: 1,
     time: '월3, 수5, 금3',
-    // myAtd: (
-    //   <IconButton type="myAtd" size="small">
-    //     <ScheduleOutlined />
-    //   </IconButton>
-    // ),
   },
   {
     id: '2',
@@ -85,11 +68,6 @@ export const shareLectures = [
     grade: 2,
     classNum: 1,
     time: '화2, 목4',
-    // myAtd: (
-    //   <IconButton type="myAtd" size="small">
-    //     <ScheduleOutlined />
-    //   </IconButton>
-    // ),
   },
 
   {
@@ -102,11 +80,6 @@ export const shareLectures = [
     grade: 2,
     classNum: 1,
     time: '화3, 수6, 목3',
-    // myAtd: (
-    //   <IconButton type="myAtd" size="small">
-    //     <ScheduleOutlined />
-    //   </IconButton>
-    // ),
   },
 
   {
@@ -119,11 +92,6 @@ export const shareLectures = [
     grade: 2,
     classNum: 1,
     time: '월1, 목2',
-    // myAtd: (
-    //   <IconButton type="myAtd" size="small">
-    //     <ScheduleOutlined />
-    //   </IconButton>
-    // ),
   },
   {
     id: '5',
@@ -135,10 +103,5 @@ export const shareLectures = [
     grade: 2,
     classNum: 1,
     time: '화3, 금6',
-    // myAtd: (
-    //   <IconButton type="myAtd" size="small">
-    //     <ScheduleOutlined />
-    //   </IconButton>
-    // ),
   },
 ]
