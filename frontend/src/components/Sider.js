@@ -1,5 +1,6 @@
 import React from 'react'
 import { Layout, Menu } from 'antd'
+import { Link } from 'react-router-dom'
 
 function Sider({ isLogin, type }) {
   const disableMenus = (
@@ -29,13 +30,15 @@ function Sider({ isLogin, type }) {
           <>
             <Menu.Item key="1">
               <span>나의 수업 조회</span>
+              <Link to="/" />
             </Menu.Item>
             {type === 'S' ? (
               <Menu.Item key="2">
                 <span>수강신청</span>
+                <Link to="/sugang" />
               </Menu.Item>
             ) : (
-              <Menu.Item key="2">
+              <Menu.Item key="2" disabled="true">
                 <span>수강관리</span>
               </Menu.Item>
             )}
