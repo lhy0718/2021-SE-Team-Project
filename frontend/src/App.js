@@ -7,6 +7,7 @@ import Login from './components/Login'
 import Signup from './components/Signup'
 import Home from './components/Home'
 import SelectSignup from './components/SelectSignup'
+import Sugang from './components/Sugang'
 
 function App() {
   const [userObj, setUserObj] = useState({
@@ -41,6 +42,7 @@ function App() {
             path="/signup/student"
             render={() => <Signup isStudentScreen={true} />}
           />
+          <Route path="/sugang" component={Sugang} />
         </LayoutCtrl>
       </BrowserRouter>
     </div>
