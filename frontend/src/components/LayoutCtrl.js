@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import 'antd/dist/antd.css'
-import Sider from './SiderCtrl'
-import Header from './HeaderCtrl'
+import Sider from './Sider'
+import Header from './Header'
 import { Layout } from 'antd'
 const { Content } = Layout
 
