@@ -1,32 +1,32 @@
 import React from 'react'
 import { Button, Row, Col } from 'antd'
-import './AttendenceCheckBtns.css'
+import './AttendanceCheckBtns.css'
 
-const AttendenceCheckBtns = ({ uID, lecID, lecNum, attendenceState }) => {
-  const onClickAttendence = () => {
-    console.log({ uID, lecID, lecNum, attendenceType: 'attendence' })
+const AttendanceCheckBtns = ({ uID, lecID, lecNum, attendanceState }) => {
+  const onClickAttendance = () => {
+    console.log({ uID, lecID, lecNum, attendanceType: 'attendance' })
   }
 
   const onClickAbsent = () => {
-    console.log({ uID, lecID, lecNum, attendenceType: 'absent' })
+    console.log({ uID, lecID, lecNum, attendanceType: 'absent' })
   }
 
   const onClickTardy = () => {
-    console.log({ uID, lecID, lecNum, attendenceType: 'Tardy' })
+    console.log({ uID, lecID, lecNum, attendanceType: 'Tardy' })
   }
 
   const onClickEtc = () => {
-    console.log({ uID, lecID, lecNum, attendenceType: 'etc' })
+    console.log({ uID, lecID, lecNum, attendanceType: 'etc' })
   }
 
   return (
-    <div className="AttendenceCheckBtns">
+    <div className="AttendanceCheckBtns">
       <Row align="center">
         <Col>
           <Button
-            id="attendenceBtn"
+            id="attendanceBtn"
             htmlType="button"
-            onClick={onClickAttendence}
+            onClick={onClickAttendance}
           >
             출석
           </Button>
@@ -53,4 +53,4 @@ const AttendenceCheckBtns = ({ uID, lecID, lecNum, attendenceState }) => {
   )
 }
 
-export default AttendenceCheckBtns
+export default AttendanceCheckBtns

@@ -7,9 +7,9 @@ import Login from './components/Login'
 import Signup from './components/Signup'
 import Home from './components/Home'
 import SelectSignup from './components/SelectSignup'
-import AttendenceCheck from './components/AttendenceCheck'
+import AttendanceCheck from './components/AttendanceCheck'
 
-// for test
+// test data
 import {
   sharedTemplate,
   shareLectures,
@@ -52,7 +52,7 @@ function App() {
           <Route
             path="/attendence"
             render={() => (
-              <AttendenceCheck
+              <AttendanceCheck
                 studentsData={shareStudents} // test data
                 lecData={shareLectures[0]} // test data
                 lecNum={1} // test data, 수업 차시 숫자
