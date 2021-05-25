@@ -32,7 +32,7 @@ const SelectClassNumberPopup = ({ lecID }) => {
   return (
     <div className="SelectClassNumberPopup">
       <Button type="primary" onClick={() => setVisible(true)}>
-        출석 체크
+        출석체크
       </Button>
 
       <Modal

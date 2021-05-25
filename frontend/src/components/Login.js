@@ -1,8 +1,8 @@
 import React from 'react'
 import { Form, Input, Button, Row } from 'antd'
 import './Login.css'
-import userLoginImage from './svg/userlogin.svg'
-import { Link } from 'react-router-dom'
+import userLoginImage from './userlogin.svg'
+
 const inputLayout = {
   labelCol: { span: 6 },
   wrapperCol: { span: 12 },
@@ -28,6 +28,10 @@ const Login = () => {
 
   const onFinishFailed = (result) => {
     console.log('fail, result: ', result)
+  }
+
+  const moveSignup = (result) => {
+    console.log('moveSignup result: ', result)
   }
 
   return (
@@ -78,11 +82,11 @@ const Login = () => {
           </Button>
         </Form.Item>
 
-        <Link to="/signup">
-          <Form.Item {...buttonLayout}>
-            <Button htmlType="button">회원가입</Button>
-          </Form.Item>
-        </Link>
+        <Form.Item {...buttonLayout}>
+          <Button htmlType="button" onClick={moveSignup}>
+            회원가입
+          </Button>
+        </Form.Item>
       </Form>
     </div>
   )
