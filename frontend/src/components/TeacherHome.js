@@ -10,12 +10,12 @@ function TeacherHome({ userObj }) {
     ...sharedTemplate,
     {
       title: '출석체크',
-      dataIndex: 'AtdCheck',
-      key: 'AtdCheck',
+      dataIndex: 'AttendanceCheck',
+      key: 'AttendanceCheck',
       width: '177px',
       align: 'center',
       render: (text, record) => (
-        <SelectClassNumberPopup lectureID={record.lectureID} />
+        <SelectClassNumberPopup lectureId={record.lectureId} />
       ),
     },
   ]
