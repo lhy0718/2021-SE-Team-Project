@@ -1,49 +1,63 @@
-@import '~antd/dist/antd.css';
-
 .AttendanceCheckBtns .ant-btn {
   margin: 2px;
 }
 
-.AttendanceCheckBtns .attendanceBtn[active] {
+.attendanceBtn {
+  --antd-wave-shadow-color: #52c41a;
+}
+
+.attendanceBtn[active] {
   background-color: #52c41a;
   border-color: #52c41a;
   color: white;
 }
 
-.AttendanceCheckBtns .attendanceBtn:hover:not([active]) {
+.attendanceBtn:hover:not([active]) {
   color: #52c41a;
   border-color: #52c41a;
 }
 
-.AttendanceCheckBtns .absentBtn[active] {
+.absentBtn {
+  --antd-wave-shadow-color: #ff4d4f;
+}
+
+.absentBtn[active] {
   background-color: #ff4d4f;
   border-color: #ff4d4f;
   color: white;
 }
 
-.AttendanceCheckBtns .absentBtn:hover:not([active]) {
+.absentBtn:hover:not([active]) {
   color: #ff4d4f;
   border-color: #ff4d4f;
 }
 
-.AttendanceCheckBtns .tardyBtn[active] {
+.tardyBtn {
+  --antd-wave-shadow-color: #faad14;
+}
+
+.tardyBtn[active] {
   background-color: #faad14;
   border-color: #faad14;
   color: white;
 }
 
-.AttendanceCheckBtns .tardyBtn:hover:not([active]) {
+.tardyBtn:hover:not([active]) {
   color: #faad14;
   border-color: #faad14;
 }
 
-.AttendanceCheckBtns .etcBtn[active] {
+.etcBtn {
+  --antd-wave-shadow-color: #8c8c8c;
+}
+
+.etcBtn[active] {
   background-color: #8c8c8c;
   border-color: #8c8c8c;
   color: white;
 }
 
-.AttendanceCheckBtns .etcBtn:hover:not([active]) {
+.etcBtn:hover:not([active]) {
   color: #8c8c8c;
   border-color: #8c8c8c;
 }
