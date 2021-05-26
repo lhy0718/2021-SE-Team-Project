@@ -11,18 +11,14 @@ import Sugang from './components/Sugang'
 import AttendanceCheck from './components/AttendanceCheck'
 
 // test data
-import {
-  sharedTemplate,
-  shareLectures,
-  shareStudents,
-} from './components/constants'
+import { shareLectures, shareStudents } from './components/constants'
 
 function App() {
   const [userObj, setUserObj] = useState({
     id: 1,
     email: '',
-    name: '김교수',
-    type: 'T',
+    name: '김학생',
+    type: 'S',
     phone: '',
     grade: 1,
   })
