@@ -83,7 +83,11 @@ const AttendanceCheck = ({ studentsData, lectureData, lectureHour }) => {
           </Button>
         </Popconfirm>
       </Row>
-      <Divider style={{ color: 'gray', margin: '0' }}>STUDENT LIST</Divider>
+      <Divider
+        style={{ color: 'gray', marginTop: '12px', marginBottom: '12px' }}
+      >
+        STUDENT LIST
+      </Divider>
       <Table columns={columns} dataSource={_studentsData} bordered={true} />
     </div>
   )
