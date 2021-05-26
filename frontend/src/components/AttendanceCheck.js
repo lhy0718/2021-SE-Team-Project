@@ -1,60 +1,66 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Button, Divider, Row, Table } from 'antd'
 import AttendanceCheckBtns from './AttendanceCheckBtns'
 import AttendanceCheckHeader from './AttendanceCheckHeader'
 import userProfileImage from './svg/profile-user.svg'
 
-const columns = [
-  {
-    title: '사진',
-    dataIndex: 'image',
-    key: 'image',
-    align: 'center',
-    render: () => (
-      <img
-        src={userProfileImage}
-        className="userProfileImage"
-        alt="User Profile"
-        width="100px"
-      />
-    ),
-  },
-  {
-    title: '번호',
-    dataIndex: 'studentNum',
-    key: 'studentNum',
-  },
-  {
-    title: '이름',
-    dataIndex: 'name',
-    key: 'name',
-  },
-  {
-    title: '출석 체크',
-    dataIndex: 'attendanceCheckButtons',
-    key: 'attendanceCheckButtons',
-    align: 'center',
-    render: (text, record) => (
-      <AttendanceCheckBtns
-        uId={record.uId}
-        lectureId={record.lectureId}
-        lectureHour={record.lectureHour}
-      />
-    ),
-  },
-]
-
 const AttendanceCheck = ({ studentsData, lectureData, lectureHour }) => {
-  const studentsDataAndLectureData = studentsData.map((elem) => ({
-    ...elem,
-    lectureId: lectureData.lectureId,
-    lectureHour: lectureHour,
-  }))
+  const [_studentsData, setStudentsData] = useState(studentsData)
+
+  const onAttendanceStateChanges = ({ uId, newAttendanceState }) => {
+    let newStudentsData = [..._studentsData]
+    newStudentsData[
+      newStudentsData.findIndex((data) => data.uId === uId)
+    ].attendanceState = newAttendanceState
+    setStudentsData(newStudentsData)
+  }
+
+  const columns = [
+    {
+      title: '사진',
+      dataIndex: 'image',
+      key: 'image',
+      align: 'center',
+      render: () => (
+        <img
+          src={userProfileImage}
+          className="userProfileImage"
+          alt="User Profile"
+          width="100px"
+        />
+      ),
+    },
+    {
+      title: '번호',
+      dataIndex: 'studentNum',
+      key: 'studentNum',
+    },
+    {
+      title: '이름',
+      dataIndex: 'name',
+      key: 'name',
+    },
+    {
+      title: '출석 체크',
+      dataIndex: 'attendanceCheckButtons',
+      key: 'attendanceCheckButtons',
+      align: 'center',
+      render: (text, record) => (
+        <AttendanceCheckBtns
+          uId={record.uId}
+          lectureId={lectureData.lectureId}
+          lectureHour={lectureHour}
+          attendanceState={record.attendanceState}
+          onAttendanceStateChange={onAttendanceStateChanges}
+        />
+      ),
+    },
+  ]
 
   return (
     <div className="AttendanceCheck">
       <AttendanceCheckHeader
-        studentsData={studentsData}
+        studentsData={_studentsData}
         lectureData={lectureData}
         lectureHour={lectureHour}
       />
@@ -67,7 +73,7 @@ const AttendanceCheck = ({ studentsData, lectureData, lectureHour }) => {
       <Table
         style={{ padding: '6px' }}
         columns={columns}
-        dataSource={studentsDataAndLectureData}
+        dataSource={_studentsData}
         bordered={true}
       />
     </div>

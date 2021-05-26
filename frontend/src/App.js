@@ -48,7 +48,7 @@ function App() {
           />
           <Route path="/sugang" component={Sugang} />
           <Route
-            path="/attendence"
+            path="/attendance"
             render={() => (
               <AttendanceCheck
                 studentsData={shareStudents} // test data

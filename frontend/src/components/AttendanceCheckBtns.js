@@ -7,21 +7,22 @@ const AttendanceCheckBtns = ({
   lectureId,
   lectureHour,
   attendanceState,
+  onAttendanceStateChange,
 }) => {
   const onClickAttendance = () => {
-    console.log({ uId, lectureId, lectureHour, attendanceType: 'attendance' })
+    onAttendanceStateChange({ uId: uId, newAttendanceState: 'attendance' })
   }
 
   const onClickAbsent = () => {
-    console.log({ uId, lectureId, lectureHour, attendanceType: 'absent' })
+    onAttendanceStateChange({ uId: uId, newAttendanceState: 'absent' })
   }
 
   const onClickTardy = () => {
-    console.log({ uId, lectureId, lectureHour, attendanceType: 'tardy' })
+    onAttendanceStateChange({ uId: uId, newAttendanceState: 'tardy' })
   }
 
   const onClickEtc = () => {
-    console.log({ uId, lectureId, lectureHour, attendanceType: 'etc' })
+    onAttendanceStateChange({ uId: uId, newAttendanceState: 'etc' })
   }
 
   return (
