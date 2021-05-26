@@ -2,21 +2,26 @@ import React from 'react'
 import { Button, Row, Col } from 'antd'
 import './AttendanceCheckBtns.css'
 
-const AttendanceCheckBtns = ({ uID, lecID, lecNum, attendanceState }) => {
+const AttendanceCheckBtns = ({
+  uId,
+  lectureId,
+  lectureHour,
+  attendanceState,
+}) => {
   const onClickAttendance = () => {
-    console.log({ uID, lecID, lecNum, attendanceType: 'attendance' })
+    console.log({ uId, lectureId, lectureHour, attendanceType: 'attendance' })
   }
 
   const onClickAbsent = () => {
-    console.log({ uID, lecID, lecNum, attendanceType: 'absent' })
+    console.log({ uId, lectureId, lectureHour, attendanceType: 'absent' })
   }
 
   const onClickTardy = () => {
-    console.log({ uID, lecID, lecNum, attendanceType: 'Tardy' })
+    console.log({ uId, lectureId, lectureHour, attendanceType: 'tardy' })
   }
 
   const onClickEtc = () => {
-    console.log({ uID, lecID, lecNum, attendanceType: 'etc' })
+    console.log({ uId, lectureId, lectureHour, attendanceType: 'etc' })
   }
 
   return (

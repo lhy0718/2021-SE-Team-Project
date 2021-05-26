@@ -5,7 +5,7 @@ import { ClockCircleOutlined, ReadOutlined } from '@ant-design/icons'
 import peopleImage from './svg/multiple-users-silhouette.svg'
 import attendanceImage from './svg/check.svg'
 
-const AttendanceCheckHeader = ({ studentsData, lecData, lecNum }) => {
+const AttendanceCheckHeader = ({ studentsData, lectureData, lectureHour }) => {
   return (
     <div className="AttendanceCheckHeader">
       <Row>
@@ -15,13 +15,13 @@ const AttendanceCheckHeader = ({ studentsData, lecData, lecNum }) => {
               <Col span={8} style={{ textAlign: 'center' }}>
                 <SchoolHatIcon />
               </Col>
-              <Col style={{ marginLeft: '6px' }}>{lecData.lecName}</Col>
+              <Col style={{ marginLeft: '6px' }}>{lectureData.lectureName}</Col>
             </Row>
             <Row align="middle">
               <Col span={8} style={{ textAlign: 'center' }}>
                 <ClockCircleOutlined style={{ fontSize: '30px' }} />
               </Col>
-              <Col style={{ marginLeft: '6px' }}>{lecNum}차시</Col>
+              <Col style={{ marginLeft: '6px' }}>{lectureHour}차시</Col>
             </Row>
             <Row align="middle">
               <Col span={8} style={{ textAlign: 'center' }}>

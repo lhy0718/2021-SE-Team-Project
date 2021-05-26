@@ -54,8 +54,8 @@ function App() {
             render={() => (
               <AttendanceCheck
                 studentsData={shareStudents} // test data
-                lecData={shareLectures[0]} // test data
-                lecNum={1} // test data, 수업 차시 숫자
+                lectureData={shareLectures[0]} // test data
+                lectureHour={1} // test data, 수업 차시 숫자
               />
             )}
           />

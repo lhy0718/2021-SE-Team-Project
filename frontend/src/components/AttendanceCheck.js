@@ -36,27 +36,27 @@ const columns = [
     align: 'center',
     render: (text, record) => (
       <AttendanceCheckBtns
-        uID={record.uID}
-        lecID={record.lecID}
-        lecNum={record.lecNum}
+        uId={record.uId}
+        lectureId={record.lectureId}
+        lectureHour={record.lectureHour}
       />
     ),
   },
 ]
 
-const AttendanceCheck = ({ studentsData, lecData, lecNum }) => {
-  const studentsDataAndLecData = studentsData.map((elem) => ({
+const AttendanceCheck = ({ studentsData, lectureData, lectureHour }) => {
+  const studentsDataAndLectureData = studentsData.map((elem) => ({
     ...elem,
-    lecID: lecData.lecID,
-    lecNum: lecNum,
+    lectureId: lectureData.lectureId,
+    lectureHour: lectureHour,
   }))
 
   return (
     <div className="AttendanceCheck">
       <AttendanceCheckHeader
         studentsData={studentsData}
-        lecData={lecData}
-        lecNum={lecNum}
+        lectureData={lectureData}
+        lectureHour={lectureHour}
       />
       <Row justify="end">
         <Button style={{ marginRight: '6px' }} danger type="primary">
@@ -67,7 +67,7 @@ const AttendanceCheck = ({ studentsData, lecData, lecNum }) => {
       <Table
         style={{ padding: '6px' }}
         columns={columns}
-        dataSource={studentsDataAndLecData}
+        dataSource={studentsDataAndLectureData}
         bordered={true}
       />
     </div>
