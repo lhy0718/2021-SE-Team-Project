@@ -30,27 +30,43 @@ const AttendanceCheckBtns = ({
       <Row align="center">
         <Col>
           <Button
-            id="attendanceBtn"
+            className="attendanceBtn"
             htmlType="button"
             onClick={onClickAttendance}
+            active={attendanceState === 'attendance' ? 'active' : undefined}
           >
             출석
           </Button>
         </Col>
         <Col>
-          <Button id="absentBtn" htmlType="button" onClick={onClickAbsent}>
+          <Button
+            className="absentBtn"
+            htmlType="button"
+            onClick={onClickAbsent}
+            active={attendanceState === 'absent' ? 'active' : undefined}
+          >
             결석
           </Button>
         </Col>
       </Row>
       <Row align="center">
         <Col>
-          <Button id="tardyBtn" htmlType="button" onClick={onClickTardy}>
+          <Button
+            className="tardyBtn"
+            htmlType="button"
+            onClick={onClickTardy}
+            active={attendanceState === 'tardy' ? 'active' : undefined}
+          >
             지각
           </Button>
         </Col>
         <Col>
-          <Button id="etcBtn" htmlType="button" onClick={onClickEtc}>
+          <Button
+            className="etcBtn"
+            htmlType="button"
+            onClick={onClickEtc}
+            active={attendanceState === 'etc' ? 'active' : undefined}
+          >
             기타
           </Button>
         </Col>
