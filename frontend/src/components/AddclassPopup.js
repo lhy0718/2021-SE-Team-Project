@@ -96,7 +96,7 @@ const AddclassPopup = () => {
               <Form.Item
                 {...inputLayout}
                 label="과목ID"
-                name="lectureID"
+                name="lectureId"
                 rules={[{ required: true, validator: checkNum }]}
               >
                 <Input />
@@ -119,7 +119,7 @@ const AddclassPopup = () => {
               <Form.Item
                 {...inputLayout}
                 label="반"
-                name="classNum"
+                name="classId"
                 rules={[{ required: true }]}
               >
                 <InputNumber min={1} max={50} />
@@ -130,7 +130,7 @@ const AddclassPopup = () => {
           <Row>
             <Col span={12}>
               <Form.Item label="교시">
-                <Form.List name="times">
+                <Form.List name="weekDay/period">
                   {(fields, { add, remove }) => (
                     <>
                       {fields.map((field) => (
@@ -138,9 +138,9 @@ const AddclassPopup = () => {
                           <Form.Item
                             {...field}
                             style={{ marginBottom: '6px' }}
-                            name={[field.name, 'day']}
-                            key={[field.key, 'day']}
-                            fieldKey={[field.fieldKey, 'day']}
+                            name={[field.name, 'weekDay']}
+                            key={[field.key, 'weekDay']}
+                            fieldKey={[field.fieldKey, 'weekDay']}
                             rules={[
                               { required: true, message: '요일을 입력하세요.' },
                             ]}
@@ -159,9 +159,9 @@ const AddclassPopup = () => {
                           <Form.Item
                             {...field}
                             style={{ marginBottom: '6px' }}
-                            name={[field.name, 'time']}
-                            key={[field.key, 'time']}
-                            fieldKey={[field.fieldKey, 'time']}
+                            name={[field.name, 'period']}
+                            key={[field.key, 'period']}
+                            fieldKey={[field.fieldKey, 'period']}
                             rules={[
                               { required: true, message: '시간을 입력하세요.' },
                             ]}

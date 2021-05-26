@@ -6,20 +6,25 @@ const { Text } = Typography
 
 function Header({ isLogin, name }) {
   const extraButton = [
-    <Text strong>{name}님, 안녕하세요!</Text>,
+    <Text key="helloMsg" strong>
+      {name}님, 안녕하세요!
+    </Text>,
     <Divider
+      key="Divider"
       type="vertical"
       style={{
         height: '30px',
       }}
     />,
     <BellOutlined
+      key="BellOutlined1"
       style={{
         fontSize: '25px',
         cursor: 'pointer',
       }}
     />,
     <ExportOutlined
+      key="BellOutlined2"
       style={{
         fontSize: '25px',
         cursor: 'pointer',

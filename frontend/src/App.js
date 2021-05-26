@@ -8,6 +8,14 @@ import Signup from './components/Signup'
 import Home from './components/Home'
 import SelectSignup from './components/SelectSignup'
 import Sugang from './components/Sugang'
+import AttendanceCheck from './components/AttendanceCheck'
+
+// test data
+import {
+  sharedTemplate,
+  shareLectures,
+  shareStudents,
+} from './components/constants'
 
 function App() {
   const [userObj, setUserObj] = useState({
@@ -43,6 +51,16 @@ function App() {
             render={() => <Signup isStudentScreen={true} />}
           />
           <Route path="/sugang" component={Sugang} />
+          <Route
+            path="/attendence"
+            render={() => (
+              <AttendanceCheck
+                studentsData={shareStudents} // test data
+                lectureData={shareLectures[0]} // test data
+                lectureHour={1} // test data, 수업 차시 숫자
+              />
+            )}
+          />
         </LayoutCtrl>
       </BrowserRouter>
     </div>

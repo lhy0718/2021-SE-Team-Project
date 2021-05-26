@@ -71,13 +71,13 @@ const Signup = (props) => {
                 <InputNumber min={1} max={10} />
               </Form.Item>
               <Form.Item
-                name="classNumber"
+                name="classId"
                 rules={[{ required: true, message: '반을 입력하세요.' }]}
               >
                 <InputNumber min={1} max={50} />
               </Form.Item>
               <Form.Item
-                name="studentNumber"
+                name="studentId"
                 rules={[{ required: true, message: '번호를 입력하세요.' }]}
               >
                 <InputNumber min={1} max={99999999} />
