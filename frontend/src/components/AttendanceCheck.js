@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, Divider, Row, Table } from 'antd'
+import { Button, Divider, Row, Table, Popconfirm } from 'antd'
 import AttendanceCheckBtns from './AttendanceCheckBtns'
 import AttendanceCheckHeader from './AttendanceCheckHeader'
 import userProfileImage from './svg/profile-user.svg'
@@ -13,6 +13,10 @@ const AttendanceCheck = ({ studentsData, lectureData, lectureHour }) => {
       newStudentsData.findIndex((data) => data.uId === uId)
     ].attendanceState = newAttendanceState
     setStudentsData(newStudentsData)
+  }
+
+  const onExitAttendance = () => {
+    console.log('Exit Attendance')
   }
 
   const columns = [
@@ -58,24 +62,29 @@ const AttendanceCheck = ({ studentsData, lectureData, lectureHour }) => {
   ]
 
   return (
-    <div className="AttendanceCheck">
+    <div
+      className="AttendanceCheck"
+      style={{ paddingRight: '48px', paddingLeft: '48px' }}
+    >
       <AttendanceCheckHeader
         studentsData={_studentsData}
         lectureData={lectureData}
         lectureHour={lectureHour}
       />
       <Row justify="end">
-        <Button style={{ marginRight: '6px' }} danger type="primary">
-          수업종료
-        </Button>
+        <Popconfirm
+          title={'수업을 종료하시겠습니까?'}
+          onConfirm={() => onExitAttendance()}
+          okText="네"
+          cancelText="아니요"
+        >
+          <Button danger type="primary">
+            수업종료
+          </Button>
+        </Popconfirm>
       </Row>
       <Divider style={{ color: 'gray', margin: '0' }}>STUDENT LIST</Divider>
-      <Table
-        style={{ padding: '6px' }}
-        columns={columns}
-        dataSource={_studentsData}
-        bordered={true}
-      />
+      <Table columns={columns} dataSource={_studentsData} bordered={true} />
     </div>
   )
 }
