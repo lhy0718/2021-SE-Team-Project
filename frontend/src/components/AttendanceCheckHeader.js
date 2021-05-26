@@ -28,7 +28,7 @@ const AttendanceCheckHeader = ({ studentsData, lectureData, lectureHour }) => {
                 <ReadOutlined style={{ fontSize: '30px' }} />
               </Col>
               <Col style={{ marginLeft: '6px' }}>
-                {studentsData[0].grade}학년 {studentsData[0].classNum}반
+                {lectureData.grade}학년 {lectureData.classNum}반
               </Col>
             </Row>
           </Card>
