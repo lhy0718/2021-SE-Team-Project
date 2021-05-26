@@ -86,7 +86,7 @@ const AddclassPopup = () => {
               <Form.Item
                 {...inputLayout}
                 label="수업명"
-                name="className"
+                name="lectureName"
                 rules={[{ required: true }]}
               >
                 <Input />
@@ -96,7 +96,7 @@ const AddclassPopup = () => {
               <Form.Item
                 {...inputLayout}
                 label="과목ID"
-                name="classID"
+                name="lectureID"
                 rules={[{ required: true, validator: checkNum }]}
               >
                 <Input />
@@ -119,7 +119,7 @@ const AddclassPopup = () => {
               <Form.Item
                 {...inputLayout}
                 label="반"
-                name="classNumber"
+                name="classNum"
                 rules={[{ required: true }]}
               >
                 <InputNumber min={1} max={50} />
@@ -130,7 +130,7 @@ const AddclassPopup = () => {
           <Row>
             <Col span={12}>
               <Form.Item label="교시">
-                <Form.List name="day/time">
+                <Form.List name="times">
                   {(fields, { add, remove }) => (
                     <>
                       {fields.map((field) => (

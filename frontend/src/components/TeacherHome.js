@@ -14,7 +14,9 @@ function TeacherHome({ userObj }) {
       key: 'AtdCheck',
       width: '177px',
       align: 'center',
-      render: (text, record) => <SelectClassNumberPopup lecID={record.lecID} />,
+      render: (text, record) => (
+        <SelectClassNumberPopup lectureID={record.lectureID} />
+      ),
     },
   ]
 
