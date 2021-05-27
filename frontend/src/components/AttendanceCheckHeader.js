@@ -10,7 +10,7 @@ const AttendanceCheckHeader = ({ studentsData, lectureData, lectureHour }) => {
     <div className="AttendanceCheckHeader">
       <Row>
         <Col span={10} style={{ padding: '24px' }}>
-          <Card bordered={true} style={{ height: '150px' }}>
+          <Card bordered={true} style={{ height: '150px', maxWidth: '300px' }}>
             <Row align="middle">
               <Col span={8} style={{ textAlign: 'center' }}>
                 <SchoolHatIcon />
@@ -28,18 +28,21 @@ const AttendanceCheckHeader = ({ studentsData, lectureData, lectureHour }) => {
                 <ReadOutlined style={{ fontSize: '30px' }} />
               </Col>
               <Col style={{ marginLeft: '6px' }}>
-                {studentsData[0].grade}학년 {studentsData[0].classNum}반
+                {lectureData.grade}학년 {lectureData.classNum}반
               </Col>
             </Row>
           </Card>
         </Col>
         <Col offset={4} span={10} style={{ padding: '24px' }}>
           <Row>
-            <Col span={12}>
+            <Col span={12} align="right">
               <Card
                 bordered={true}
                 bodyStyle={{ padding: '0' }}
-                style={{ marginRight: '4px', height: '150px' }}
+                style={{
+                  height: '150px',
+                  maxWidth: '150px',
+                }}
                 cover={
                   <img
                     src={peopleImage}
@@ -64,11 +67,15 @@ const AttendanceCheckHeader = ({ studentsData, lectureData, lectureHour }) => {
                 <p style={{ textAlign: 'center', color: 'gray' }}>Students</p>
               </Card>
             </Col>
-            <Col span={12}>
+            <Col span={12} align="right">
               <Card
                 bordered={true}
                 bodyStyle={{ padding: '0' }}
-                style={{ marginRight: '4px', height: '150px' }}
+                style={{
+                  marginRight: '4px',
+                  height: '150px',
+                  maxWidth: '150px',
+                }}
                 cover={
                   <img
                     src={attendanceImage}
