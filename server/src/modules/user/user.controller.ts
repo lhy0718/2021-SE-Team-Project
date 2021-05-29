@@ -5,6 +5,7 @@ import {
   HttpException,
   HttpStatus,
   Param,
+  Post,
   Query,
   ValidationPipe,
 } from '@nestjs/common'
@@ -28,10 +29,6 @@ export class UserController {
 
     if (isDuplicated) {
       throw new HttpException('DUPLICATED_EMAIL', HttpStatus.CONFLICT)
-    }
-
-    return {
-      isDuplicated,
     }
   }
 }
