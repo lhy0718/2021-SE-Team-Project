@@ -12,7 +12,7 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger'
 import cookieParser = require('cookie-parser')
 
 async function bootstrap() {
-  console.log('Helllo world!')
+  console.log('Helllllllllllo world!')
   const app = await NestFactory.create(AppModule)
 
   app.use(cookieParser(process.env.COOKIE_SECRET))
@@ -26,7 +26,7 @@ async function bootstrap() {
     .setDescription('ATTENDENCE API documentation')
     .setVersion('0.1')
     .setBasePath('/api')
-    .addServer('https://') // 그냥 https 만 붙여야 할 수 도
+    .addServer('http') // 그냥 https 만 붙여야 할 수 도
     .build()
 
   const document = SwaggerModule.createDocument(app, swaggerOptions)
