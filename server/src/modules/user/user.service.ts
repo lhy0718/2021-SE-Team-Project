@@ -28,6 +28,30 @@ export class UserService {
     }
   }
 
+  async findOneByUserId(id: number): Promise<User> {
+    const user = await this.userRepository.findOneOrFail({
+      where: {
+        id,
+        deletedAt: null,
+      },
+      // relations: ['lecture', 'attendance'],
+    })
+
+    return user
+  }
+
+  async findOneByEmail(email: string): Promise<User> {
+    const user = await this.userRepository.findOne({
+      where: {
+        email,
+        deletedAt: null,
+      },
+      // relations: ['lecture', 'attendance', ''],
+    })
+
+    return user
+  }
+
   async create(createUserDto: CreateUserDto): Promise<any> {
     try {
       // 이메일 중복체크
