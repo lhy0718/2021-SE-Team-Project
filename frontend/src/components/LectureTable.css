@@ -1,0 +1,16 @@
+.table-row-light {
+  background-color: #ffffff;
+}
+.table-row-dark {
+  background-color: #fcf4ff;
+}
+
+.ant-table-thead > tr > th {
+  font-size: 15px;
+  color: #ffffff !important;
+  background: #462594 !important;
+}
+
+.ant-table-body tr > td {
+  padding: 10px;
+}
