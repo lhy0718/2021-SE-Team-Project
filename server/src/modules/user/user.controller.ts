@@ -7,7 +7,6 @@ import {
   Param,
   Post,
   Query,
-  ValidationPipe,
 } from '@nestjs/common'
 import { ApiOperation, ApiQuery, ApiResponse, ApiTags } from '@nestjs/swagger'
 import { EmailVerificationParams } from './dto/email-verification.params'
