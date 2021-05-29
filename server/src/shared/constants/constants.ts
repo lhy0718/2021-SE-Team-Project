@@ -16,3 +16,5 @@ export const USERTOKEN_EXPIRE_IN = 360 * DAY_IN_SECONDS * 1000
 
 export const USERTOKEN_COOKIE_NAME = 'authtoken'
 export const OAUTHINFO_TOKEN_COOKIE_NAME = 'oauthinfo'
+
+export const SERVICE_NAME = '출석이'

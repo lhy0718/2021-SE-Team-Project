@@ -42,5 +42,10 @@ export class User extends AbstractEntity<UserDto> {
   })
   phone: string
 
+  @Column({
+    nullable: true,
+  })
+  deletedAt: Date
+
   dtoClass = UserDto
 }
