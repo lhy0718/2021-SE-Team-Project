@@ -123,11 +123,11 @@ export class UserService {
     })
 
     // TODO: 실제 이메일을 보내는 과정은 잠시 제외시켜놓음
-    // await this.awsServce.sendEmail({
-    //   toEmail: email,
-    //   title: `[${SERVICE_NAME}] 가입을 위한 인증번호`,
-    //   body: `<div>${SERVICE_NAME}에 가입 하기 위한 6자리 인증번호는 다음과 같습니다: <b>${randomCode}</b></div>`,
-    // })
+    await this.awsServce.sendEmail({
+      toEmail: email,
+      title: `[${SERVICE_NAME}] 가입을 위한 인증번호`,
+      body: `<div>${SERVICE_NAME}에 가입 하기 위한 6자리 인증번호는 다음과 같습니다: <b>${randomCode}</b></div>`,
+    })
   }
 
   async verifyEmail(email: string, code: string): Promise<boolean> {

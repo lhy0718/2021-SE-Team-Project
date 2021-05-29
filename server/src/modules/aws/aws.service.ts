@@ -1,5 +1,5 @@
 import { Injectable, Logger } from '@nestjs/common'
-import AWS from 'aws-sdk'
+import * as AWS from 'aws-sdk'
 import { ConfigService } from 'src/shared/config/config.service'
 import { SERVICE_NAME } from 'src/shared/constants/constants'
 
@@ -20,10 +20,6 @@ export class AwsService {
     })
   }
 
-  getSES() {
-    return this.ses
-  }
-
   async sendEmail({
     toEmail,
     title,
@@ -34,35 +30,37 @@ export class AwsService {
     body: string
   }) {
     return new Promise((resolve, reject) => {
-      this.ses.sendEmail(
-        {
-          Source: `${SERVICE_NAME} <noreply@service-name.co>`,
-          Destination: {
-            ToAddresses: [toEmail],
-          },
-          Message: {
-            Subject: {
-              Data: title,
-              Charset: 'utf-8',
-            },
-            Body: {
-              Html: {
-                Data: body,
-                Charset: 'utf-8',
-              },
-            },
-          },
-        },
-        (err, data) => {
-          if (err) {
-            this.logger.error(JSON.stringify(err, null, 2))
-            return reject(err)
-          }
+      // TODO: 임시로 꺼놓음
+      resolve('TEMP')
+      // this.ses.sendEmail(
+      //   {
+      //     Source: `${SERVICE_NAME} <noreply@service-name.co>`,
+      //     Destination: {
+      //       ToAddresses: [toEmail],
+      //     },
+      //     Message: {
+      //       Subject: {
+      //         Data: title,
+      //         Charset: 'utf-8',
+      //       },
+      //       Body: {
+      //         Html: {
+      //           Data: body,
+      //           Charset: 'utf-8',
+      //         },
+      //       },
+      //     },
+      //   },
+      //   (err, data) => {
+      //     if (err) {
+      //       this.logger.error(JSON.stringify(err, null, 2))
+      //       return reject(err)
+      //     }
 
-          this.logger.debug('EMAIL: ' + JSON.stringify(data, null, 2))
-          resolve(data)
-        },
-      )
+      //     this.logger.debug('EMAIL: ' + JSON.stringify(data, null, 2))
+      //     resolve(data)
+      //   },
+      // )
     })
   }
 }
