@@ -37,6 +37,12 @@ export class User extends AbstractEntity<UserDto> {
   })
   classNumber: number
 
+  // 선생님의 경우 없음
+  @Column({
+    nullable: true,
+  })
+  studentNumber: number
+
   @Column({
     nullable: true,
   })

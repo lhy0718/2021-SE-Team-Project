@@ -10,7 +10,7 @@ export class UserDto extends AbstractDto {
   role: UserRole
 
   @ApiPropertyOptional({
-    example: 'test@test.com',
+    example: 'test@cau.ac.kr',
   })
   email: string
 
@@ -28,6 +28,11 @@ export class UserDto extends AbstractDto {
     example: '12',
   })
   classNumber: number
+
+  @ApiPropertyOptional({
+    example: 14,
+  })
+  studentNumber: number
 
   @ApiPropertyOptional({
     example: '01058529586',
