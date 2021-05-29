@@ -16,11 +16,13 @@
 
 
 
-### Swagger 접속 주소
+### API가 잘 나왔는지 테스트 하는 방법
 
-Api 문서 및 테스트를 할 수 있는 주소 입니다. 밑에 개발환경에서 각종 테스트가 가능 합니다.
+다음 url로 접속을 합니다. Swagger 접속 주소:  `localhost:3000/api/swagger`
 
-`localhost:3000/api/swagger`
+Swagger이라는 프로그램을 이용하여 현재 서버에 나와있는 모든 api를 보며 테스트 할 수 있습니다. 
+`Try It Out` 버튼을 누르면 굳이 postman 같은 툴을 쓰지 않고 swagger 내에서 바로 테스트가 가능합니다.
+`Execute` 을 누르면 서버로 request가 전송이 되고, 밑에 Responses 영역에 Response code (200, 400 등) 과 detail이 돌아옵니다. 
 
 
 
