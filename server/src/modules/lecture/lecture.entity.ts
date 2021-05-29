@@ -8,6 +8,7 @@ import {
   OneToOne,
   ManyToMany,
 } from 'typeorm'
+import { Attendance } from '../attendance/attendance.entity'
 import { User } from '../user/user.entity'
 import { LectureTime } from './dto/lecture-time.entity'
 import { LectureDto } from './dto/lecture.dto'
@@ -28,6 +29,9 @@ export class Lecture extends AbstractEntity<LectureDto> {
 
   @OneToMany(() => LectureTime, (lectuerTime) => lectuerTime.lecture)
   lectureTime: LectureTime[]
+
+  @OneToMany(() => Attendance, (attendance) => attendance.lecture)
+  attendance: Attendance[]
 
   @ManyToMany(() => User, (user) => user.lectures)
   users: User[]

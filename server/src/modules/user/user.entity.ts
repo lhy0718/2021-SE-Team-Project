@@ -9,6 +9,7 @@ import {
   ManyToMany,
   JoinTable,
 } from 'typeorm'
+import { Attendance } from '../attendance/attendance.entity'
 import { Lecture } from '../lecture/lecture.entity'
 import { UserDto } from './dto/user.dto'
 
@@ -66,6 +67,9 @@ export class User extends AbstractEntity<UserDto> {
   })
   @JoinTable()
   lectures: Lecture[]
+
+  @OneToMany(() => Attendance, (attendance) => attendance.user)
+  attendances: Attendance[]
 
   dtoClass = UserDto
 }
