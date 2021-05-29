@@ -23,7 +23,7 @@ export class UserController {
   @ApiOperation({
     summary: '인증 이메일 위한 이메일 입력',
     description:
-      '유효한 이메일인지, 중복이 없는지, 검증된 주소인지 검증한 뒤 6자리 코드 전송',
+      '유효한 이메일인지, 중복이 없는지, 검증된 주소인지 검증한 뒤 6자리 코드 전송 현재 는 뒤에 주소가 @cau.ac.kr 인지 체크만 하며 실제로 6자리 코드 이메일이 가지는 않음. 인증코드는 000000',
   })
   async validateEmail(@Param() params: EmailVerificationParams): Promise<any> {
     const { email } = params
@@ -43,7 +43,8 @@ export class UserController {
   @Get('/email-validation')
   @ApiOperation({
     summary: '이메일 인증번호',
-    description: '이메일과 6자리 코드를 둘다 쿼리로 보내면 됨',
+    description:
+      '이메일과 6자리 코드를 둘다 쿼리로 보내면 됨. 현재 코드는 000000 으로 통일함',
   })
   @ApiQuery({ name: 'email', type: 'string' })
   @ApiQuery({ name: 'code', type: 'string' })
