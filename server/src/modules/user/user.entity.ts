@@ -1,6 +1,15 @@
 import { AbstractEntity } from 'src/shared/abstract.entity'
 import { UserRole } from 'src/shared/constants/constants'
-import { Entity, Column, ManyToOne, OneToMany, OneToOne } from 'typeorm'
+import {
+  Entity,
+  Column,
+  ManyToOne,
+  OneToMany,
+  OneToOne,
+  ManyToMany,
+  JoinTable,
+} from 'typeorm'
+import { Lecture } from '../lecture/lecture.entity'
 import { UserDto } from './dto/user.dto'
 
 @Entity()
@@ -51,6 +60,12 @@ export class User extends AbstractEntity<UserDto> {
     nullable: true,
   })
   deletedAt: Date
+
+  @ManyToMany(() => Lecture, (lecture) => lecture.users, {
+    eager: true,
+  })
+  @JoinTable()
+  lectures: Lecture[]
 
   dtoClass = UserDto
 }
