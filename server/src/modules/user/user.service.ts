@@ -6,7 +6,7 @@ import {
   NotFoundException,
 } from '@nestjs/common'
 import { InjectRepository } from '@nestjs/typeorm'
-import moment from 'moment'
+import * as moment from 'moment'
 import { UtilsService } from 'src/providers/utils.service'
 import { getManager, Repository } from 'typeorm'
 import { CreateUserDto } from './dto/create-user.dto'

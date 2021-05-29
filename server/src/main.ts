@@ -25,8 +25,8 @@ async function bootstrap() {
     .setTitle('ATTENDENCE API')
     .setDescription('ATTENDENCE API documentation')
     .setVersion('0.1')
-    .setBasePath('/api')
-    .addServer('http') // 그냥 https 만 붙여야 할 수 도
+    // .setBasePath('/api')
+    // .addServer('http://') // 그냥 https 만 붙여야 할 수 도
     .build()
 
   const document = SwaggerModule.createDocument(app, swaggerOptions)
