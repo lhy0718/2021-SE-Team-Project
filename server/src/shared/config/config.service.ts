@@ -7,6 +7,7 @@ export class ConfigService {
 
   constructor(filePath: string) {
     this.envConfig = dotenv.parse(fs.readFileSync(filePath))
+    console.log('ENVCONFIG', this.envConfig)
   }
 
   get(key: string): string {
@@ -30,6 +31,6 @@ export class ConfigService {
   }
 
   getJwtSecret(): string {
-    return this.envConfig['JWT_SECRET']
+    return this.envConfig['JWT_SECRET_KEY']
   }
 }
