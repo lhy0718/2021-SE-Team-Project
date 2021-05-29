@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common'
 import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm'
-import { AppController } from './app.controller'
-import { AppService } from './app.service'
+import { AuthModule } from './modules/auth/auth.module'
+import { UserModule } from './modules/user/user.module'
 import { ConfigModule } from './shared/config/config.module'
 import { ConfigService } from './shared/config/config.service'
 
@@ -37,8 +37,6 @@ const ConfiguredTypeOrmModule = TypeOrmModule.forRootAsync({
 })
 
 @Module({
-  imports: [ConfigModule, ConfiguredTypeOrmModule],
-  // controllers: [AppController],
-  // providers: [AppService],
+  imports: [ConfigModule, ConfiguredTypeOrmModule, UserModule, AuthModule],
 })
 export class AppModule {}
