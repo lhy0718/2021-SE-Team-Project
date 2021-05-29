@@ -1,7 +1,8 @@
 import { Module } from '@nestjs/common'
 import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm'
-import { AppController } from './app.controller'
-import { AppService } from './app.service'
+import { AuthModule } from './modules/auth/auth.module'
+import { AwsModule } from './modules/aws/aws.module'
+import { UserModule } from './modules/user/user.module'
 import { ConfigModule } from './shared/config/config.module'
 import { ConfigService } from './shared/config/config.service'
 
@@ -17,6 +18,7 @@ const ConfiguredTypeOrmModule = TypeOrmModule.forRootAsync({
       password: configService.get('DB_PASSWORD'),
       database: configService.get('DB_DATABASE_NAME'),
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
+      // migrations: [__dirname + '/**/migrations/*{.ts,.js}'],
       // synchronize: process.env.NODE_ENV === 'development',
       // TODO : After development, Set sync false.
       synchronize: true,
@@ -29,14 +31,19 @@ const ConfiguredTypeOrmModule = TypeOrmModule.forRootAsync({
         connectionTimeoutMillis: 0,
       },
     }
+    console.log('[ORM CONFIG]', ormconfigs)
     return ormconfigs
   },
   inject: [ConfigService],
 })
 
 @Module({
-  imports: [ConfigModule, ConfiguredTypeOrmModule],
-  // controllers: [AppController],
-  // providers: [AppService],
+  imports: [
+    ConfigModule,
+    ConfiguredTypeOrmModule,
+    UserModule,
+    AuthModule,
+    AwsModule,
+  ],
 })
 export class AppModule {}

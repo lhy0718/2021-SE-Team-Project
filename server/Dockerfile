@@ -16,7 +16,7 @@ COPY ./src /app/src
 COPY ./tsconfig.json /app 
 COPY ./tsconfig.build.json /app 
 COPY ./wait-for-it.sh /app
-# COPY ./production.env /app
+COPY ./.development.env /app
 
 # build the app at docker image build stage
 RUN yarn build
