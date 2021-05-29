@@ -34,6 +34,8 @@ services:
     environment:
       - NODE_ENV=development
     command: ['yarn', 'start:dev']
+    ports:
+      - 3000:3000
     volumes:
       - ./server:/app:cached
     depends_on:
