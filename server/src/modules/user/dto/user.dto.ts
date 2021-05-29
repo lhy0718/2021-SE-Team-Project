@@ -47,5 +47,6 @@ export class UserDto extends AbstractDto {
     this.grade = user.grade
     this.classNumber = user.classNumber
     this.phone = user.phone
+    this.studentNumber = user.studentNumber
   }
 }

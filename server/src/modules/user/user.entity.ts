@@ -1,4 +1,3 @@
-import { ApiProperty } from '@nestjs/swagger'
 import { AbstractEntity } from 'src/shared/abstract.entity'
 import { UserRole } from 'src/shared/constants/constants'
 import { Entity, Column, ManyToOne, OneToMany, OneToOne } from 'typeorm'
