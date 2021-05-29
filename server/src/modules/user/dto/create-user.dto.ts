@@ -14,7 +14,7 @@ import { UserRole } from 'src/shared/constants/constants'
 
 export class CreateUserDto {
   @ApiProperty({
-    example: UserRole.STUDENT,
+    example: 'STUDENT',
   })
   @IsEnum(UserRole)
   readonly role: UserRole

@@ -5,8 +5,7 @@ import { User } from '../user.entity'
 
 export class UserDto extends AbstractDto {
   @ApiProperty({
-    type: UserRole,
-    example: UserRole.STUDENT,
+    example: 'STUDENT',
   })
   role: UserRole
 
