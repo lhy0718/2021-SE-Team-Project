@@ -35,10 +35,14 @@ export class CreateLectureDto {
   @ApiProperty({
     example: [
       {
+        weekDay: Weekday.WED,
+        period: 1,
+      },
+      {
         weekDay: Weekday.FRI,
         period: 4,
       },
     ],
   })
-  lectureTime: LectureTimeDto
+  lectureTime: LectureTimeDto[]
 }
