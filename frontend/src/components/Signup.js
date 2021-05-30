@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Form, Input, Button, Row, InputNumber } from 'antd'
 import './Signup.css'
 import { withRouter } from 'react-router-dom'
+import axios from 'axios'
 
 const inputLayout = {
   labelCol: { span: 6 },
@@ -19,8 +20,29 @@ const validateMessages = {
 const Signup = (props) => {
   const [password, setPassword] = useState('')
 
-  const onFinish = (result) => {
-    console.log('finish, result:', result)
+  const onFinish = (data) => {
+    const url = '/api/auth/sign-up'
+    const headers = {
+      'Content-Type': 'application/json; charset=utf-8',
+      accept: 'application/json',
+    }
+
+    axios
+      .post(url, data, {
+        headers: headers,
+      })
+      .then((response) => {
+        console.log('response: ', response.data)
+      })
+      .catch((error) => {
+        if (error.response.status == 400) {
+          let errormsg = ''
+          error.response.data.message.map((msg) => {
+            errormsg += '입력을 확인하세요: ' + msg + '\n'
+          })
+          alert(errormsg)
+        } else alert(JSON.stringify(error.response.data))
+      })
   }
 
   const onFinishFailed = (result) => {
@@ -36,6 +58,8 @@ const Signup = (props) => {
 
   const checkNum = (_, value) => {
     if (!isNaN(value) && parseInt(value) > 0) {
+      if (String(value).length < 9 || String(value).length > 11)
+        return Promise.reject(new Error('9~11자리의 숫자를 입력하세요.'))
       return Promise.resolve()
     }
     return Promise.reject(new Error('숫자만 입력 가능합니다.'))
@@ -54,7 +78,15 @@ const Signup = (props) => {
         onFinishFailed={onFinishFailed}
         validateMessages={validateMessages}
       >
-        <Form.Item label="이름" name="name" rules={[{ required: true }]}>
+        <Form.Item
+          name="role"
+          initialValue={props.isStudentScreen ? 'STUDENT' : 'TEACHER'}
+          hidden
+        >
+          <Input />
+        </Form.Item>
+
+        <Form.Item label="이름" name="fullName" rules={[{ required: true }]}>
           <Input />
         </Form.Item>
 
