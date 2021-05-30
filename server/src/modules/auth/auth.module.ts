@@ -19,9 +19,9 @@ import { EmailVerification } from '../user/email-verification.entity'
     TypeOrmModule.forFeature([User, EmailVerification]),
     PassportModule.register({ defaultStrategy: 'jwt' }),
     JwtModule.register({
-      // secret: dotenv.parse(fs.readFileSync(`.${process.env.NODE_ENV}.env`))[
-      //   'JWT_SECRET_KEY'
-      // ],
+      secret: dotenv.parse(fs.readFileSync(`.${process.env.NODE_ENV}.env`))[
+        'JWT_SECRET_KEY'
+      ],
     }),
   ],
   controllers: [AuthController],

@@ -99,7 +99,13 @@ export class UserService {
         phone: createUserDto.phone,
       })
 
-      return created
+      const result = this.userRepository.findOneOrFail({
+        where: {
+          id: created.id,
+        },
+      })
+
+      return result
     } catch (e) {
       this.logger.error(e)
       throw e

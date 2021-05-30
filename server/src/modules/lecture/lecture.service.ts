@@ -6,8 +6,12 @@ import {
   NotFoundException,
 } from '@nestjs/common'
 import { InjectRepository } from '@nestjs/typeorm'
+import { Weekday } from 'src/shared/constants/constants'
 import { PaginationQuery } from 'src/shared/pagination.query'
-import { Repository } from 'typeorm'
+import { getManager, Repository } from 'typeorm'
+import { User } from '../user/user.entity'
+import { CreateLectureDto } from './dto/create-lecture.dto'
+import { LectureTime } from './lecture-time.entity'
 import { Lecture } from './lecture.entity'
 
 @Injectable()
@@ -17,17 +21,123 @@ export class LectureService {
   constructor(
     @InjectRepository(Lecture)
     private readonly lectureRepo: Repository<Lecture>,
+    @InjectRepository(LectureTime)
+    private readonly lectureTimeRepo: Repository<LectureTime>,
   ) {}
 
-  // TODO: Work in progress
   async getLecturesByUserId(
     id: number,
-    query: PaginationQuery,
+    { page, pageSize }: PaginationQuery,
   ): Promise<Lecture[]> {
-    return this.lectureRepo.find({
-      where: {
-        id,
-      },
-    })
+    try {
+      const lectures = this.lectureRepo
+        .createQueryBuilder('lecture')
+        .leftJoin('lecture.user', 'user')
+        .where('user.id = :id', { id })
+        .skip(pageSize * (page - 1))
+        .take(pageSize)
+        .getMany()
+
+      return lectures
+    } catch (e) {
+      this.logger.error(e)
+      throw e
+    }
+  }
+
+  async getRecentLectures({
+    page,
+    pageSize,
+    order,
+  }: PaginationQuery): Promise<Lecture[]> {
+    try {
+      const lectures = await this.lectureRepo
+        .createQueryBuilder('lecture')
+        .orderBy('lecture.createdAt', order)
+        .skip(pageSize * (page - 1))
+        .take(Math.min(pageSize, 50))
+        .getMany()
+
+      return lectures
+    } catch (e) {
+      this.logger.error(e)
+      throw e
+    }
+  }
+
+  async create(user: User, dto: CreateLectureDto) {
+    console.log('[LECTURE DTO TIME]', dto.lectureTime)
+    try {
+      // const savedLectureTimes = await Promise.all(
+      //   dto.lectureTime.map(async (x) => {
+      //     console.log('[X]', x)
+      //     return await this.lectureTimeRepo.save({
+      //       weekDay: x.weekDay,
+      //       period: x.period,
+      //     })
+      //   }),
+      // )
+      let savedLectureTimes = []
+      for (const x of dto.lectureTime) {
+        console.log('[X]', x)
+
+        const result = await this.lectureTimeRepo.save({
+          weekDay: Weekday.FRI,
+          period: 4,
+        })
+        savedLectureTimes.push(result)
+      }
+      // await getManager().transaction(async (manager) => {
+      //   const saved = await manager
+      //     .createQueryBuilder()
+      //     .insert()
+      //     .into(LectureTime)
+      //     .values(dto.lectureTime)
+      //     .execute()
+
+      //   console.log('[SAVED LECTURE TIMES]', saved)
+      //   savedLectureTimes = saved
+      // })
+      // console.log('[SAVED LECTURE TIMES]', savedLectureTimes)
+      const created = await this.lectureRepo.save({
+        users: [user],
+        lectureName: dto.lectureName,
+        grade: dto.grade,
+        classNumber: dto.classNumber,
+        lectureCode: dto.lectureCode,
+        lectureTime: savedLectureTimes,
+        attendances: [],
+      })
+
+      const lecture = await this.lectureRepo.findOneOrFail({
+        relations: ['lectureTime', 'attendances'],
+        where: {
+          id: created.id,
+        },
+      })
+
+      console.log('[CREATED LECTURE]', lecture)
+      return lecture
+    } catch (e) {
+      this.logger.error(e)
+      throw e
+    }
+  }
+
+  async register(user: User, lectureId: number) {
+    try {
+      const lecture = await this.lectureRepo.findOneOrFail({
+        where: {
+          id: lectureId,
+        },
+      })
+      lecture.users.push(user)
+      const saved = await this.lectureRepo.save(lecture)
+      console.log('SAVED LECTURE', saved)
+      return saved
+    } catch (e) {
+      this.logger.error(e)
+      throw e
+    }
   }
 }
