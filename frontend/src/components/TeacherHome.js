@@ -3,8 +3,8 @@ import LectureTemplate from './LectureTemplate'
 import { sharedTemplate, shareLectures } from './constants'
 import SelectClassNumberPopup from './SelectClassNumberPopup'
 
-function TeacherHome({ userObj }) {
-  const lectures = shareLectures
+function TeacherHome({ userObj, lectures }) {
+  lectures = !!lectures ? lectures : shareLectures
 
   const columns = [
     ...sharedTemplate,

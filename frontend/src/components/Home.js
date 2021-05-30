@@ -15,7 +15,7 @@ function Home({ userObj }) {
 
   const params = {
     page: 1,
-    pageSize: 10,
+    pageSize: 50,
     order: 'ASC',
   }
 
