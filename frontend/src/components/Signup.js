@@ -21,6 +21,38 @@ const Signup = (props) => {
   const [password, setPassword] = useState('')
 
   const onFinish = (data) => {
+    checkEmail(data)
+  }
+
+  const onFinishFailed = (result) => {
+    console.log('fail, result: ', result)
+  }
+
+  const checkEmail = (data) => {
+    const url = '/api/users/email-verification/' + data.email
+    const headers = {
+      accept: '*/*',
+    }
+
+    axios
+      .post(url, data, {
+        headers: headers,
+      })
+      .then((response) => {
+        requestSignup(data)
+      })
+      .catch((error) => {
+        if (error.response.status == 403) {
+          if (error.response.data.message === 'FORBIDDEN_DOMAIN')
+            alert('이메일 주소는 "cau.ac.kr" 으로 끝나야 합니다.')
+          else if (error.response.data.message === 'EMAIL_DUPLICATED')
+            alert('동일한 이메일 주소로 가입한 계정이 존재합니다.')
+          else alert(JSON.stringify(error.response.data))
+        } else alert(JSON.stringify(error.response.data))
+      })
+  }
+
+  const requestSignup = (data) => {
     const url = '/api/auth/sign-up'
     const headers = {
       'Content-Type': 'application/json; charset=utf-8',
@@ -43,10 +75,6 @@ const Signup = (props) => {
           alert(errormsg)
         } else alert(JSON.stringify(error.response.data))
       })
-  }
-
-  const onFinishFailed = (result) => {
-    console.log('fail, result: ', result)
   }
 
   const checkPassword = (_, value) => {
