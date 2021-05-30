@@ -8,6 +8,7 @@
 6. [Domain Model](#Domain-Model)
 7. [System Design Document(SDD)](#System-Design-Document)
 8. [UI](#UI)
+9. [ERD](#erd)
 ## Contributors
 
 |  이름  |   학번   |   Github ID   | 비고 |
@@ -130,3 +131,6 @@ Actor | Actor's Goal | Use Case Name
 
 ## UI
 - [UI Mockup](/docs/UI/UI_Mockup.md)
+
+## ERD
+- [ERD](/docs/ERD/ERD.md)
