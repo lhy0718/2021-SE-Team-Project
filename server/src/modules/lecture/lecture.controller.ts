@@ -6,6 +6,7 @@ import {
   HttpException,
   HttpStatus,
   Param,
+  Patch,
   Post,
   Query,
   Req,
@@ -19,6 +20,7 @@ import { PaginationQuery } from 'src/shared/pagination.query'
 import { User } from '../user/user.entity'
 import { CreateLectureDto } from './dto/create-lecture.dto'
 import { LectureService } from './lecture.service'
+import { EnrollParam } from './params/enroll-param'
 
 @Controller('lectures')
 @ApiTags('lecture')
@@ -35,9 +37,19 @@ export class LectureController {
     return lectures.map((x) => x.toDto())
   }
 
+  @Patch('/:lectureId')
+  @ApiOperation({
+    summary: '수강신청',
+  })
+  @UseGuards(AuthGuard('jwt'))
+  async enroll(@Param() params: EnrollParam, @Req() req: Request) {
+    const user = req.user as User
+    const created = await this.lectureService.register(user, params.lectureId)
+  }
+
   @Get('/users/:userId')
   @ApiOperation({
-    summary: '[선생님 전용] 학생/선생의 수업 리스트 조회',
+    summary: '[선생님 ONLY] 학생/선생의 수업 리스트 조회',
   })
   @UseGuards(AuthGuard('jwt'), RolesGuard)
   async getUserLectures(
@@ -64,6 +76,6 @@ export class LectureController {
   ) {
     const user = req.user as User
 
-    return (await this.lectureService.create(user, createLectureDto)).toDto()
+    return await this.lectureService.create(user, createLectureDto)
   }
 }
