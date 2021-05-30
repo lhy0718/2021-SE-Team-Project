@@ -8,7 +8,7 @@ import { AbstractDto } from './abstract.dto'
 
 // PK 와 create, update 자동생성을 해주며 dto 와 매칭 해줌
 export abstract class AbstractEntity<T extends AbstractDto = AbstractDto> {
-  @PrimaryGeneratedColumn('uuid')
+  @PrimaryGeneratedColumn('increment')
   id: string
 
   @CreateDateColumn({
