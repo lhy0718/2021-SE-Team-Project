@@ -7,6 +7,7 @@
 5. [Use Case](#Use-Case)
 6. [Domain Model](#Domain-Model)
 7. [System Design Document(SDD)](#System-Design-Document)
+8. [UI](#UI)
 ## Contributors
 
 |  이름  |   학번   |   Github ID   | 비고 |
@@ -126,3 +127,6 @@ Actor | Actor's Goal | Use Case Name
 ### Student
 - [Sequence Diagram](/docs/Student/SequenceDiagram.md)
 - [Class Diagram](/docs/Student/ClassDiagram.md)
+
+## UI
+- [UI Mockup](/docs/UI/UI_Mockup.md)
