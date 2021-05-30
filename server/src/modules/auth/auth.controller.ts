@@ -74,7 +74,7 @@ export class AuthController {
     @Res() res: Response,
   ) {
     const createdUser = await this.userService.create(createUserDto)
-    console.log('<<Created User>> : ', createdUser)
+    // console.log('<<Created User>> : ', createdUser)
     const token = await this.authService.createToken(createdUser)
     this.setUserTokenToCookie(res, token.accessToken)
     return res.json(createdUser.toDto())
@@ -105,10 +105,8 @@ export class AuthController {
   @UseGuards(AuthGuard('jwt'))
   @ApiOkResponse({ type: UserDto, description: 'current user info' })
   async getCurrentUser(@Req() req: Request) {
-    console.log('ME', req.user)
     const user = req.user as User
     const result = await this.userService.findOneByUserId(+user.id)
-    console.log('SHIT')
     return result.toDto()
   }
 }
