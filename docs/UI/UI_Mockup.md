@@ -7,7 +7,7 @@
 5. [수업상세 페이지](#수업상세-페이지)
 
 ---
-## 로그인 페이지
+## 1. 로그인 페이지
 
 ### a) 로그인 페이지
 ![Login](https://user-images.githubusercontent.com/76427521/120102505-57ef2180-c186-11eb-91b7-a79e9ccb7ee2.png)
@@ -22,7 +22,7 @@
 
 ---
 
-## 회원가입 페이지
+## 2. 회원가입 페이지
 
 ### a) 회원가입 1단계 (신분 선택)
 ![Auth_Select](https://user-images.githubusercontent.com/76427521/120102578-a8667f00-c186-11eb-83e3-64b4801c7bb5.png)
@@ -49,7 +49,7 @@
 
 ---
 
-## 메인 페이지 - 선생
+## 3. 메인 페이지 - 선생
 ![Teacher_MyLecture](https://user-images.githubusercontent.com/76427521/120102683-262a8a80-c187-11eb-86a9-2b1763f04392.png)
 
 - 수업목록 우상단 `수업 추가` 버튼 클릭 시 d(교사용 수업 추가 Pop-up)이 떠야 함
@@ -66,7 +66,7 @@
 ![차시입력 pop-up](https://user-images.githubusercontent.com/76427521/120102750-86213100-c187-11eb-8661-c15a98b2f66b.png)
 - 차시 드롭박스에는 1~20(예시) 까지가 존재하고, `차시 추가` 버튼을 누르면 드롭박스의 항목이 추가(이전 숫자 이어서)되고 `차시 삭제` 버튼을 누르면 드롭박스의 마지막 항목이 삭제됨
 
-## 메인 페이지 - 학생
+## 4. 메인 페이지 - 학생
 ![Student_MyLecture](https://user-images.githubusercontent.com/76427521/120102726-668a0880-c187-11eb-8102-443b24b0815e.jpg)
 - 출결현황 조회 버튼은 버튼만 존재, 실제로 구현하지 않음
 - 왼쪽 메뉴바에서 '나의 수업 조회'와 '수강신청'만 구현
@@ -79,7 +79,7 @@
 
 ---
 
-## 수업상세 페이지
+## 5. 수업상세 페이지
 ![Teacher_AtdCheck](https://user-images.githubusercontent.com/76427521/120102783-a650f000-c187-11eb-8fe6-56704b9b2527.png)
 - Checked는 출결체크 한 학생의 숫자
 - Search기능은 UI만 존재, 실제로는 구현 X
