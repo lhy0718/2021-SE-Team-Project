@@ -1,7 +1,16 @@
-import { ApiProperty } from '@nestjs/swagger'
 import { AbstractEntity } from 'src/shared/abstract.entity'
 import { UserRole } from 'src/shared/constants/constants'
-import { Entity, Column, ManyToOne, OneToMany, OneToOne } from 'typeorm'
+import {
+  Entity,
+  Column,
+  ManyToOne,
+  OneToMany,
+  OneToOne,
+  ManyToMany,
+  JoinTable,
+} from 'typeorm'
+import { Attendance } from '../attendance/attendance.entity'
+import { Lecture } from '../lecture/lecture.entity'
 import { UserDto } from './dto/user.dto'
 
 @Entity()
@@ -37,6 +46,12 @@ export class User extends AbstractEntity<UserDto> {
   })
   classNumber: number
 
+  // 선생님의 경우 없음
+  @Column({
+    nullable: true,
+  })
+  studentNumber: number
+
   @Column({
     nullable: true,
   })
@@ -46,6 +61,15 @@ export class User extends AbstractEntity<UserDto> {
     nullable: true,
   })
   deletedAt: Date
+
+  @ManyToMany(() => Lecture, (lecture) => lecture.users, {
+    eager: true,
+  })
+  @JoinTable()
+  lectures: Lecture[]
+
+  @OneToMany(() => Attendance, (attendance) => attendance.user)
+  attendances: Attendance[]
 
   dtoClass = UserDto
 }

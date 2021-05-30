@@ -20,7 +20,7 @@ export class CreateUserDto {
   readonly role: UserRole
 
   @ApiProperty({
-    example: 'test@test.com',
+    example: 'test@cau.ac.kr',
   })
   @IsEmail()
   readonly email: string
@@ -38,19 +38,32 @@ export class CreateUserDto {
   @IsString()
   readonly fullName: string
 
-  @ApiPropertyOptional()
+  @ApiPropertyOptional({
+    example: 1,
+  })
   @IsOptional()
   @IsInt()
   @Min(1)
   @Max(12)
   readonly grade: number
 
-  @ApiPropertyOptional()
+  @ApiPropertyOptional({
+    example: 5,
+  })
   @IsOptional()
   @IsInt()
   @Min(1)
   @Max(50)
   readonly classNumber: number
+
+  @ApiPropertyOptional({
+    example: 25,
+  })
+  @IsOptional()
+  @IsInt()
+  @Min(1)
+  @Max(99)
+  readonly studentNumber: number
 
   @ApiPropertyOptional()
   @IsOptional()

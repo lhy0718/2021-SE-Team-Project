@@ -8,7 +8,7 @@ import {
 import { InjectRepository } from '@nestjs/typeorm'
 import * as moment from 'moment'
 import { UtilsService } from 'src/providers/utils.service'
-import { getManager, Repository } from 'typeorm'
+import { Repository } from 'typeorm'
 import { CreateUserDto } from './dto/create-user.dto'
 import { EmailVerification } from './email-verification.entity'
 import { User } from './user.entity'

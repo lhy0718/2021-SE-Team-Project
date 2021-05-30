@@ -65,6 +65,9 @@ export class AuthController {
   }
 
   @Delete()
+  @ApiOperation({
+    summary: '탈퇴',
+  })
   @UseGuards(AuthGuard('jwt'))
   async unregister(@Req() req: Request, @Res() res: Response) {
     const user = req.user as User
@@ -78,6 +81,10 @@ export class AuthController {
   }
 
   @Get('me')
+  @ApiOperation({
+    summary: '내 정보를 불러옴',
+    description: '현재 로그인 되어 있는 유저의 정보를 불러옴',
+  })
   @HttpCode(HttpStatus.OK)
   @UseGuards(AuthGuard('jwt'))
   @ApiOkResponse({ type: UserDto, description: 'current user info' })

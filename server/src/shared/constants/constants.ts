@@ -8,6 +8,16 @@ export enum Order {
   DESC = 'DESC',
 }
 
+export enum Weekday {
+  MON = 'MON',
+  TUE = 'TUE',
+  WED = 'WED',
+  THUR = 'THUR',
+  FRI = 'FRI',
+  SAT = 'SAT',
+  SUN = 'SUN',
+}
+
 export const MINUTE_IN_SECONDS = 60
 export const HOUR_IN_SECONDS = 60 * MINUTE_IN_SECONDS
 export const DAY_IN_SECONDS = 24 * HOUR_IN_SECONDS

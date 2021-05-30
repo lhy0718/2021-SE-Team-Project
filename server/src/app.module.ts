@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common'
 import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm'
 import { AuthModule } from './modules/auth/auth.module'
 import { AwsModule } from './modules/aws/aws.module'
+import { LectureModule } from './modules/lecture/lecture.module'
 import { UserModule } from './modules/user/user.module'
 import { ConfigModule } from './shared/config/config.module'
 import { ConfigService } from './shared/config/config.service'
@@ -44,6 +45,7 @@ const ConfiguredTypeOrmModule = TypeOrmModule.forRootAsync({
     UserModule,
     AuthModule,
     AwsModule,
+    LectureModule,
   ],
 })
 export class AppModule {}
