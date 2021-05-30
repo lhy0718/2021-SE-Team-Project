@@ -6,7 +6,7 @@ import {
   CreateDateColumn,
   ManyToOne,
 } from 'typeorm'
-import { Lecture } from '../lecture.entity'
+import { Lecture } from './lecture.entity'
 
 @Entity()
 export class LectureTime {
