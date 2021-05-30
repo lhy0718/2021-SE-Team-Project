@@ -2,6 +2,11 @@ import React from 'react'
 import { Form, Input, Button, Row } from 'antd'
 import './Login.css'
 import userLoginImage from './userlogin.svg'
+import axios from 'axios'
+import { useHistory } from 'react-router'
+
+//test data
+import { shareStudents } from './constants'
 
 const inputLayout = {
   labelCol: { span: 6 },
@@ -21,9 +26,26 @@ const buttonLayout = {
   },
 }
 
-const Login = () => {
-  const onFinish = (result) => {
-    console.log('finish, result:', result)
+const Login = ({ setUserObjCallback }) => {
+  const history = useHistory()
+
+  const onFinish = (data) => {
+    const url = '/api/auth/login'
+    const headers = {
+      accept: 'application/json',
+      'Content-Type': 'application/json',
+    }
+    axios
+      .post(url, data, {
+        headers: headers,
+      })
+      .then((response) => {
+        setUserObjCallback(shareStudents[0])
+        history.push('/')
+      })
+      .catch((error) => {
+        alert(JSON.stringify(error.response.data))
+      })
   }
 
   const onFinishFailed = (result) => {
@@ -31,7 +53,7 @@ const Login = () => {
   }
 
   const moveSignup = (result) => {
-    console.log('moveSignup result: ', result)
+    history.push('/signup')
   }
 
   return (

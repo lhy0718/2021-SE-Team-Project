@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './App.css'
 import { useState } from 'react'
 import LayoutCtrl from './components/LayoutCtrl'
@@ -14,14 +14,11 @@ import AttendanceCheck from './components/AttendanceCheck'
 import { shareLectures, shareStudents } from './components/constants'
 
 function App() {
-  const [userObj, setUserObj] = useState({
-    id: 1,
-    email: '',
-    name: '김학생',
-    type: 'S',
-    phone: '',
-    grade: 1,
-  })
+  const [userObj, setUserObj] = useState({})
+
+  const setUserObjCallback = (data) => {
+    setUserObj(data)
+  }
 
   return (
     <div className="App">
@@ -31,10 +28,10 @@ function App() {
             path="/"
             exact
             component={() => {
-              if (userObj) {
+              if (userObj.id) {
                 return <Home userObj={userObj} />
               }
-              return <Login />
+              return <Login setUserObjCallback={setUserObjCallback} />
             }}
           />
           <Route path="/signup" exact component={SelectSignup} />
