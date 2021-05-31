@@ -1,6 +1,5 @@
 # Attendance Management System
-
-
+![교사-수업상세페이지](https://user-images.githubusercontent.com/76427521/120205277-bdb1db00-c264-11eb-9e31-84b0e18bbaaf.PNG)
 ## Contents
 ### - [1st Checkpoint](#1st-Checkpoint)
  - [Problem Statement](#problem-statement)
