@@ -1,9 +1,14 @@
 import React, { useState } from 'react'
 import { Form, Modal, Button, Select, Input } from 'antd'
+import { useHistory } from 'react-router'
+import { useLocation } from 'react-router-dom'
 
 const { Option } = Select
 
 const SelectClassNumberPopup = ({ lectureCode }) => {
+  const history = useHistory()
+  const location = useLocation()
+
   const [visible, setVisible] = useState(false)
   const [maxClassNumber, setMaxClassNumber] = useState(3)
   const [selectClassNumberForm] = Form.useForm()
@@ -11,6 +16,14 @@ const SelectClassNumberPopup = ({ lectureCode }) => {
   const onFinish = (result) => {
     console.log('finish, result:', result)
     console.log('lecid:', lectureCode)
+    history.push({
+      pathname: '/attendance',
+      state: {
+        userObj: location.state.userObj,
+        lectureId: lectureCode,
+        nth: result.classNumber,
+      },
+    })
   }
 
   const onFinishFailed = (result) => {

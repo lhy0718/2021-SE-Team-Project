@@ -3,17 +3,34 @@ import { Button, Divider, Row, Table, Popconfirm, Input, Col } from 'antd'
 import AttendanceCheckBtns from './AttendanceCheckBtns'
 import AttendanceCheckHeader from './AttendanceCheckHeader'
 import userProfileImage from './svg/profile-user.svg'
+import { useLocation } from 'react-router-dom'
+import axios from 'axios'
 
 const AttendanceCheck = ({ studentsData, lectureData, lectureHour }) => {
   const [_studentsData, setStudentsData] = useState(studentsData)
   const [tableData, setTableData] = useState(studentsData)
+  const location = useLocation()
 
   const onAttendanceStateChanges = ({ uId, newAttendanceState }) => {
-    let newStudentsData = [..._studentsData]
-    newStudentsData[
-      newStudentsData.findIndex((data) => data.uId === uId)
-    ].attendanceState = newAttendanceState
-    setStudentsData(newStudentsData)
+    const url = '/api/auth/login'
+    const headers = {
+      accept: 'application/json',
+      'Content-Type': 'application/json',
+    }
+    axios
+      .post(url, data, {
+        headers: headers,
+      })
+      .then((response) => {
+        let newStudentsData = [..._studentsData]
+        newStudentsData[
+          newStudentsData.findIndex((element) => element.uId === uId)
+        ].attendanceState = newAttendanceState
+        setStudentsData(newStudentsData)
+      })
+      .catch((error) => {
+        console.log(error)
+      })
   }
 
   const onExitAttendance = () => {

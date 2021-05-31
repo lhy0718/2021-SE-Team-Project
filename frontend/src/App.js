@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import './App.css'
 import LayoutCtrl from './components/LayoutCtrl'
-import { Route } from 'react-router-dom'
+import { Route, useLocation } from 'react-router-dom'
 import Login from './components/Login'
 import Signup from './components/Signup'
 import Home from './components/Home'
 import SelectSignup from './components/SelectSignup'
 import Sugang from './components/Sugang'
 import AttendanceCheck from './components/AttendanceCheck'
-import { useLocation } from 'react-router-dom'
 
 // test data
 import { shareLectures, shareStudents } from './components/constants'
