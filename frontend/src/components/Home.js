@@ -25,7 +25,7 @@ function Home({ userObj }) {
         headers: headers,
       })
       .then((res) => {
-        console.log(res)
+        // console.log(res)
         setLectures(res.data)
       })
       .catch((error) => {
