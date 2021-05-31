@@ -17,7 +17,7 @@ const AttendanceCheck = ({ studentsData, lectureData, lectureHour }) => {
     }
     const data = {
       userId: uId,
-      lectureId: lectureData.lectureCode,
+      lectureId: lectureData.id,
       nth: lectureHour,
       check: newAttendanceState,
     }
@@ -28,7 +28,7 @@ const AttendanceCheck = ({ studentsData, lectureData, lectureHour }) => {
       .then((response) => {
         let newStudentsData = [..._studentsData]
         newStudentsData[
-          newStudentsData.findIndex((element) => element.uId === uId)
+          newStudentsData.findIndex((element) => element.id === uId)
         ].attendanceState = newAttendanceState
         setStudentsData(newStudentsData)
       })
@@ -75,7 +75,7 @@ const AttendanceCheck = ({ studentsData, lectureData, lectureHour }) => {
       align: 'center',
       render: (text, record) => (
         <AttendanceCheckBtns
-          uId={record.uId}
+          uId={record.id}
           lectureCode={lectureData.lectureCode}
           lectureHour={lectureHour}
           attendanceState={record.attendanceState}

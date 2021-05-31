@@ -108,7 +108,7 @@ export const shareLectures = [
 
 export const shareStudents = [
   {
-    id: '1',
+    id: 1,
     key: '1',
     uId: 10000,
     email: 'kcs@example.com',
@@ -121,7 +121,7 @@ export const shareStudents = [
     attendanceState: null,
   },
   {
-    id: '2',
+    id: 2,
     key: '2',
     uId: 10001,
     email: 'kcs@example.com',
@@ -134,7 +134,7 @@ export const shareStudents = [
     attendanceState: 'ATTENDANCE',
   },
   {
-    id: '3',
+    id: 3,
     key: '3',
     uId: 10002,
     email: 'kcs@example.com',
@@ -147,7 +147,7 @@ export const shareStudents = [
     attendanceState: 'ABSENT',
   },
   {
-    id: '4',
+    id: 4,
     key: '4',
     uId: 10003,
     email: 'kcs@example.com',
@@ -160,7 +160,7 @@ export const shareStudents = [
     attendanceState: 'ATTENDANCE',
   },
   {
-    id: '5',
+    id: 5,
     key: '5',
     uId: 10004,
     email: 'kcs@example.com',
@@ -173,7 +173,7 @@ export const shareStudents = [
     attendanceState: 'TARDY',
   },
   {
-    id: '6',
+    id: 6,
     key: '6',
     uId: 10005,
     email: 'kcs@example.com',
