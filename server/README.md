@@ -106,21 +106,9 @@ Ctrl+C 누르면 됨 (Mac & Windows 동일함)
 - 웹앱에서 사용되는 API는 다음과 같이 구성되어있다.
 ![image](https://user-images.githubusercontent.com/59490892/120207498-7b3dcd80-c267-11eb-9176-a849f8d1bb03.png)
 1. [users](#users)
-- [이메일 유효성 및 중복 확인(/api/users/email-verification/{email})](#이메일-유효성-및-중복-확인(/api/users/email-verification/{email}))
-- [이메일 인증번호(/api/users/email-validation)](#이메일-인증번호(/api/users/email-validation))
 2. [auth](#auth)
-- [회원가입(/api/auth/sign-up)](#회원가입(/api/auth/sign-up))
-- [로그인(/api/auth/login)](#로그인(/api/auth/login))
-- [로그아웃(/api/auth/logout)](#로그아웃(/api/auth/logout))
-- [내 정보 조회(/api/auth/me)](#내-정보-조회(/api/auth/me))
-- [탈퇴(/api/auth)](#탈퇴(/api/auth))
 3. [lecture](#lecture)
-- [전체 수업 리스트 조회(/api/lecture)](#전체-수업-리스트-조회(/api/lecture))
-- [수업 개설(/api/lectures)](#수업-개설(/api/lectures))
-- [수강 신청(/api/lectures/{lectureId})](#수강-신청(/api/lectures/{lectureId}))
-- [user 수업 리스트 조회(/api/lectures/users/{userId})](#user-수업-리스트-조회(/api/lectures/users/{userId}))
 4. [attendence](#attendence)
-- [출석체크(/api/attendence)](#출석체크(/api/attendence))
 
 
 
