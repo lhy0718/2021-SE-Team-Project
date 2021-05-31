@@ -258,5 +258,5 @@ Ctrl+C 누르면 됨 (Mac & Windows 동일함)
 - 재사용성이 상당히 많은 UI가 많아 이에 최적화된 View Library 인 React를 사용하였다.
 
 ### 4. Frontend & Server READ.ME
-- [Frontend] (/frontend/README.md)
-- [Server] (/server/README.md)
+- [Frontend](/frontend/README.md)
+- [Server](/server/README.md)
