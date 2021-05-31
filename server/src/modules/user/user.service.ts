@@ -48,7 +48,7 @@ export class UserService {
         id,
         deletedAt: null,
       },
-      relations: ['lecture', 'attendance'],
+      relations: ['lectures', 'attendances'],
     })
 
     return user
