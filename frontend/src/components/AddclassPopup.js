@@ -48,16 +48,6 @@ const AddclassPopup = ({ lectures, setLectures }) => {
       'Content-Type': 'application/json',
     }
 
-    let teacherName = ''
-    axios
-      .get('/api/auth/me')
-      .then((res) => {
-        teacherName = res.data.fullName
-      })
-      .catch((err) => {
-        console.log(err)
-      })
-
     axios
       .post(url, data, {
         headers: headers,
@@ -66,8 +56,8 @@ const AddclassPopup = ({ lectures, setLectures }) => {
         console.log(response)
         alert('수업이 추가되었습니다.')
         setVisible(false)
-        data.teacherName = teacherName
-        setLectures([...lectures, data])
+        setLectures([...lectures, response.data])
+        // console.log(response)
       })
       .catch((error) => {
         if (error.response.status == 409)
