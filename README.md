@@ -2,9 +2,9 @@
 
 
 ## Contents
-- [1st Checkpoint](#1st-Checkpoint)
-- [2nd Checkpoint](#2nd-Checkpoint)
-- [3rd Checkpoint](#3rd-Checkpoint)
+### - [1st Checkpoint](#1st-Checkpoint)
+### - [2nd Checkpoint](#2nd-Checkpoint)
+### - [3rd Checkpoint](#3rd-Checkpoint)
  1. [Contributors](#Contributors)
  2. [Problem Statement](#Problem-Statement)
  3. [Sub-Group](#Sub-Group)
