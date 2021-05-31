@@ -4,6 +4,7 @@ import {
   Injectable,
   Logger,
   NotFoundException,
+  UnauthorizedException,
 } from '@nestjs/common'
 import { InjectRepository } from '@nestjs/typeorm'
 import * as moment from 'moment'
@@ -85,6 +86,17 @@ export class UserService {
 
       if (!createUserDto.password) {
         throw new BadRequestException('MISSING_PASSWORD')
+      }
+
+      // 이메일이 인증받을 메일인지 확인
+      const emailVerification = await this.emailVerficationRepository.findOne({
+        where: {
+          email: createUserDto.email,
+        },
+      })
+
+      if (!emailVerification.isVerified) {
+        throw new UnauthorizedException('EMAIL_NOT_VERIFIED')
       }
 
       const hashed = UtilsService.generateHash(createUserDto.password)
