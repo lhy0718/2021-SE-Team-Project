@@ -13,13 +13,13 @@ export const sharedTemplate = [
     width: '100px',
     align: 'center',
   },
-  {
-    title: '교사명',
-    dataIndex: 'teacherName',
-    key: 'teacherName',
-    width: '150px',
-    align: 'center',
-  },
+  // {
+  //   title: '교사명',
+  //   dataIndex: 'teacherName',
+  //   key: 'teacherName',
+  //   width: '150px',
+  //   align: 'center',
+  // },
 
   {
     title: '학년',
