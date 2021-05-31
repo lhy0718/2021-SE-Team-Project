@@ -291,7 +291,7 @@ Ctrl+C 누르면 됨 (Mac & Windows 동일함)
 
 - 다음은 check에 'ABSENT'를 넣어 request했을때의 결과이다.
 
-![image-20210531230053631](C:\Users\samsung\AppData\Roaming\Typora\typora-user-images\image-20210531230053631.png)
+![image-20210531230053631](https://user-images.githubusercontent.com/59490892/120207311-3b76e600-c267-11eb-9b06-33dc3116c122.png)
 
 - 정상적으로 출석체크가 완료되어 status code(200)와 response된다.
 
