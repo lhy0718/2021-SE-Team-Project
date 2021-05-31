@@ -17,7 +17,7 @@ const AttendanceCheck = ({ studentsData, lectureData, lectureHour }) => {
     }
     const data = {
       userId: uId,
-      lectureId: lectureData.lectureId,
+      lectureId: lectureData.lectureCode,
       nth: lectureHour,
       check: newAttendanceState,
     }
