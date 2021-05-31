@@ -4,7 +4,7 @@ import LectureTable from './LectureTable'
 import AddclassPopup from './AddclassPopup'
 
 const LectureTemplate = ({ columns, lectures, type, name }) => {
-  return type === 'T' ? (
+  return type === 'TEACHER' ? (
     <div className="LectureTemplate">
       <div className="list-title">
         <div className="title">

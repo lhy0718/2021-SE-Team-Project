@@ -26,7 +26,14 @@ const buttonLayout = {
   },
 }
 
-const Login = ({ setUserObjCallback }) => {
+const validateMessages = {
+  required: '${label}을(를) 입력하세요.',
+  types: {
+    email: '유효한 이메일이 아닙니다.',
+  },
+}
+
+const Login = () => {
   const history = useHistory()
 
   const onFinish = (data) => {
@@ -40,11 +47,16 @@ const Login = ({ setUserObjCallback }) => {
         headers: headers,
       })
       .then((response) => {
-        setUserObjCallback(shareStudents[0])
-        history.push('/')
+        history.push({
+          pathname: '/',
+          state: { userObj: response.data },
+        })
       })
       .catch((error) => {
-        alert(JSON.stringify(error.response.data))
+        if (!error.response) console.log(error)
+        else if (error.response.status == 500)
+          alert('이메일 또는 비밀번호가 틀립니다.')
+        else alert(JSON.stringify(error.response.data))
       })
   }
 
@@ -71,14 +83,15 @@ const Login = ({ setUserObjCallback }) => {
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
         name="loginForm"
+        validateMessages={validateMessages}
       >
         <Form.Item
-          label="ID"
-          name="id"
+          label="Email"
+          name="email"
           rules={[
             {
+              type: 'email',
               required: true,
-              message: 'ID를 입력하세요.',
             },
           ]}
         >
@@ -88,12 +101,7 @@ const Login = ({ setUserObjCallback }) => {
         <Form.Item
           label="Password"
           name="password"
-          rules={[
-            {
-              required: true,
-              message: '비밀번호를 입력하세요.',
-            },
-          ]}
+          rules={[{ required: true }]}
         >
           <Input.Password />
         </Form.Item>

@@ -42,13 +42,11 @@ const Signup = (props) => {
         requestSignup(data)
       })
       .catch((error) => {
-        if (error.response.status == 403) {
-          if (error.response.data.message === 'FORBIDDEN_DOMAIN')
-            alert('이메일 주소는 "cau.ac.kr" 으로 끝나야 합니다.')
-          else if (error.response.data.message === 'EMAIL_DUPLICATED')
-            alert('동일한 이메일 주소로 가입한 계정이 존재합니다.')
-          else alert(JSON.stringify(error.response.data))
-        } else alert(JSON.stringify(error.response.data))
+        if (error.response.status == 403)
+          alert('이메일 주소는 "cau.ac.kr" 으로 끝나야 합니다.')
+        else if (error.response.status == 409)
+          alert('동일한 이메일 주소로 가입한 계정이 존재합니다.')
+        else alert(JSON.stringify(error.response.data))
       })
   }
 
@@ -64,7 +62,11 @@ const Signup = (props) => {
         headers: headers,
       })
       .then((response) => {
-        console.log('response: ', response.data)
+        alert('회원가입이 완료되었습니다.')
+        props.history.push({
+          pathname: '/',
+          state: { userObj: response.data },
+        })
       })
       .catch((error) => {
         if (error.response.status == 400) {
@@ -118,9 +120,6 @@ const Signup = (props) => {
           <Input />
         </Form.Item>
 
-        <Form.Item label="아이디" name="id" rules={[{ required: true }]}>
-          <Input />
-        </Form.Item>
         {props.isStudentScreen && (
           <Form.Item label="학년/반/번호">
             <Input.Group compact>

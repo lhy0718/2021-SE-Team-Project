@@ -2,7 +2,7 @@ import StudentHome from './StudentHome'
 import TeacherHome from './TeacherHome'
 
 function Home({ userObj }) {
-  return userObj.type === 'S' ? (
+  return userObj.role === 'STUDENT' ? (
     <StudentHome userObj={userObj} />
   ) : (
     <TeacherHome userObj={userObj} />
