@@ -45,6 +45,7 @@ export class LectureController {
   async enroll(@Param() params: EnrollParam, @Req() req: Request) {
     const user = req.user as User
     const created = await this.lectureService.register(user, params.lectureId)
+    return created
   }
 
   @Get('/users/:userId')
