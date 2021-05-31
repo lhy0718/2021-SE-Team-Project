@@ -21,6 +21,7 @@ import { User } from '../user/user.entity'
 import { CreateLectureDto } from './dto/create-lecture.dto'
 import { LectureService } from './lecture.service'
 import { EnrollParam } from './params/enroll-param'
+import { UserIdParam } from './params/user-id-param'
 
 @Controller('lectures')
 @ApiTags('lecture')
@@ -44,6 +45,8 @@ export class LectureController {
   @UseGuards(AuthGuard('jwt'))
   async enroll(@Param() params: EnrollParam, @Req() req: Request) {
     const user = req.user as User
+    console.log('<lecture id>', +params.lectureId)
+    console.log('<type of lecture id>', typeof +params.lectureId)
     const created = await this.lectureService.register(user, params.lectureId)
     return created
   }
@@ -56,7 +59,7 @@ export class LectureController {
   async getUserLectures(
     @Req() req: Request,
     @Query() query: PaginationQuery,
-    @Param() { userId }: { userId: number },
+    @Param() { userId }: UserIdParam,
   ) {
     const user = req.user as User
     const lectures = await this.lectureService.getLecturesByUserId(
