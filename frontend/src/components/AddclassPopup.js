@@ -12,12 +12,13 @@ import {
 } from 'antd'
 import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons'
 import './AddclassPopup.css'
+import axios from 'axios'
 
 const { Option } = Select
 
 const inputLayout = {
-  labelCol: { span: 6 },
-  wrapperCol: { span: 18 },
+  labelCol: { span: 8 },
+  wrapperCol: { span: 16 },
 }
 
 const validateMessages = {
@@ -30,21 +31,40 @@ const validateMessages = {
 
 const checkNum = (_, value) => {
   if (!isNaN(value) && parseInt(value) >= 0) {
+    if (String(value).length > 4)
+      return Promise.reject(new Error('4자리의 이하의 숫자를 입력하세요.'))
     return Promise.resolve()
   }
   return Promise.reject(new Error('숫자만 입력 가능합니다.'))
 }
 
-const onFinish = (result) => {
-  console.log('finish, result:', result)
-}
-
-const onFinishFailed = (result) => {
-  console.log('fail, result: ', result)
-}
-
 const AddclassPopup = () => {
   const [visible, setVisible] = useState(false)
+
+  const onFinish = (data) => {
+    const url = '/api/lectures'
+    const headers = {
+      accept: '*/*',
+      'Content-Type': 'application/json',
+    }
+    axios
+      .post(url, data, {
+        headers: headers,
+      })
+      .then((response) => {
+        alert('수업이 추가되었습니다.')
+        setVisible(false)
+      })
+      .catch((error) => {
+        if (error.response.status == 409)
+          alert('동일한 과목코드의 수업이 존재합니다.')
+        else alert(JSON.stringify(error.response.data))
+      })
+  }
+
+  const onFinishFailed = (result) => {
+    console.log('fail, result: ', result)
+  }
 
   return (
     <div className="AddclassPopup">
@@ -95,8 +115,8 @@ const AddclassPopup = () => {
             <Col span={12}>
               <Form.Item
                 {...inputLayout}
-                label="과목ID"
-                name="lectureId"
+                label="과목코드"
+                name="lectureCode"
                 rules={[{ required: true, validator: checkNum }]}
               >
                 <Input />
@@ -119,7 +139,7 @@ const AddclassPopup = () => {
               <Form.Item
                 {...inputLayout}
                 label="반"
-                name="classId"
+                name="classNumber"
                 rules={[{ required: true }]}
               >
                 <InputNumber min={1} max={50} />
@@ -130,7 +150,7 @@ const AddclassPopup = () => {
           <Row>
             <Col span={12}>
               <Form.Item label="교시">
-                <Form.List name="weekDay/period">
+                <Form.List name="lectureTime">
                   {(fields, { add, remove }) => (
                     <>
                       {fields.map((field) => (
@@ -146,13 +166,13 @@ const AddclassPopup = () => {
                             ]}
                           >
                             <Select placeholder="요일">
-                              <Option value="mon">월</Option>
-                              <Option value="tue">화</Option>
-                              <Option value="wed">수</Option>
-                              <Option value="thu">목</Option>
-                              <Option value="fri">금</Option>
-                              <Option value="sat">토</Option>
-                              <Option value="sun">일</Option>
+                              <Option value="MON">월</Option>
+                              <Option value="TUE">화</Option>
+                              <Option value="WED">수</Option>
+                              <Option value="THU">목</Option>
+                              <Option value="FRI">금</Option>
+                              <Option value="SAT">토</Option>
+                              <Option value="SUN">일</Option>
                             </Select>
                           </Form.Item>
 
