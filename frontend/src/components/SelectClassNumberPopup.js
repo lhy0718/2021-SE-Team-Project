@@ -1,16 +1,29 @@
 import React, { useState } from 'react'
 import { Form, Modal, Button, Select, Input } from 'antd'
+import { useHistory } from 'react-router'
+import { useLocation } from 'react-router-dom'
 
 const { Option } = Select
 
-const SelectClassNumberPopup = ({ lectureCode }) => {
+const SelectClassNumberPopup = ({ lectureData }) => {
+  const history = useHistory()
+  const location = useLocation()
+
   const [visible, setVisible] = useState(false)
   const [maxClassNumber, setMaxClassNumber] = useState(3)
   const [selectClassNumberForm] = Form.useForm()
 
   const onFinish = (result) => {
     console.log('finish, result:', result)
-    console.log('lecid:', lectureCode)
+    console.log('lecture data', lectureData)
+    history.push({
+      pathname: '/attendance',
+      state: {
+        userObj: location.state.userObj,
+        lectureData: lectureData,
+        nth: result.classNumber,
+      },
+    })
   }
 
   const onFinishFailed = (result) => {
@@ -49,7 +62,7 @@ const SelectClassNumberPopup = ({ lectureCode }) => {
             취소
           </Button>,
           <Button
-            form={lectureCode + 'selectClassNumberForm'}
+            form={lectureData.id + 'selectClassNumberForm'}
             key="submit"
             htmlType="submit"
             type="primary"
@@ -60,7 +73,7 @@ const SelectClassNumberPopup = ({ lectureCode }) => {
       >
         <Form
           form={selectClassNumberForm}
-          name={lectureCode + 'selectClassNumberForm'}
+          name={lectureData.id + 'selectClassNumberForm'}
           onFinish={onFinish}
           onFinishFailed={onFinishFailed}
         >

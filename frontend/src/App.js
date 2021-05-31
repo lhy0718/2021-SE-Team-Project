@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import './App.css'
 import LayoutCtrl from './components/LayoutCtrl'
-import { Route } from 'react-router-dom'
+import { Route, useLocation } from 'react-router-dom'
 import Login from './components/Login'
 import Signup from './components/Signup'
 import Home from './components/Home'
 import SelectSignup from './components/SelectSignup'
 import Sugang from './components/Sugang'
 import AttendanceCheck from './components/AttendanceCheck'
-import { useLocation } from 'react-router-dom'
 
 // test data
 import { shareLectures, shareStudents } from './components/constants'
@@ -19,10 +18,10 @@ function App() {
   const [userObj, setUserObj] = useState(
     location.state ? location.state.userObj : {},
   )
+  console.log(location.state)
 
   useEffect(() => {
     setUserObj(location.state ? location.state.userObj : {})
-    console.log(location)
   }, [location])
 
   return (
@@ -53,8 +52,8 @@ function App() {
           render={() => (
             <AttendanceCheck
               studentsData={shareStudents} // test data
-              lectureData={shareLectures[0]} // test data
-              lectureHour={1} // test data, 수업 차시 숫자
+              lectureData={location.state.lectureData}
+              lectureHour={location.state.nth}
             />
           )}
         />
