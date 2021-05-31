@@ -38,7 +38,7 @@ const checkNum = (_, value) => {
   return Promise.reject(new Error('숫자만 입력 가능합니다.'))
 }
 
-const AddclassPopup = () => {
+const AddclassPopup = ({ lectures, setLectures }) => {
   const [visible, setVisible] = useState(false)
 
   const onFinish = (data) => {
@@ -47,6 +47,17 @@ const AddclassPopup = () => {
       accept: '*/*',
       'Content-Type': 'application/json',
     }
+
+    let teacherName = ''
+    axios
+      .get('/api/auth/me')
+      .then((res) => {
+        teacherName = res.data.fullName
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+
     axios
       .post(url, data, {
         headers: headers,
@@ -54,6 +65,8 @@ const AddclassPopup = () => {
       .then((response) => {
         alert('수업이 추가되었습니다.')
         setVisible(false)
+        data.teacherName = teacherName
+        setLectures([...lectures, data])
       })
       .catch((error) => {
         if (error.response.status == 409)

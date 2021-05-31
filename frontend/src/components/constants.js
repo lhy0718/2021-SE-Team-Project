@@ -8,8 +8,8 @@ export const sharedTemplate = [
   },
   {
     title: '과목ID',
-    dataIndex: 'lectureId',
-    key: 'lectureId',
+    dataIndex: 'lectureCode',
+    key: 'lectureCode',
     width: '100px',
     align: 'center',
   },
@@ -31,8 +31,8 @@ export const sharedTemplate = [
 
   {
     title: '반',
-    dataIndex: 'classNum',
-    key: 'classNum',
+    dataIndex: 'classNumber',
+    key: 'classNumber',
     width: '87px',
     align: 'center',
   },
