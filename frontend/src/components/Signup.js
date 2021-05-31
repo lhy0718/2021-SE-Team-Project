@@ -24,18 +24,6 @@ const Signup = (props) => {
   const [password, setPassword] = useState('')
   const [isCodeInputHidden, setIsCodeInputHidden] = useState(true)
 
-  const onFinish = (data) => {
-    const url = '/api/users/email-validation'
-    const params = {}
-    const headers = {
-      accept: '*/*',
-    }
-  }
-
-  const onFinishFailed = (result) => {
-    console.log('fail, result: ', result)
-  }
-
   const checkEmail = () => {
     const email = signupForm.getFieldsValue().email
     const url = '/api/users/email-verification/' + email
@@ -61,7 +49,56 @@ const Signup = (props) => {
       })
   }
 
-  const requestSignup = (data) => {}
+  const onFinish = (data) => {
+    const url = '/api/users/email-validation'
+    const params = {
+      email: data.email,
+      code: data.emailValidCode,
+    }
+    const headers = {
+      accept: '*/*',
+    }
+    axios
+      .get(url, {
+        headers: headers,
+        params: params,
+      })
+      .then((response) => {
+        requestSignup(data)
+      })
+      .catch((error) => {
+        alert(JSON.stringify(error.response.data))
+      })
+  }
+
+  const onFinishFailed = (result) => {
+    console.log('fail, result: ', result)
+  }
+
+  const requestSignup = (data) => {
+    const url = '/api/auth/sign-up'
+    const headers = {
+      accept: '*/*',
+      'Content-Type': 'application/json',
+    }
+
+    axios
+      .post(url, data, {
+        headers: headers,
+      })
+      .then((response) => {
+        alert('회원가입이 완료되었습니다.')
+        console.log(data)
+        console.log(response)
+        props.history.push({
+          pathname: '/',
+          state: { userObj: response.data },
+        })
+      })
+      .catch((error) => {
+        alert(JSON.stringify(error.response.data))
+      })
+  }
 
   const checkPassword = (_, value) => {
     if (password === value) {
@@ -116,14 +153,14 @@ const Signup = (props) => {
                 <InputNumber min={1} max={10} />
               </Form.Item>
               <Form.Item
-                name="classId"
+                name="classNumber"
                 rules={[{ required: true, message: '반을 입력하세요.' }]}
                 style={{ width: '25%' }}
               >
                 <InputNumber min={1} max={50} />
               </Form.Item>
               <Form.Item
-                name="studentId"
+                name="studentNumber"
                 rules={[{ required: true, message: '번호를 입력하세요.' }]}
                 style={{ width: '25%' }}
               >
