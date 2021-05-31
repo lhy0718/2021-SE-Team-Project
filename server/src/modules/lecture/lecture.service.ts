@@ -46,6 +46,21 @@ export class LectureService {
     }
   }
 
+  async getLectureById(id: number) {
+    try {
+      const lecture = await this.lectureRepo.findOneOrFail({
+        where: {
+          id,
+        },
+        relations: ['users', 'attendances', 'lectureTime'],
+      })
+      return lecture
+    } catch (e) {
+      this.logger.error(e)
+      throw e
+    }
+  }
+
   async getRecentLectures({
     page,
     pageSize,
