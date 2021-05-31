@@ -33,7 +33,7 @@ export class LectureService {
     try {
       const lectures = this.lectureRepo
         .createQueryBuilder('lecture')
-        .leftJoin('lecture.user', 'user')
+        .leftJoin('lecture.users', 'user')
         .where('user.id = :id', { id })
         .skip(pageSize * (page - 1))
         .take(pageSize)
@@ -67,6 +67,9 @@ export class LectureService {
   }
 
   async create(user: User, dto: CreateLectureDto) {
+    if (user.role === UserRole.STUDENT) {
+      throw new UnauthorizedException('STUDENT_NOT_AVAILABLE')
+    }
     try {
       const savedLectureTimes = await Promise.all(
         dto.lectureTime.map(async (x) => {
