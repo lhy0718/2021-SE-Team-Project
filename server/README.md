@@ -149,7 +149,7 @@ Ctrl+C 누르면 됨 (Mac & Windows 동일함)
 
 
 - 인증코드를 잘못 입력하였을때의 결과값이다. email string이 유효하며 code string=111111이므로 status code(200)이고 False. 
-- 
+
 ![image-20210531182335055](https://user-images.githubusercontent.com/59490892/120206297-fdc58d80-c265-11eb-8c24-47c76cb9699c.png)
 
 
