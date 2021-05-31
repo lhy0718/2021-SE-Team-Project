@@ -13,12 +13,6 @@ import { useLocation } from 'react-router-dom'
 // test data
 import { shareLectures, shareStudents } from './components/constants'
 
-//prevent back-page button
-window.history.pushState(null, null, window.location.href)
-window.onpopstate = function () {
-  window.history.go(1)
-}
-
 function App() {
   const location = useLocation()
 
