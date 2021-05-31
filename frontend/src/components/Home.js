@@ -9,7 +9,6 @@ function Home({ userObj }) {
   const url = `/api/lectures/users/${userObj.id}`
 
   const headers = {
-    'Content-Type': 'application/json; charset=utf-8',
     accept: '*/*',
   }
 

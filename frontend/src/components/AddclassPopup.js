@@ -172,9 +172,9 @@ const AddclassPopup = ({ lectures, setLectures }) => {
                           <Form.Item
                             {...field}
                             style={{ marginBottom: '6px' }}
-                            name={[field.name, 'weekDay']}
-                            key={[field.key, 'weekDay']}
-                            fieldKey={[field.fieldKey, 'weekDay']}
+                            name={[field.name, 'weekday']}
+                            key={[field.key, 'weekday']}
+                            fieldKey={[field.fieldKey, 'weekday']}
                             rules={[
                               { required: true, message: '요일을 입력하세요.' },
                             ]}
