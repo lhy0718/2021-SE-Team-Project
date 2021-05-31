@@ -1,14 +1,10 @@
 # Attendance Management System
+
 ## Contents
-1. [Contributors](#Contributors)
-2. [Problem Statement](#Problem-Statement)
-3. [Sub-Group](#Sub-Group)
-4. [Requirements (Stories)](#Requirements)
-5. [Use Case](#Use-Case)
-6. [Domain Model](#Domain-Model)
-7. [System Design Document(SDD)](#System-Design-Document)
-8. [UI](#UI)
-9. [ERD](#erd)
+1. [1st Checkpoint](#1st-Checkpoint)
+2. [2nd Checkpoint](#2nd-Checkpoint)
+3. [3rd Checkpoint](#3rd-Checkpoint)
+
 ## Contributors
 
 |  이름  |   학번   |   Github ID   | 비고 |
@@ -19,7 +15,6 @@
 | 이한용 | 20151322 |    lhy0718    |
 | 정나린 | 20180396 |    jnl1128    |
 |  진겸  | 20153031 | kevinOriginal |
-
 
 
 ## 실행 방법
@@ -47,9 +42,6 @@ docker-compose down $(docker ps -q)
 ```
 
 
-
-
-
 ## Problem Statement
 
 ### Problem and Purpose
@@ -57,8 +49,8 @@ docker-compose down $(docker ps -q)
 코로나-19 바이러스로 인한 비대면 수업이 장기화되었다. 제 4차 감염이 예상되는 가운데, 초중고등학교 학생들은 돌봄 부재 속에 방치되어 있다. 비대면 상황 속에서 교수자, 학부모 학생은 아래와 같은 문제점을 겪고 있다.
 
 1. 교수자는 학생에게 공지사항이 제대로 전달이 되었는지 확인하기 어렵다.
-1. 학부모는 자녀의 수업 공지사항을 확인하기 어렵다.
-1. 학생은 해당 수업에 출결 처리가 정상적으로 처리되었는지 확인하기 어렵고 수업 참여에 대한 동기부여를 얻기 어렵다.
+2. 학부모는 자녀의 수업 공지사항을 확인하기 어렵다.
+3. 학생은 해당 수업에 출결 처리가 정상적으로 처리되었는지 확인하기 어렵고 수업 참여에 대한 동기부여를 얻기 어렵다.
 
 우리는 교수자, 학부모, 학생 모두가 비대면 상황에서 돌봄 공백을 느끼지 않을 수 있는 서비스가 있었으면 좋겠다. 우리는 교수자가 학생과 학부모에게 공지사항을 일괄 전송하고 확인했는지 여부까지 파악해 소통의 문제를 해결할 수 있기를 원한다. 우리는 학부모가 수업별 공지사항를 교수자로부터 확인받아 자녀에 대한 고민을 덜길 바란다. 마지막으로 우리는 학생들이 수업 참여에 대한 동기부여를 잃지 않고 출석과 과제 참여를 높이기 위한 시스템이 있기를 바란다.
 
@@ -80,19 +72,19 @@ docker-compose down $(docker ps -q)
 | Teacher   | 학생에 대한 출석 체크, 수업 및 학생 목록, 정보 조회, 출결 결과 및 공지사항 발송 | 이한용, 정나린 |
 | Student   | 수업 신청, 개인 출결현황 및 수업참여도 확인                                     | 박종혁, 윤진호 |
 
-## Requirements
 
-- [Core & Auth](/docs/Core/Requirements.md)
-- [Teacher](/docs/Teacher/Requirements.md)
-- [Student](/docs/Student/Requirements.md)
-
-## Use Case
-
-- [Core & Auth](/docs/Core/UseCases.md)
-- [Teacher](/docs/Teacher/UseCases.md)
-- [Student](/docs/Student/Usecases.md)
-
-Actor | Actor's Goal | Use Case Name
+## 1st Checkpoint
+### 1. Requirements (Stories)
+  - [Core & Auth](/docs/Core/Requirements.md)
+  - [Teacher](/docs/Teacher/Requirements.md)
+  - [Student](/docs/Student/Requirements.md)
+  
+### 2. Use Case
+  - [Core & Auth](/docs/Core/UseCases.md)
+  - [Teacher](/docs/Teacher/UseCases.md)
+  - [Student](/docs/Student/Usecases.md)
+  
+  Actor | Actor's Goal | Use Case Name
 -|-|-
 교수자 | 교수자가 본인임을 인증하고 가입 및 로그인을 할 수 있기 위함 | 교수자 온보딩 (UC-1)
 교수자 | 학생들의 출결을 관리 하기 위함 | 출결 관리(UC-2)
@@ -104,33 +96,37 @@ Actor | Actor's Goal | Use Case Name
 학생 | 나의 이번 학기 수업 목록을 선택해서 그 정보를 보기 위함 | 수업 신청 (UC-8)
 학생 | 학생이 수업의 공지 및 출결상태를 확인 하기 위함 | 수업상태확인(UC-9)
 학생 | 자신의 프로필 및 정보를 수정하기 위함 | 학생정보관리(UC-10)
-교수자,학생 | 지정된 도메인의 메일주소를 가지고 있는지 확인하기 위함 | UC-1,UC-7
+교수자,학생 | 지정된 도메인의 메일주소를 가지고 있는지 확인하기 위함 | (UC-1), (UC-7)
 교수자,학생 | 서비스 회원 탈퇴를 하기 위함 | 회원탈퇴(UC-11)
 서버 | 학부모가 학생들의 출결상태를 확인하기 위함 | 출결 확인(UC-12)
 서버,클라이언트 | 사용자 요청에 대한 유효성 검사 (타입, 범위, URL, ...) | 유효성 검사(UC-13)
 
-## Domain Model
+### 3. Domain Model
+  - [Core & Auth](/docs/Core/DomainModel.md)
+  - [Teacher](/docs/Teacher/DomainModel.md)
+  - [Student](/docs/Student/DomainModel.md)
 
-- [Core & Auth](/docs/Core/DomainModel.md)
-- [Teacher](/docs/Teacher/DomainModel.md)
-- [Student](/docs/Student/DomainModel.md)
 
-## System Design Document
+## 2nd Checkpoint
+### 1. System Design Document(SDD)
 
-### Core
-- [Sequence Diagram](/docs/Core/SequenceDiagram.md)
-- [Class Diagram](/docs/Core/Classdiagram.md)
+#### Core
+  - [Sequence Diagram](/docs/Core/SequenceDiagram.md)
+  - [Class Diagram](/docs/Core/Classdiagram.md)
 
-### Teacher
-- [Sequence Diagram](/docs/Teacher/SequenceDiagram.md)
-- [Class Diagram](/docs/Teacher/Classdiagram.md)
+#### Teacher
+  - [Sequence Diagram](/docs/Teacher/SequenceDiagram.md)
+  - [Class Diagram](/docs/Teacher/Classdiagram.md)
 
-### Student
-- [Sequence Diagram](/docs/Student/SequenceDiagram.md)
-- [Class Diagram](/docs/Student/ClassDiagram.md)
+#### Student
+  - [Sequence Diagram](/docs/Student/SequenceDiagram.md)
+  - [Class Diagram](/docs/Student/ClassDiagram.md)
 
-## UI
-- [UI Mockup](/docs/UI/UI_Mockup.md)
 
-## ERD
-- [ERD](/docs/ERD/ERD.md)
+
+## 3rd Checkpoint
+### 1. UI
+  - [UI Mockup](/docs/UI/UI_Mockup.md)
+  
+### 2. ERD
+  - [ERD](/docs/ERD/ERD.md)
