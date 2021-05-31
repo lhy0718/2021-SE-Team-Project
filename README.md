@@ -1,9 +1,9 @@
 # Attendance Management System
 
 ## Contents
-1. [1st Checkpoint](#1st-Checkpoint)
-2. [2nd Checkpoint](#2nd-Checkpoint)
-3. [3rd Checkpoint](#3rd-Checkpoint)
+### 1. [1st Checkpoint](#1st-Checkpoint)
+### 2. [2nd Checkpoint](#2nd-Checkpoint)
+### 3. [3rd Checkpoint](#3rd-Checkpoint)
 
 ## Contributors
 
