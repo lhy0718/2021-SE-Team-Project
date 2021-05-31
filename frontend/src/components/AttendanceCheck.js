@@ -103,7 +103,7 @@ const AttendanceCheck = ({ studentsData, lectureData, lectureHour }) => {
             placeholder="Search Name"
             onSearch={(value) => {
               const filteredData = _studentsData.filter((entry) =>
-                entry.name.includes(value),
+                entry.fullName.includes(value),
               )
               setTableData(filteredData)
             }}
