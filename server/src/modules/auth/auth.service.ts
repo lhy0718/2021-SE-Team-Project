@@ -36,20 +36,23 @@ export class AuthService {
   }
 
   async validateUser(userLoginDto: LoginDto): Promise<User> {
-    // const user = await this.userService.findOneByEmail(userLoginDto.email)
-    const user = await this.userRepository
-      .createQueryBuilder('user')
-      .where('user.email = :email', { email: userLoginDto.email })
-      .addSelect('user.password')
-      .getOneOrFail()
-    // const isPasswordValid = await compare(userLoginDto.password, user.password)
-    const isPasswordValid = await UtilsService.validateHash(
-      userLoginDto.password,
-      user && user.password,
-    )
-    if (!user || !isPasswordValid) {
+    try {
+      const user = await this.userRepository
+        .createQueryBuilder('user')
+        .where('user.email = :email', { email: userLoginDto.email })
+        .addSelect('user.password')
+        .getOneOrFail()
+      // const isPasswordValid = await compare(userLoginDto.password, user.password)
+      const isPasswordValid = await UtilsService.validateHash(
+        userLoginDto.password,
+        user && user.password,
+      )
+      if (!user || !isPasswordValid) {
+        throw new UnauthorizedException()
+      }
+      return user
+    } catch (e) {
       throw new UnauthorizedException()
     }
-    return user
   }
 }
