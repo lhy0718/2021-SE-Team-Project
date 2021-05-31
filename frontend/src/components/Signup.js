@@ -185,7 +185,9 @@ const Signup = (props) => {
           <Button
             htmlType="button"
             onClick={() => {
-              props.history.goBack()
+              props.history.push({
+                pathname: '/signup',
+              })
             }}
           >
             이전
