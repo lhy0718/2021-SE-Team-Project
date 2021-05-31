@@ -72,6 +72,7 @@ docker-compose down $(docker ps -q)
 | Teacher   | 학생에 대한 출석 체크, 수업 및 학생 목록, 정보 조회, 출결 결과 및 공지사항 발송 | 이한용, 정나린 |
 | Student   | 수업 신청, 개인 출결현황 및 수업참여도 확인                                     | 박종혁, 윤진호 |
 
+------------------------------------------------------------
 
 ## 1st Checkpoint
 ### 1. Requirements (Stories)
@@ -96,7 +97,7 @@ docker-compose down $(docker ps -q)
 학생 | 나의 이번 학기 수업 목록을 선택해서 그 정보를 보기 위함 | 수업 신청 (UC-8)
 학생 | 학생이 수업의 공지 및 출결상태를 확인 하기 위함 | 수업상태확인(UC-9)
 학생 | 자신의 프로필 및 정보를 수정하기 위함 | 학생정보관리(UC-10)
-교수자,학생 | 지정된 도메인의 메일주소를 가지고 있는지 확인하기 위함 | (UC-1), (UC-7)
+교수자,학생 | 지정된 도메인의 메일주소를 가지고 있는지 확인하기 위함 | 교수자 온보딩 (UC-1), 학생 온보딩 (UC-7)
 교수자,학생 | 서비스 회원 탈퇴를 하기 위함 | 회원탈퇴(UC-11)
 서버 | 학부모가 학생들의 출결상태를 확인하기 위함 | 출결 확인(UC-12)
 서버,클라이언트 | 사용자 요청에 대한 유효성 검사 (타입, 범위, URL, ...) | 유효성 검사(UC-13)
@@ -106,7 +107,7 @@ docker-compose down $(docker ps -q)
   - [Teacher](/docs/Teacher/DomainModel.md)
   - [Student](/docs/Student/DomainModel.md)
 
-
+-----------------------------------------------------------------
 ## 2nd Checkpoint
 ### 1. System Design Document(SDD)
 
@@ -122,7 +123,7 @@ docker-compose down $(docker ps -q)
   - [Sequence Diagram](/docs/Student/SequenceDiagram.md)
   - [Class Diagram](/docs/Student/ClassDiagram.md)
 
-
+-----------------------------------------------------------------
 
 ## 3rd Checkpoint
 ### 1. UI
