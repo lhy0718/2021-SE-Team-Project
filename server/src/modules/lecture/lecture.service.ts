@@ -34,6 +34,7 @@ export class LectureService {
       const lectures = this.lectureRepo
         .createQueryBuilder('lecture')
         .leftJoin('lecture.users', 'user')
+        .leftJoinAndSelect('lecture.lectureTime', 'lectureTime')
         .where('user.id = :id', { id })
         .skip(pageSize * (page - 1))
         .take(pageSize)
