@@ -63,6 +63,7 @@ const AddclassPopup = ({ lectures, setLectures }) => {
         headers: headers,
       })
       .then((response) => {
+        console.log(response)
         alert('수업이 추가되었습니다.')
         setVisible(false)
         data.teacherName = teacherName
