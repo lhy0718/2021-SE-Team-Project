@@ -66,38 +66,13 @@ export class LectureService {
   }
 
   async create(user: User, dto: CreateLectureDto) {
-    console.log('[LECTURE DTO TIME]', dto.lectureTime)
     try {
-      // const savedLectureTimes = await Promise.all(
-      //   dto.lectureTime.map(async (x) => {
-      //     console.log('[X]', x)
-      //     return await this.lectureTimeRepo.save({
-      //       weekDay: x.weekDay,
-      //       period: x.period,
-      //     })
-      //   }),
-      // )
-      let savedLectureTimes = []
-      for (const x of dto.lectureTime) {
-        console.log('[X]', x)
-
-        const result = await this.lectureTimeRepo.save({
-          weekDay: Weekday.FRI,
-          period: 4,
-        })
-        savedLectureTimes.push(result)
-      }
-      // await getManager().transaction(async (manager) => {
-      //   const saved = await manager
-      //     .createQueryBuilder()
-      //     .insert()
-      //     .into(LectureTime)
-      //     .values(dto.lectureTime)
-      //     .execute()
-
-      //   console.log('[SAVED LECTURE TIMES]', saved)
-      //   savedLectureTimes = saved
-      // })
+      const savedLectureTimes = await Promise.all(
+        dto.lectureTime.map(async (x) => {
+          console.log('[X]', x)
+          return await this.lectureTimeRepo.save(x)
+        }),
+      )
       // console.log('[SAVED LECTURE TIMES]', savedLectureTimes)
       const created = await this.lectureRepo.save({
         users: [user],
