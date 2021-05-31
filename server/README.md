@@ -22,8 +22,8 @@
 
 Swagger이라는 프로그램을 이용하여 현재 서버에 나와있는 모든 api를 보며 테스트 할 수 있습니다. 
 `Try It Out` 버튼을 누르면 굳이 postman 같은 툴을 쓰지 않고 swagger 내에서 바로 테스트가 가능합니다.
-`Execute` 을 누르면 서버로 request가 전송이 되고, 밑에 Responses 영역에 Response code (200, 400 등) 과 detail이 돌아옵니다. 
-
+`Execute` 을 누르면 서버로 request가 전송이 되고, 밑에 Responses 영역에 Response code (200, 400 등) 과 detail이 돌아옵니다.   
+[API list](#API-list)
 
 ### 개발환경 안내
 
@@ -102,7 +102,7 @@ Ctrl+C 누르면 됨 (Mac & Windows 동일함)
 
 
 
-## **API-list**
+## **API list**
 - 웹앱에서 사용되는 API는 다음과 같이 구성되어있다.
 ![image](https://user-images.githubusercontent.com/59490892/120207498-7b3dcd80-c267-11eb-9176-a849f8d1bb03.png)
 
