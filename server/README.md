@@ -108,9 +108,14 @@ Ctrl+C 누르면 됨 (Mac & Windows 동일함)
 
 
 
+
+
+
 ### **users**
 
-#####  이메일 유효성 및 중복 확인(/api/users/email-verification/{email})
+
+
+####  이메일 유효성 및 중복 확인(/api/users/email-verification/{email})
 
 - 회원가입시 이메일 인증을 위해 이메일을 입력할 때 사용.
 
@@ -119,12 +124,14 @@ Ctrl+C 누르면 됨 (Mac & Windows 동일함)
 
 - cau2@cau.ac.kr 입력 시 유효한 status code(200)가 response된다.
 
-![image-20210531195024849](https://user-images.githubusercontent.com/59490892/120206114-bd660f80-c265-11eb-8c6b-48f9607a0973.png).png)
+![image-20210531195024849](https://user-images.githubusercontent.com/59490892/120206114-bd660f80-c265-11eb-8c6b-48f9607a0973.png)
 
 
 
 
-##### 이메일 인증번호(/api/users/email-validation)
+
+
+#### 이메일 인증번호(/api/users/email-validation)
 
 - 회원가입시 이메일로 전송된 이메일 인증번호 확인 시 사용한다. (현재 코드는 000000 으로 통일)
 
@@ -147,9 +154,14 @@ Ctrl+C 누르면 됨 (Mac & Windows 동일함)
 
 
 
+
+
+
 ### **auth**
 
-##### 회원가입(/api/auth/sign-up)
+
+
+#### 회원가입(/api/auth/sign-up)
 
 - 회원가입시 사용되는 api
 
@@ -165,7 +177,9 @@ Ctrl+C 누르면 됨 (Mac & Windows 동일함)
 
 
 
-##### 로그인(/api/auth/login)
+
+
+#### 로그인(/api/auth/login)
 
 - 로그인에 사용되는 api
 
@@ -183,7 +197,9 @@ Ctrl+C 누르면 됨 (Mac & Windows 동일함)
 
 
 
-##### 로그아웃(/api/auth/logout)
+
+
+#### 로그아웃(/api/auth/logout)
 
 - 로그아웃에 사용되는 api
 - 정상적으로 로그아웃이 완료된 경우 status code(201)가 response된다.
@@ -193,7 +209,9 @@ Ctrl+C 누르면 됨 (Mac & Windows 동일함)
 
 
 
-##### 내 정보 조회(/api/auth/me)
+
+
+#### 내 정보 조회(/api/auth/me)
 
 - 현재 로그인 되어있는 user의 정보를 불러와 데이터값을 조회하는 경우 사용된다.
 - 정상적으로 조회된 경우 status code(200)과 함께 user의 데이터 값이 response된다.
@@ -204,7 +222,8 @@ Ctrl+C 누르면 됨 (Mac & Windows 동일함)
 
 
 
-##### 탈퇴(/api/auth)
+
+#### 탈퇴(/api/auth)
 
 - 회원 탈퇴시 사용된다.
 - 정상적으로 회원 탈퇴된 경우 status code(200)가 response된다.
@@ -219,13 +238,15 @@ Ctrl+C 누르면 됨 (Mac & Windows 동일함)
 ### **lecture**
 
 
-##### 전체 수업 리스트 조회(/api/lecture)
+#### 전체 수업 리스트 조회(/api/lecture)
 
 - 학생이 수강신청을 할 때 필요한 리스트를 반환해주는 api이다.
 - page,pagesize,order 값을 설정하여 반환되는 데이터의 수와 정렬 방식을 조정해줄 수 있다.
 - 정상적으로 데이터가 조회된 경우 status code(200)와 함께 현재 조회가능한 lecture list가 response된다.
 
 ![image-20210531193347608](https://user-images.githubusercontent.com/59490892/120206599-5d239d80-c266-11eb-8555-2cc6be046e07.png)
+
+
 
 
 
@@ -252,7 +273,7 @@ Ctrl+C 누르면 됨 (Mac & Windows 동일함)
 
 
 
-##### 수강 신청(/api/lectures/{lectureId})
+#### 수강 신청(/api/lectures/{lectureId})
 
 - 학생이 수강할 lecture를 수강신청할 때 사용된다.
 
@@ -272,7 +293,7 @@ Ctrl+C 누르면 됨 (Mac & Windows 동일함)
 
 
 
-##### user 수업 리스트 조회(/api/lectures/users/{userId})
+#### user 수업 리스트 조회(/api/lectures/users/{userId})
 
 - Teacher/Student가 현재 본인이 강의/수강하고 있는lecture 목록을 조회할 때 사용된다
 - 정상적으로 수업이 조회된 경우 status code(200)와 lecture list가 response된다.
@@ -287,7 +308,7 @@ Ctrl+C 누르면 됨 (Mac & Windows 동일함)
 ### **attendence**
 
 
-##### 출석체크(/api/attendence)
+#### 출석체크(/api/attendence)
 
 - 교수가 학생의 출석체크를 진행할 때 사용된다.
 
