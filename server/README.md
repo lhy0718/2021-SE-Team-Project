@@ -103,6 +103,8 @@ Ctrl+C 누르면 됨 (Mac & Windows 동일함)
 
 
 ## API-list
+- 웹앱에서 사용되는 API는 다음과 같이 구성되어있다.
+![image](https://user-images.githubusercontent.com/59490892/120207498-7b3dcd80-c267-11eb-9176-a849f8d1bb03.png)
 
 
 ### users
