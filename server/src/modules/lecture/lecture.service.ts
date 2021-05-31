@@ -34,12 +34,28 @@ export class LectureService {
       const lectures = this.lectureRepo
         .createQueryBuilder('lecture')
         .leftJoin('lecture.users', 'user')
+        .leftJoinAndSelect('lecture.lectureTime', 'lectureTime')
         .where('user.id = :id', { id })
         .skip(pageSize * (page - 1))
         .take(pageSize)
         .getMany()
 
       return lectures
+    } catch (e) {
+      this.logger.error(e)
+      throw e
+    }
+  }
+
+  async getLectureById(id: number) {
+    try {
+      const lecture = await this.lectureRepo.findOneOrFail({
+        where: {
+          id,
+        },
+        relations: ['users', 'attendances', 'lectureTime'],
+      })
+      return lecture
     } catch (e) {
       this.logger.error(e)
       throw e

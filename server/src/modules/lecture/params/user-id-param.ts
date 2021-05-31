@@ -8,3 +8,11 @@ export class UserIdParam {
   })
   readonly userId: number
 }
+
+export class LectureIdParam {
+  @ApiProperty({
+    example: 1,
+    type: Number,
+  })
+  readonly lectureId: number
+}
