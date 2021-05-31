@@ -60,7 +60,7 @@ function Sugang() {
       align: 'center',
       render: (text, record) => (
         <Popconfirm
-          title={`${record.lectureName}(${record.teacherName}) 신청하시겠습니까?`}
+          title={`[${record.lectureName}]과목을 신청하시겠습니까?`}
           onConfirm={() => confirm(record.id)}
           okText="네"
           cancelText="아니요"
