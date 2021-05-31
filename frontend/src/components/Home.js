@@ -10,7 +10,7 @@ function Home({ userObj }) {
 
   const headers = {
     'Content-Type': 'application/json; charset=utf-8',
-    accept: 'application/json',
+    accept: '*/*',
   }
 
   const params = {
@@ -23,10 +23,10 @@ function Home({ userObj }) {
     axios
       .get(url, {
         params: params,
-        haeders: headers,
+        headers: headers,
       })
       .then((res) => {
-        console.log(res)
+        // console.log(res)
         setLectures(res.data)
       })
       .catch((error) => {

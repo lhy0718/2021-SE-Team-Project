@@ -13,7 +13,7 @@ function Sugang() {
 
     const headers = {
       'Content-Type': 'application/json; charset=utf-8',
-      accept: 'application/json',
+      accept: '*/*',
     }
 
     const params = {
@@ -36,17 +36,17 @@ function Sugang() {
       })
   }, [])
 
-  function confirm(lectureCode) {
-    console.log(lectureCode)
+  function confirm(lectureId) {
+    console.log(lectureId)
     axios
-      .patch(`/api/lectures/${lectureCode}`, {
-        lectureId: parseInt(lectureCode),
-      })
+      .patch(`/api/lectures/${lectureId}`)
       .then((res) => {
-        console.log(res)
+        // console.log(res)
+        alert('신청이 완료되었습니다.')
       })
       .catch((err) => {
         console.log(err)
+        alert(`신청에 실패했습니다.`)
       })
   }
 
@@ -61,7 +61,7 @@ function Sugang() {
       render: (text, record) => (
         <Popconfirm
           title={`${record.lectureName}(${record.teacherName}) 신청하시겠습니까?`}
-          onConfirm={() => confirm(record.lectureCode)}
+          onConfirm={() => confirm(record.id)}
           okText="네"
           cancelText="아니요"
         >
