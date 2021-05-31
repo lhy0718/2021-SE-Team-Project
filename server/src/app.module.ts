@@ -6,7 +6,7 @@ import { LectureModule } from './modules/lecture/lecture.module'
 import { UserModule } from './modules/user/user.module'
 import { ConfigModule } from './shared/config/config.module'
 import { ConfigService } from './shared/config/config.service'
-
+import { AttendanceModule } from './modules/attendance/attendance.module';
 // TypeORM DB Configuration
 const ConfiguredTypeOrmModule = TypeOrmModule.forRootAsync({
   imports: [ConfigModule],
@@ -46,6 +46,7 @@ const ConfiguredTypeOrmModule = TypeOrmModule.forRootAsync({
     AuthModule,
     AwsModule,
     LectureModule,
+    AttendanceModule
   ],
 })
 export class AppModule {}
