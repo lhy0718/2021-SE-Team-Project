@@ -4,35 +4,35 @@ import { User } from 'src/modules/user/user.entity'
 import { AbstractDto } from 'src/shared/abstract.dto'
 import { Attendance } from '../attendance.entity'
 import { Attend } from 'src/shared/constants/constants'
+import { Type } from 'class-transformer'
+import { UserDto } from 'src/modules/user/dto/user.dto'
+import { LectureDto } from 'src/modules/lecture/dto/lecture.dto'
 
 export class AttendanceDto extends AbstractDto {
-  @ApiProperty({})//({})원래이거임
-  user: User
-
-  @ApiProperty()
-  lecture: Lecture
-/*
   @ApiProperty({
-    example: '2021-05-01',
-  })
-  date: string
-*/
-  @ApiProperty({
-    example: 3,
+    example: 1,
   })
   nth: number
 
-  @ApiProperty({//출결여부
+  @ApiProperty({
     example: 'ABSENT',
   })
-  role: Attend
+  check: Attend
+
+  @Type(() => UserDto)
+  @ApiProperty()
+  user: User
+
+  @Type(() => LectureDto)
+  @ApiProperty()
+  lecture: Lecture
 
   constructor(a: Attendance) {
     super(a)
 
+    this.check = a.check
+    this.nth = a.nth
     this.user = a.user
     this.lecture = a.lecture
-    this.role = a.role
-    this.nth = a.nth
   }
 }

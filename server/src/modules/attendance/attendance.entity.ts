@@ -11,17 +11,13 @@ export class Attendance extends AbstractEntity<AttendanceDto> {
 
   @ManyToOne(() => Lecture, (lecture) => lecture.attendances)
   lecture: Lecture
-/*
-  // 날짜만 저장하고 시간은 저장하지 않는다.
-  @Column({ type: 'date' })
-  date: string
-*/
+
   // 몇 번 째 수업인지
   @Column()
   nth: number
 
   @Column()
-  role: Attend  
+  check: Attend
 
   dtoClass = AttendanceDto
 }

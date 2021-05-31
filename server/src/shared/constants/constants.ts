@@ -18,10 +18,10 @@ export enum Weekday {
   SUN = 'SUN',
 }
 export enum Attend {
-  ATTENDENCE='ATTENDENCE',
-  ABSENT='ABSENT',
-  TARDY='TARDY',
-  ETC='ETC'
+  ATTENDED = 'ATTENDED',
+  ABSENT = 'ABSENT',
+  TARDY = 'TARDY',
+  ETC = 'ETC',
 }
 export const MINUTE_IN_SECONDS = 60
 export const HOUR_IN_SECONDS = 60 * MINUTE_IN_SECONDS
