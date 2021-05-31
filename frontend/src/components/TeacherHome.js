@@ -1,11 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import LectureTemplate from './LectureTemplate'
 import { sharedTemplate, shareLectures } from './constants'
 import SelectClassNumberPopup from './SelectClassNumberPopup'
 
-function TeacherHome({ userObj, lectures }) {
-  lectures = !!lectures ? lectures : shareLectures
-
+function TeacherHome({ userObj, lectures, setLectures }) {
   const columns = [
     ...sharedTemplate,
     {
@@ -26,6 +24,7 @@ function TeacherHome({ userObj, lectures }) {
       lectures={lectures}
       type={userObj.role}
       name={userObj.fullName}
+      setLectures={setLectures}
     />
   )
 }

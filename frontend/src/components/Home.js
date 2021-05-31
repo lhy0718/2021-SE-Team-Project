@@ -4,7 +4,7 @@ import StudentHome from './StudentHome'
 import TeacherHome from './TeacherHome'
 
 function Home({ userObj }) {
-  const [lectures, setLectures] = useState(null)
+  const [lectures, setLectures] = useState([])
 
   const url = `/api/lectures/users/${userObj.id}`
 
@@ -21,7 +21,8 @@ function Home({ userObj }) {
 
   useEffect(() => {
     axios
-      .post(url, params, {
+      .get(url, {
+        params: params,
         haeders: headers,
       })
       .then((res) => {
@@ -34,9 +35,13 @@ function Home({ userObj }) {
   }, [])
 
   return userObj.role === 'STUDENT' ? (
-    <StudentHome userObj={userObj} />
+    <StudentHome userObj={userObj} lectures={lectures} />
   ) : (
-    <TeacherHome userObj={userObj} lectures={lectures} />
+    <TeacherHome
+      userObj={userObj}
+      lectures={lectures}
+      setLectures={setLectures}
+    />
   )
 }
 
