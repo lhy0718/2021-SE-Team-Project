@@ -103,10 +103,9 @@ export class AuthController {
   })
   @HttpCode(HttpStatus.OK)
   @UseGuards(AuthGuard('jwt'))
-  @ApiOkResponse({ type: UserDto, description: 'current user info' })
   async getCurrentUser(@Req() req: Request) {
     const user = req.user as User
     const result = await this.userService.findOneByUserId(+user.id)
-    return result.toDto()
+    return result
   }
 }
