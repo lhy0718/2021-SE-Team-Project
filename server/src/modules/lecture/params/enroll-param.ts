@@ -6,6 +6,5 @@ export class EnrollParam {
     example: 1,
     type: Number,
   })
-  @IsInt()
   readonly lectureId: number
 }
