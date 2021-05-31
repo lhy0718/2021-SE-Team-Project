@@ -32,7 +32,7 @@ const ConfiguredTypeOrmModule = TypeOrmModule.forRootAsync({
         connectionTimeoutMillis: 0,
       },
     }
-    console.log('[ORM CONFIG]', ormconfigs)
+    // console.log('[ORM CONFIG]', ormconfigs)
     return ormconfigs
   },
   inject: [ConfigService],

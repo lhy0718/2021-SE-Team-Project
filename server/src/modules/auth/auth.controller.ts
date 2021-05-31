@@ -16,6 +16,7 @@ import { ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger'
 import {
   USERTOKEN_COOKIE_NAME,
   OAUTHINFO_TOKEN_COOKIE_NAME,
+  USERTOKEN_EXPIRE_IN,
 } from 'src/shared/constants/constants'
 import { CreateUserDto } from '../user/dto/create-user.dto'
 import { UserDto } from '../user/dto/user.dto'
@@ -33,19 +34,27 @@ export class AuthController {
     private userService: UserService,
   ) {}
 
+  setUserTokenToCookie(res: Response, token: string) {
+    res.cookie(USERTOKEN_COOKIE_NAME, token, {
+      signed: true,
+      maxAge: USERTOKEN_EXPIRE_IN,
+      httpOnly: true,
+    })
+  }
+
   @Post('/login')
   @HttpCode(HttpStatus.OK)
-  @UseGuards(AuthGuard('local'))
-  @ApiOkResponse({
-    type: LoginPayloadDto,
-    description: '로그인 완료',
-  })
   @ApiOperation({})
-  async login(@Body() loginDto: LoginDto) {
-    const userEntity = await this.authService.validateUser(loginDto)
+  async login(
+    @Body() loginDto: LoginDto,
+    @Req() req: Request,
+    @Res() res: Response,
+  ) {
+    const validatedUser = await this.authService.validateUser(loginDto)
 
-    const token = await this.authService.createToken(userEntity)
-    return new LoginPayloadDto(userEntity.toDto(), token)
+    const token = await this.authService.createToken(validatedUser)
+    this.setUserTokenToCookie(res, token.accessToken)
+    return res.json(validatedUser.toDto())
   }
 
   @Post('/logout')
@@ -58,10 +67,17 @@ export class AuthController {
 
   @Post('/sign-up')
   @HttpCode(HttpStatus.OK)
-  @ApiOkResponse({ type: UserDto, description: '가입 완료' })
-  async signUp(@Body() createUserDto: CreateUserDto): Promise<UserDto> {
+  @ApiOperation({})
+  async signUp(
+    @Body() createUserDto: CreateUserDto,
+    @Req() req: Request,
+    @Res() res: Response,
+  ) {
     const createdUser = await this.userService.create(createUserDto)
-    return createdUser.toDto()
+    // console.log('<<Created User>> : ', createdUser)
+    const token = await this.authService.createToken(createdUser)
+    this.setUserTokenToCookie(res, token.accessToken)
+    return res.json(createdUser.toDto())
   }
 
   @Delete()
@@ -88,8 +104,9 @@ export class AuthController {
   @HttpCode(HttpStatus.OK)
   @UseGuards(AuthGuard('jwt'))
   @ApiOkResponse({ type: UserDto, description: 'current user info' })
-  getCurrentUser(@Req() req: Request, @Res() res: Response) {
+  async getCurrentUser(@Req() req: Request) {
     const user = req.user as User
-    return user.toDto()
+    const result = await this.userService.findOneByUserId(+user.id)
+    return result.toDto()
   }
 }

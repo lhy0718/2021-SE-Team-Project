@@ -1,4 +1,9 @@
-import { Injectable, Logger, NotFoundException } from '@nestjs/common'
+import {
+  Injectable,
+  Logger,
+  NotFoundException,
+  UnauthorizedException,
+} from '@nestjs/common'
 import { JwtService } from '@nestjs/jwt'
 import { InjectRepository } from '@nestjs/typeorm'
 import { UtilsService } from 'src/providers/utils.service'
@@ -10,6 +15,7 @@ import { User } from '../user/user.entity'
 import { UserService } from '../user/user.service'
 import { LoginDto } from './dto/login.dto'
 import { TokenPayloadDto } from './dto/token-payload.dto'
+import { compare } from 'bcryptjs'
 
 @Injectable()
 export class AuthService {
@@ -30,13 +36,19 @@ export class AuthService {
   }
 
   async validateUser(userLoginDto: LoginDto): Promise<User> {
-    const user = await this.userService.findOneByEmail(userLoginDto.email)
+    // const user = await this.userService.findOneByEmail(userLoginDto.email)
+    const user = await this.userRepository
+      .createQueryBuilder('user')
+      .where('user.email = :email', { email: userLoginDto.email })
+      .addSelect('user.password')
+      .getOneOrFail()
+    // const isPasswordValid = await compare(userLoginDto.password, user.password)
     const isPasswordValid = await UtilsService.validateHash(
       userLoginDto.password,
       user && user.password,
     )
     if (!user || !isPasswordValid) {
-      throw new NotFoundException()
+      throw new UnauthorizedException()
     }
     return user
   }

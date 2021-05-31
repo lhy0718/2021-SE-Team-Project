@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Form, Input, Button, Row, InputNumber } from 'antd'
 import './Signup.css'
 import { withRouter } from 'react-router-dom'
+import axios from 'axios'
 
 const inputLayout = {
   labelCol: { span: 6 },
@@ -19,12 +20,63 @@ const validateMessages = {
 const Signup = (props) => {
   const [password, setPassword] = useState('')
 
-  const onFinish = (result) => {
-    console.log('finish, result:', result)
+  const onFinish = (data) => {
+    checkEmail(data)
   }
 
   const onFinishFailed = (result) => {
     console.log('fail, result: ', result)
+  }
+
+  const checkEmail = (data) => {
+    const url = '/api/users/email-verification/' + data.email
+    const headers = {
+      accept: '*/*',
+    }
+
+    axios
+      .post(url, data, {
+        headers: headers,
+      })
+      .then((response) => {
+        requestSignup(data)
+      })
+      .catch((error) => {
+        if (error.response.status == 403)
+          alert('이메일 주소는 "cau.ac.kr" 으로 끝나야 합니다.')
+        else if (error.response.status == 409)
+          alert('동일한 이메일 주소로 가입한 계정이 존재합니다.')
+        else alert(JSON.stringify(error.response.data))
+      })
+  }
+
+  const requestSignup = (data) => {
+    const url = '/api/auth/sign-up'
+    const headers = {
+      'Content-Type': 'application/json; charset=utf-8',
+      accept: 'application/json',
+    }
+
+    axios
+      .post(url, data, {
+        headers: headers,
+      })
+      .then((response) => {
+        alert('회원가입이 완료되었습니다.')
+        props.history.push({
+          pathname: '/',
+          state: { userObj: response.data },
+        })
+      })
+      .catch((error) => {
+        if (error.response.status == 400) {
+          let errormsg = ''
+          error.response.data.message.map((msg) => {
+            errormsg += '입력을 확인하세요: ' + msg + '\n'
+          })
+          alert(errormsg)
+        } else alert(JSON.stringify(error.response.data))
+      })
   }
 
   const checkPassword = (_, value) => {
@@ -36,6 +88,8 @@ const Signup = (props) => {
 
   const checkNum = (_, value) => {
     if (!isNaN(value) && parseInt(value) > 0) {
+      if (String(value).length < 9 || String(value).length > 11)
+        return Promise.reject(new Error('9~11자리의 숫자를 입력하세요.'))
       return Promise.resolve()
     }
     return Promise.reject(new Error('숫자만 입력 가능합니다.'))
@@ -54,13 +108,18 @@ const Signup = (props) => {
         onFinishFailed={onFinishFailed}
         validateMessages={validateMessages}
       >
-        <Form.Item label="이름" name="name" rules={[{ required: true }]}>
+        <Form.Item
+          name="role"
+          initialValue={props.isStudentScreen ? 'STUDENT' : 'TEACHER'}
+          hidden
+        >
           <Input />
         </Form.Item>
 
-        <Form.Item label="아이디" name="id" rules={[{ required: true }]}>
+        <Form.Item label="이름" name="fullName" rules={[{ required: true }]}>
           <Input />
         </Form.Item>
+
         {props.isStudentScreen && (
           <Form.Item label="학년/반/번호">
             <Input.Group compact>
