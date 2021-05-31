@@ -4,9 +4,10 @@ import {
   Injectable,
   Logger,
   NotFoundException,
+  UnauthorizedException,
 } from '@nestjs/common'
 import { InjectRepository } from '@nestjs/typeorm'
-import { Weekday } from 'src/shared/constants/constants'
+import { UserRole, Weekday } from 'src/shared/constants/constants'
 import { PaginationQuery } from 'src/shared/pagination.query'
 import { getManager, Repository } from 'typeorm'
 import { User } from '../user/user.entity'
@@ -100,12 +101,22 @@ export class LectureService {
   }
 
   async register(user: User, lectureId: number) {
+    if (user.role === UserRole.TEACHER) {
+      throw new UnauthorizedException('TEACHER_NOT_AVAILABLE')
+    }
+
     try {
       const lecture = await this.lectureRepo.findOneOrFail({
         where: {
           id: lectureId,
         },
+        relations: ['lectureTime', 'users', 'attendances'],
       })
+
+      if (lecture.users.find((x) => x.id === user.id)) {
+        throw new BadRequestException('ALREADY_ENROLLED')
+      }
+
       lecture.users.push(user)
       const saved = await this.lectureRepo.save(lecture)
       console.log('SAVED LECTURE', saved)
