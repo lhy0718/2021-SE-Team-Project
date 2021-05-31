@@ -9,7 +9,7 @@ export class Attendance extends AbstractEntity<AttendanceDto> {
   @ManyToOne(() => User, (user) => user.attendances)
   user: User
 
-  @ManyToOne(() => Lecture, (lecture) => lecture.attendance)
+  @ManyToOne(() => Lecture, (lecture) => lecture.attendances)
   lecture: Lecture
 
   // 날짜만 저장하고 시간은 저장하지 않는다.

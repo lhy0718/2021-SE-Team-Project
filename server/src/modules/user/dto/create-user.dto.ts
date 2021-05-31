@@ -65,7 +65,9 @@ export class CreateUserDto {
   @Max(99)
   readonly studentNumber: number
 
-  @ApiPropertyOptional()
+  @ApiPropertyOptional({
+    example: '01012341234',
+  })
   @IsOptional()
   @IsPhoneNumber('KR')
   readonly phone: string

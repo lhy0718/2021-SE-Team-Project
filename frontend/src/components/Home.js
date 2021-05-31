@@ -33,8 +33,8 @@ function Home({ userObj }) {
       })
   }, [])
 
-  return userObj.type === 'S' ? (
-    <StudentHome userObj={userObj} lectures={lectures} />
+  return userObj.role === 'STUDENT' ? (
+    <StudentHome userObj={userObj} />
   ) : (
     <TeacherHome userObj={userObj} lectures={lectures} />
   )

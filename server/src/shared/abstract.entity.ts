@@ -8,18 +8,20 @@ import { AbstractDto } from './abstract.dto'
 
 // PK 와 create, update 자동생성을 해주며 dto 와 매칭 해줌
 export abstract class AbstractEntity<T extends AbstractDto = AbstractDto> {
-  @PrimaryGeneratedColumn('uuid')
+  @PrimaryGeneratedColumn('increment')
   id: string
 
   @CreateDateColumn({
     type: 'timestamp without time zone',
     name: 'created_at',
+    select: false,
   })
   createdAt: Date
 
   @UpdateDateColumn({
     type: 'timestamp without time zone',
     name: 'updated_at',
+    select: false,
   })
   updatedAt: Date
 

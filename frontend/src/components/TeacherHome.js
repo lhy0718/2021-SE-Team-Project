@@ -24,8 +24,8 @@ function TeacherHome({ userObj, lectures }) {
     <LectureTemplate
       columns={columns}
       lectures={lectures}
-      type={userObj.type}
-      name={userObj.name}
+      type={userObj.role}
+      name={userObj.fullName}
     />
   )
 }

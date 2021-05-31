@@ -16,17 +16,17 @@ export class JwtStrategy extends PassportStrategy(Strategy, 'jwt') {
   ) {
     super({
       secretOrKey: configService.getJwtSecret(),
-      jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-      // jwtFromRequest: (req: Request) => {
-      //   // Extract Jwt from cookie
-      //   let token = null
+      // jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+      jwtFromRequest: (req: Request) => {
+        // Extract Jwt from cookie
+        let token = null
 
-      //   if (req && req.signedCookies) {
-      //     token = req.signedCookies[USERTOKEN_COOKIE_NAME]
-      //   }
+        if (req && req.signedCookies) {
+          token = req.signedCookies[USERTOKEN_COOKIE_NAME]
+        }
 
-      //   return token
-      // },
+        return token
+      },
     })
     // console.log('JWT SECRET', configService.getJwtSecret())
   }
