@@ -7,7 +7,7 @@ export class LectureTimeDto {
     example: 'TUE',
   })
   @IsEnum(Weekday)
-  weekDay: Weekday
+  weekday: Weekday
 
   @ApiProperty({
     example: 5,

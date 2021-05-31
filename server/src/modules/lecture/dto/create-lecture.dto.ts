@@ -35,11 +35,11 @@ export class CreateLectureDto {
   @ApiProperty({
     example: [
       {
-        weekDay: Weekday.WED,
+        weekday: Weekday.WED,
         period: 1,
       },
       {
-        weekDay: Weekday.FRI,
+        weekday: Weekday.FRI,
         period: 4,
       },
     ],
