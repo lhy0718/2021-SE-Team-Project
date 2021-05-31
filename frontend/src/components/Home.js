@@ -2,21 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import StudentHome from './StudentHome'
 import TeacherHome from './TeacherHome'
-
-function parseWeekday(day) {
-  let ret = ''
-  if (day.weekday === 'MON') ret += '월'
-  else if (day.weekday === 'TUE') ret += '화'
-  else if (day.weekday === 'WED') ret += '수'
-  else if (day.weekday === 'THU') ret += '목'
-  else if (day.weekday === 'FRI') ret += '금'
-  else if (day.weekday === 'SAT') ret += '토'
-  else if (day.weekday === 'SUN') ret += '일'
-
-  ret += day.period
-
-  return ret
-}
+import { parseWeekday } from './constants'
 
 function Home({ userObj }) {
   const [lectures, setLectures] = useState([])
@@ -46,7 +32,6 @@ function Home({ userObj }) {
 
           lec.times = Times.join(',')
         })
-        console.log(lectureData)
         setLectures(lectureData)
       })
       .catch((err) => {

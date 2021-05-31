@@ -1,3 +1,18 @@
+export function parseWeekday(day) {
+  let ret = ''
+  if (day.weekday === 'MON') ret += '월'
+  else if (day.weekday === 'TUE') ret += '화'
+  else if (day.weekday === 'WED') ret += '수'
+  else if (day.weekday === 'THU') ret += '목'
+  else if (day.weekday === 'FRI') ret += '금'
+  else if (day.weekday === 'SAT') ret += '토'
+  else if (day.weekday === 'SUN') ret += '일'
+
+  ret += day.period
+
+  return ret
+}
+
 export const sharedTemplate = [
   {
     title: '수업명',
