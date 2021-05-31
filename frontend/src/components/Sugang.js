@@ -36,11 +36,11 @@ function Sugang() {
       })
   }, [])
 
-  function confirm(lectureId) {
-    console.log(lectureId)
+  function confirm(lectureCode) {
+    console.log(lectureCode)
     axios
-      .patch(`/api/lectures/${lectureId}`, {
-        lectureId: parseInt(lectureId),
+      .patch(`/api/lectures/${lectureCode}`, {
+        lectureId: parseInt(lectureCode),
       })
       .then((res) => {
         console.log(res)
@@ -61,7 +61,7 @@ function Sugang() {
       render: (text, record) => (
         <Popconfirm
           title={`${record.lectureName}(${record.teacherName}) 신청하시겠습니까?`}
-          onConfirm={() => confirm(record.lectureId)}
+          onConfirm={() => confirm(record.lectureCode)}
           okText="네"
           cancelText="아니요"
         >

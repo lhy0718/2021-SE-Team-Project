@@ -55,7 +55,7 @@ const AttendanceCheck = ({ studentsData, lectureData, lectureHour }) => {
       render: (text, record) => (
         <AttendanceCheckBtns
           uId={record.uId}
-          lectureId={lectureData.lectureId}
+          lectureCode={lectureData.lectureCode}
           lectureHour={lectureHour}
           attendanceState={record.attendanceState}
           onAttendanceStateChange={onAttendanceStateChanges}

@@ -4,7 +4,7 @@ import './AttendanceCheckBtns.css'
 
 const AttendanceCheckBtns = ({
   uId,
-  lectureId,
+  lectureCode,
   lectureHour,
   attendanceState,
   onAttendanceStateChange,

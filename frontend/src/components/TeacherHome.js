@@ -13,7 +13,7 @@ function TeacherHome({ userObj, lectures, setLectures }) {
       width: '177px',
       align: 'center',
       render: (text, record) => (
-        <SelectClassNumberPopup lectureID={record.lectureID} />
+        <SelectClassNumberPopup lectureCode={record.lectureCode} />
       ),
     },
   ]
