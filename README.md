@@ -286,5 +286,5 @@ Ctrl+C 누르면 됨 (Mac & Windows 동일함)
 
 - 개발 프로세스를 자동 화 하기 위해 CI/CD를 도입. (원래는 develop/staging/master 3 가지 브랜치로 나뉘어야 하나, 프로젝트 규모와 시간 관계상 master 한 브랜치에서만 되도록 했다.)
 
-![image-20210531234909344](/Users/kevin/Library/Application Support/typora-user-images/image-20210531234909344.png)
+![hi](https://user-images.githubusercontent.com/18115360/120210323-9c53ed80-c26a-11eb-9047-546a384d40aa.png)
 
