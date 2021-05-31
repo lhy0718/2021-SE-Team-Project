@@ -58,9 +58,11 @@ function Sider({ isLogin, userObj }) {
           <>
             <Menu.Item key="1">
               <span>로그인</span>
+              <Link to="/" />
             </Menu.Item>
             <Menu.Item key="2">
               <span>회원가입</span>
+              <Link to="/signup" />
             </Menu.Item>
           </>
         )}
