@@ -20,16 +20,13 @@ function Home({ userObj }) {
 
   useEffect(() => {
     axios
-      .get(url, {
-        params: params,
-        headers: headers,
-      })
+      .get(url, { params: params, headers: headers })
       .then((res) => {
-        // console.log(res)
         setLectures(res.data)
+        // console.log(res.data)
       })
-      .catch((error) => {
-        console.log(error)
+      .catch((err) => {
+        console.log(err)
       })
   }, [])
 
