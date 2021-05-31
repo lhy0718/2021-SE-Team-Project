@@ -1,21 +1,25 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Button, Divider, Row, Table, Popconfirm, Input, Col } from 'antd'
 import AttendanceCheckBtns from './AttendanceCheckBtns'
 import AttendanceCheckHeader from './AttendanceCheckHeader'
 import userProfileImage from './svg/profile-user.svg'
-import { useLocation } from 'react-router-dom'
 import axios from 'axios'
 
 const AttendanceCheck = ({ studentsData, lectureData, lectureHour }) => {
   const [_studentsData, setStudentsData] = useState(studentsData)
   const [tableData, setTableData] = useState(studentsData)
-  const location = useLocation()
 
   const onAttendanceStateChanges = ({ uId, newAttendanceState }) => {
-    const url = '/api/auth/login'
+    const url = '/api/attendance'
     const headers = {
       accept: 'application/json',
       'Content-Type': 'application/json',
+    }
+    const data = {
+      userId: uId,
+      lectureId: lectureData.lectureId,
+      nth: lectureHour,
+      check: newAttendanceState,
     }
     axios
       .post(url, data, {

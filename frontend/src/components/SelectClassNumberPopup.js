@@ -5,7 +5,7 @@ import { useLocation } from 'react-router-dom'
 
 const { Option } = Select
 
-const SelectClassNumberPopup = ({ lectureCode }) => {
+const SelectClassNumberPopup = ({ lectureData }) => {
   const history = useHistory()
   const location = useLocation()
 
@@ -15,12 +15,12 @@ const SelectClassNumberPopup = ({ lectureCode }) => {
 
   const onFinish = (result) => {
     console.log('finish, result:', result)
-    console.log('lecid:', lectureCode)
+    console.log('lecture data', lectureData)
     history.push({
       pathname: '/attendance',
       state: {
         userObj: location.state.userObj,
-        lectureId: lectureCode,
+        lectureData: lectureData,
         nth: result.classNumber,
       },
     })
@@ -62,7 +62,7 @@ const SelectClassNumberPopup = ({ lectureCode }) => {
             취소
           </Button>,
           <Button
-            form={lectureCode + 'selectClassNumberForm'}
+            form={lectureData.id + 'selectClassNumberForm'}
             key="submit"
             htmlType="submit"
             type="primary"
@@ -73,7 +73,7 @@ const SelectClassNumberPopup = ({ lectureCode }) => {
       >
         <Form
           form={selectClassNumberForm}
-          name={lectureCode + 'selectClassNumberForm'}
+          name={lectureData.id + 'selectClassNumberForm'}
           onFinish={onFinish}
           onFinishFailed={onFinishFailed}
         >

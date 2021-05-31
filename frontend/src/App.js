@@ -18,10 +18,10 @@ function App() {
   const [userObj, setUserObj] = useState(
     location.state ? location.state.userObj : {},
   )
+  console.log(location.state)
 
   useEffect(() => {
     setUserObj(location.state ? location.state.userObj : {})
-    console.log(location)
   }, [location])
 
   return (
@@ -52,8 +52,8 @@ function App() {
           render={() => (
             <AttendanceCheck
               studentsData={shareStudents} // test data
-              lectureData={shareLectures[0]} // test data
-              lectureHour={1} // test data, 수업 차시 숫자
+              lectureData={location.state.lectureData} // test data
+              lectureHour={location.state.nth} // test data, 수업 차시 숫자
             />
           )}
         />

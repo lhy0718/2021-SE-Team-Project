@@ -131,7 +131,7 @@ export const shareStudents = [
     grade: 4,
     classNum: 2,
     studentNum: 2,
-    attendanceState: 'attendance',
+    attendanceState: 'ATTENDANCE',
   },
   {
     id: '3',
@@ -144,7 +144,7 @@ export const shareStudents = [
     grade: 4,
     classNum: 2,
     studentNum: 3,
-    attendanceState: 'absent',
+    attendanceState: 'ABSENT',
   },
   {
     id: '4',
@@ -157,7 +157,7 @@ export const shareStudents = [
     grade: 4,
     classNum: 2,
     studentNum: 4,
-    attendanceState: 'attendance',
+    attendanceState: 'ATTENDANCE',
   },
   {
     id: '5',
@@ -170,7 +170,7 @@ export const shareStudents = [
     grade: 4,
     classNum: 2,
     studentNum: 5,
-    attendanceState: 'tardy',
+    attendanceState: 'TARDY',
   },
   {
     id: '6',
@@ -183,6 +183,6 @@ export const shareStudents = [
     grade: 4,
     classNum: 2,
     studentNum: 6,
-    attendanceState: 'etc',
+    attendanceState: 'ETC',
   },
 ]
