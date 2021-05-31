@@ -21,7 +21,7 @@ import { User } from '../user/user.entity'
 import { CreateLectureDto } from './dto/create-lecture.dto'
 import { LectureService } from './lecture.service'
 import { EnrollParam } from './params/enroll-param'
-import { UserIdParam } from './params/user-id-param'
+import { LectureIdParam, UserIdParam } from './params/user-id-param'
 
 @Controller('lectures')
 @ApiTags('lecture')
@@ -33,9 +33,20 @@ export class LectureController {
     summary: '열려있는 수업 리스트 조회',
     description: '수강신청을 할 때 필요한 리스트',
   })
+  @UseGuards(AuthGuard('jwt'))
   async getLectures(@Req() req: Request, @Query() queries: PaginationQuery) {
     const lectures = await this.lectureService.getRecentLectures(queries)
     return lectures.map((x) => x.toDto())
+  }
+
+  @Get('/:lectureId')
+  @UseGuards(AuthGuard('jwt'), RolesGuard)
+  @ApiOperation({
+    summary: '수업 정보 조회',
+    description: '수업 정보, 학생 리스트 및 attendance 정보 불러옴',
+  })
+  async getOneLecture(@Req() req: Request, @Param() param: LectureIdParam) {
+    return await this.lectureService.getLectureById(param.lectureId)
   }
 
   @Patch('/:lectureId')
